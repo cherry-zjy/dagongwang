@@ -1,0 +1,32 @@
+<swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" width="100%" height="100%"/>
+    </swiper-item>
+  </block>
+</swiper>
+
+<view class='info-list' wx:for="{{jobList}}" wx:key="index" data-id="{{item.ID}}" bindtap='jobDetail'>
+    <view class='list-img'>
+      <image class='img-msg' src='{{item.Display_Image}}'></image>
+    </view>
+    <view class='list-jobtext'>
+      <view>
+        <text class='job-title'>3800~4500元</text>
+        <view class="page-section">
+      <view class="page-section-spacing">
+        <view class="flex-wrp" style="flex-direction:row;">
+          <view class="flex-item job-tag">1</view>
+          <view class="flex-item job-tag">2</view>
+          <view class="flex-item job-tag">3</view>
+        </view>
+      </view>
+    </view>
+      </view>
+      <!-- <view class='job-text'>
+        <text class='job-title'>{{item.Type}}</text>
+        <text class='job-time'>{{item.Money}}</text>
+      </view> -->
+    </view>
+  </view>

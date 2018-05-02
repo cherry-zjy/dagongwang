@@ -1,0 +1,109 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+.tabbar-img {
+  width: 100%;
+  height: 380rpx;
+  background-color: #261e2b;
+}
+
+.swiper-box {
+  height: 100%;
+}
+
+.slide-image {
+  width: 100%;
+  height: 100%;
+}
+
+/*首页info列表  */
+
+.info-listbtn {
+  width: 710rpx;
+  background-color: #1a1723;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  padding-bottom: 20rpx;
+}
+
+.info-list {
+  height: 220rpx;
+  width: 100%;
+  background-color: #fff;
+  margin-bottom: 20rpx;
+  display: flex;
+}
+
+/*列表图片  */
+
+.list-img {
+  padding: 20rpx;
+}
+
+.img-msg {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+}
+
+/*列表信息  */
+
+.list-newtext {
+  width: 100%;
+  padding: 20rpx 20rpx 20rpx 10rpx;
+}
+
+.job-title {
+  /* width: 135rpx; *//* height: 32rpx; */
+  font-size: 34rpx;
+  font-family: FZLTHJW--GB1-0;
+  color: rgba(51, 51, 51, 1);
+  line-height: 39rpx;
+  font-weight: 600;
+}
+
+.job-time {
+  float: right;
+  font-size: 26rpx;
+  font-family: FZLTHJW--GB1-0;
+  color: rgba(128, 128, 128, 1);
+  line-height: 50rpx;
+}
+
+.job-text {
+  /* width: 383rpx; */
+  height: 84rpx;
+  font-size: 26rpx;
+  font-family: FZLTHJW--GB1-0;
+  color: rgba(102, 102, 102, 1);
+  line-height: 39rpx;
+  margin-top: 20rpx;
+}
+
+.flex-wrp{
+  margin-top: 10rpx;
+  display:flex;
+}
+.flex-item{
+  width: 50rpx;
+  font-size: 26rpx;
+}
