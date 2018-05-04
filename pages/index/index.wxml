@@ -1,3 +1,18 @@
+<view class="page-section-spacing search-box">
+  <view class="flex-wrp" style="flex-direction:row;">
+    <view class="serachimgbox">
+      <!-- <image bindtap='searchImg' class='search-icon' src='../../img/locat.png'></image> -->
+    </view>
+    <view class="serachbox">
+      <input class='search' value='{{searchVal}}' bindinput='changeSearch' placeholder='输入您想搜索的内容'></input>
+      <image bindtap='searchImg' class='search-icon' src='../../img/serach.png'></image>
+    </view>
+    <view class="serachimgbox">
+      <image bindtap='searchImg' class='search-icon' src='../../img/tuijian.png'></image>
+    </view>
+  </view>
+</view>
+
 <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
   <block wx:for="{{imgUrls}}">
     <swiper-item>
@@ -14,21 +29,20 @@
   <view class='job-line'></view>
   <view class='list-jobtext'>
     <view class='job-list'>
-      <text class='job-title'>3800~4500<text class='job-address'>元</text></text>
-      <view>
-        <view class="page-section-spacing">
-          <view class="flex-wrp" style="flex-direction:row;">
-            <view class="flex-item job-tag">环境好</view>
-            <view class="flex-item job-tag">流水线</view>
-            <view class="flex-item job-tag">妹子多</view>
-          </view>
+      <text class='job-title'>3800~4500<text class='job-address'>元</text>
+      </text>
+      <view class="page-section-spacing">
+        <view class="flex-wrp" style="flex-direction:row;">
+          <view class="flex-item job-tag">环境好</view>
+          <view class="flex-item job-tag">流水线</view>
+          <view class="flex-item job-tag">妹子多</view>
         </view>
       </view>
       <text class='job-address'>{{item.Address}}</text>
     </view>
   </view>
   <view class='subsidy-list'>
-      <view class='subsidy'>补贴</view>
-      <view class='subsidy-money'>200元</view>
-    </view>
+    <view class='subsidy'>补贴</view>
+    <view class='subsidy-money'>200元</view>
+  </view>
 </view>

@@ -35,13 +35,20 @@ Page({
       Address: '宁波市鄞州区',
       Money: '200元',
       Price: '3500元'
-    }]
+    }],
+    searchVal:''
   },
   // 点击跳转详情页
   jobDetail(event) {
     var id = event.currentTarget.dataset.id
     wx.navigateTo({
-      url: 'newsDetail/newsDetail?id=' + id,
+      url: 'jobDetail/jobDetail?id=' + id,
+    })
+  },
+  // 点击搜素
+  changeSearch(e) {
+    this.setData({
+      searchVal: e.detail.value
     })
   },
 })

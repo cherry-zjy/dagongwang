@@ -35,6 +35,41 @@
   height: 100%;
 }
 
+.search-box {
+  background: linear-gradient(to right, rgb(26,122,228) , rgb(0,215,229));
+  width: 100%;
+}
+.serachbox{
+  margin-left: 60rpx;
+  position: relative;
+  width: 80%;
+}
+.search {
+  height: 60rpx;
+  background-color: #fff;
+  font-size: 26rpx;
+  padding: 0 80rpx;
+  border-radius:50px;
+  margin: 20rpx 0;
+  opacity:0.5;
+}
+.search-icon {
+  width: 60rpx;
+  height: 60rpx;
+  margin: 20rpx 20rpx 0 20rpx;
+  color: #fff;
+}
+
+.serachbox .search-icon {
+  position: absolute;
+  left: 5rpx;
+  width: 40rpx;
+  height: 40rpx;
+  margin: 20rpx;
+  top:10rpx;
+/* z-index:999999999; */
+}
+
 /*首页info列表  */
 
 .info-listbtn {

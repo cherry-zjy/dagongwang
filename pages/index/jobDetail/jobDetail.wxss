@@ -1,0 +1,219 @@
+/* pages/index/jobDetail/jobDetail.wxss */
+
+/* 表格样式 */
+.table {
+  border: 0px solid darkgray;
+}
+.onetr {
+  display: flex;
+  width: 96%;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1.5%;
+  background-color: #fff;
+}
+.one-td1{
+  width: 30%;
+  justify-content: center;
+  text-align: right;
+  padding-right: 50rpx;
+  font-size: 25rpx;
+}
+.one-td2{
+  width: 70%;
+  text-align: lest;
+  padding-left: 50rpx;
+  justify-content: center;
+  color: rgb(248,85,120);
+  font-size: 25rpx;
+  border-left: 1px solid rgb(173,173,173);
+}
+.th {
+  width: 40%;
+  justify-content: center;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+/* 标签 */
+.flex-wrp{
+  margin-top: 5rpx;
+  display:flex;
+  padding: 20rpx;
+  position: relative;
+  background-color:#fff;
+  margin-bottom:20rpx;
+
+}
+.page-section-spacing .flex-item{
+  font-size: 22rpx;
+  padding: 0 10rpx;
+  text-align: center;
+  border: 1px solid rgb(80,164,237);
+  border-radius: 3px;
+  color: rgb(80,164,237);
+}
+.job-tag{
+  margin: 0 5rpx;
+  background-color: rgb(241,251,255)
+}
+.job-size{
+  position: absolute;
+  right: 20rpx;
+  font-size: 25rpx;
+}
+
+/* swipe */
+.swipebox {
+  width: 96%;
+  margin-left: 1.5%;
+  margin-top: 20rpx;
+  position: relative;
+}
+.slide-image {
+  width: 100%;
+  height: 100%;
+}
+.swipe-text{
+  position: absolute;
+  bottom: 0;
+  background: #000;
+  opacity: 0.5;
+  left: 0;
+  width: 100%;
+  color: #fff;
+  font-size:25rpx;
+  height:80rpx;
+  text-align: center;
+}
+.swipebox .section{
+  width: 20%;
+}
+.swipelist{
+  width: 80%;
+}
+.imgbox{
+  padding: 0;
+}
+.img-type{
+  height: 100%;
+  background-color: #000;
+  opacity: 0.8;
+}
+.swipebox .flex-item{
+  height: 25%;
+  width: 100%;
+  color: #fff;
+  font-size: 25rpx;
+  padding: 0;
+  text-align: center;
+  align-items:center;
+  border-bottom: 1px solid #fff;
+}
+.flex-item.on{
+  color: #000;
+  background-color: #fff;
+}
+.img-text{
+  padding-top: 10%; 
+}
+.showview{
+  display: block;
+}
+.hideview{
+  display: none;
+}
+.section.foot{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 10;
+}
+/* 底部栏 */
+.flex-wrp.flexfoot{
+  margin-bottom: 0;
+  padding: 0;
+}
+.flex-wrp.flexfoot .flex-item{
+  border: 1px solid rgb(173,173,173);
+  font-size: 25rpx;
+  text-align: center;
+}
+.flex-wrp.flexfoot .flex-item image{
+  width: 50rpx;
+  height: 50rpx;
+  margin-bottom: -12rpx;
+}
+.flex-item.floow{
+  width: 20%;
+}
+.flex-item.call{
+  width: 20%;
+}
+.flex-item.attend{
+  width: 60%;
+  color: #fff;
+  background-color: rgb(26,122,228)
+}
+/* 表格 */
+.moneybox , .workbox , .qiyebox{
+  padding:20rpx 0;
+}
+.tb-bigtitle{
+  font-size: 35rpx;
+  margin-left: 1.5%;
+  padding: 10rpx 0;
+  border-bottom: 1px solid rgb(173,173,173);
+}
+.section.type{
+  width: 96%;
+  margin-left: 1.5%;
+  font-size: 30rpx;
+  background-color: rgb(240,240,240);
+}
+.section.type .flex-wrp{
+  background-color: unset;
+}
+.job-type{
+  width: 33.3%;
+  text-align: center;
+}
+.job-type.act{
+  color: rgb(26,122,228)
+}
+.basic-td1{
+   width: 15%; 
+  justify-content: center;
+  text-align: center;
+  font-size: 25rpx;
+  border-right: 1px solid rgb(173,173,173);
+}
+.basic-td2{
+   width: 35%; 
+  text-align: center;
+  justify-content: center;
+  font-size: 25rpx;
+  height: 100%;
+}
+.basic-td3{
+  width: 50%; 
+  justify-content: center;
+  border-left: 1px solid rgb(173,173,173);
+  font-size: 25rpx;
+}
+.tb-title{
+  font-size: 30rpx;
+  padding: 10rpx 0;
+  margin-left: 1.5%;
+}
+.onetr{
+  border: 1px solid rgb(173,173,173);
+}
+.qiyetext{
+  font-size: 25rpx;
+  padding: 10rpx 1.5% 0 1.5%;
+  background-color: #fff;
+}
+.qiyetable{
+  margin-bottom: 100rpx;
+}

@@ -1,6 +1,8 @@
 {
   "pages":[
+    "pages/index/jobDetail/jobDetail",
     "pages/index/index",
+    
     "pages/mine/index",
     "pages/money/index"
   ],
