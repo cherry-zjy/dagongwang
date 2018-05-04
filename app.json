@@ -1,15 +1,17 @@
 {
   "pages":[
-    "pages/index/jobDetail/jobDetail",
-    "pages/index/index",
     
+    "pages/index/index",
+    "pages/index/jobDetail/jobDetail",
+    "pages/index/search/search",
+    "pages/index/search/searchDetail/searchDetail", 
     "pages/mine/index",
     "pages/money/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "全球英才",
     "navigationBarTextStyle":"black"
   },
   "tabBar": {

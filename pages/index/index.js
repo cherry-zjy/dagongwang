@@ -51,4 +51,9 @@ Page({
       searchVal: e.detail.value
     })
   },
+  gotosearch(){
+    wx.navigateTo({
+      url: 'search/search'
+    })
+  }
 })
