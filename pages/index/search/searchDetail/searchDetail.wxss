@@ -1,1 +1,82 @@
 /* pages/index/search/searchDetail/searchDetail.wxss */
+
+page {
+  background-color: #fff;
+}
+/* 搜索框 */
+.search-box {
+  width: 100%;
+  border-bottom: 1px solid rgb(245,245,245);
+  position: relative;
+}
+.serachbox{
+  margin-left: 40rpx;
+  width: 80%;
+}
+.search {
+  height: 60rpx;
+  background-color: rgb(245,245,245);
+  font-size: 26rpx;
+  padding: 0 30rpx;
+  border-radius:50px;
+  margin: 20rpx 0;
+  opacity:0.5;
+}
+.serachimgbox{
+  position: absolute;
+  right: 30rpx;
+  top: 30rpx;
+  font-size: 26rpx; 
+}
+/* 筛选、排序 */
+.flex-wrp{
+  margin-top: 5rpx;
+  display:flex;
+}
+.flex-item{
+  font-size: 26rpx;
+  padding: 10rpx;
+  text-align: center;
+  width: 50%;
+  color:rgb(173,173,173);
+}
+.screen{
+  border-right: 1px solid rgb(245,245,245);
+  border-bottom: 1px solid rgb(245,245,245);
+}
+.sort{
+  border-bottom: 1px solid rgb(245,245,245);
+}
+.search-icon{
+  width: 26rpx;
+  height: 26rpx;
+}
+/* 列表 */
+.list{
+  width: 100%;
+}
+.list .flex-item{
+  color: #000;
+  text-align: left;
+  margin-left: 10rpx;
+  border-bottom: 1px solid rgb(245,245,245);
+}
+.list-other{
+  position: absolute;
+  right: 50rpx;
+  top: 40rpx;
+  color: rgb(173,173,173);
+}
+.list-moneybox{
+  margin: 10rpx 0;
+}
+.list-money{
+  font-size: 22rpx;
+  padding: 10rpx 20rpx;
+  background-color: rgb(245,245,245);
+  border-radius: 5px;
+}
+.list .flex-item{
+  position: relative;
+  width: 100%;
+}

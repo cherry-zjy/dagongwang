@@ -15,13 +15,13 @@
 <view class='title'>热度搜索</view>
  <view class='hotsearch'> 
   <view class='search-left'>
-    <image class='search-icon' src='../../../../img/tag.png'></image>
+    <image class='search-icon' src='../../../../img/tag.png' bindtap='searchDetail'></image>
     <view class='smalltitle'>标签</view>
   </view>
   
    <view class="search-right">
     <view class="flex-wrp">
-      <view class="flex-item search-tag" wx:for="{{taglist}}">{{item}}</view>
+      <view class="flex-item search-tag" wx:for="{{taglist}}" bindtap='searchDetail'>{{item}}</view>
     </view>
   </view> 
   </view> 
@@ -34,7 +34,7 @@
   
    <view class="search-right">
     <view class="flex-wrp">
-      <view class="flex-item search-tag" wx:for="{{taglist}}">{{item}}</view>
+      <view class="flex-item search-tag" wx:for="{{taglist}}" bindtap='searchDetail'>{{item}}</view>
     </view>
   </view> 
   </view> 
