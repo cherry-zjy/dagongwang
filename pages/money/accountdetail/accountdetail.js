@@ -1,31 +1,11 @@
-// pages/money/index.js
+// pages/money/accountdetail/accountdetail.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    accountshow:true,
-  },
-  open(){
-    this.setData({
-      accountshow: false
-    })
-  },
-  close() {
-    this.setData({
-      accountshow: true
-    })
-  },
-  accountdetail(){
-    wx.navigateTo({
-      url: 'accountdetail/accountdetail'
-    })
-  },
-  accountwithdraw(){
-    wx.navigateTo({
-      url: 'accountwithdraw/accountwithdraw'
-    })
+  
   },
 
   /**

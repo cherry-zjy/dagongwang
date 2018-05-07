@@ -15,7 +15,7 @@
 <view class='title'>热度搜索</view>
  <view class='hotsearch'> 
   <view class='search-left'>
-    <image class='search-icon' src='../../../../img/tag.png' bindtap='searchDetail'></image>
+    <image class='search-icon' src='../../../../img/tag.png'></image>
     <view class='smalltitle'>标签</view>
   </view>
   
