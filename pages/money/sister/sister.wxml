@@ -1,0 +1,44 @@
+<!--pages/money/sister/sister.wxml-->
+
+ <view class='sister-agent'>
+  <view class='agent-box'>
+    <image class="sister-img" src="{{sister.Icon}}"></image>
+    <view class="sister-name">{{sister.Name}}</view>
+    <image class="sister-zan" src="../../../../img/zan.png"></image>
+  </view>
+</view>
+
+<view class='connectbox'>
+ <view class="flex-wrp" style="flex-direction:row;">
+    <view class="flex-item icon">
+      <image class="sister-icon" src='../../../../img/flag.png'></image>
+    </view>
+    <view class="flex-item msg">
+    <view class='postage'>
+      <text class='sister-connect'>18258773565</text>
+    </view>
+    </view>
+  </view>
+  <view class="flex-wrp" style="flex-direction:row;">
+    <view class="flex-item icon">
+      <image class="sister-icon" src='../../../../img/flag.png'></image>
+    </view>
+    <view class="flex-item msg">
+    <view class='postage'>
+      <text class='sister-connect'>18258773565</text>
+    </view>
+    </view>
+  </view>
+  <view class="flex-wrp last" style="flex-direction:row;">
+    <view class="flex-item icon">
+      <image class="sister-icon" src='../../../../img/flag.png'></image>
+    </view>
+    <view class="flex-item msg">
+    <view class='postage'>
+      <text class='sister-connect'>18258773565</text>
+    </view>
+    </view>
+  </view>
+  </view>
+
+  <view class='phone'>公司客服电话：<text class='blue'>400-8355-655</text></view>

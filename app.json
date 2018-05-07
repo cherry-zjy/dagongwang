@@ -1,6 +1,6 @@
 {
   "pages":[
-    "pages/money/wages/wages",
+    "pages/money/sister/sister",
     
     "pages/index/index",
     "pages/index/search/search",
@@ -10,6 +10,7 @@
     "pages/money/index",
     "pages/money/accountdetail/accountdetail",
     "pages/money/store/store",
+    "pages/money/wages/wages",
     
     "pages/money/store/storedetail/storedetail",
     "pages/money/accountwithdraw/withdrawfeedback/withdrawfeedback",
