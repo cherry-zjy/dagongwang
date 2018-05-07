@@ -1,0 +1,30 @@
+/* pages/money/accountwithdraw/withdrawfeedback/withdrawfeedback.wxss */
+page{
+  text-align: center;
+}
+.icon-box{
+  margin-top: 200rpx;
+}
+.icon-box-ctn{
+  margin-top: 20rpx;
+}
+.icon-box-title{
+  font-weight: bolder;
+  font-size: 35rpx
+}
+.icon-box-desc{
+  font-size: 25rpx;
+  margin-top: 20rpx;
+}
+
+.btn-area{
+  text-align: center;
+}
+.btn {
+  background: #fff;
+  width: 180rpx;
+  opacity: 0.9;
+  color: rgb(26,122,228);
+  margin-top: 90rpx;
+  font-size: 30rpx;
+}

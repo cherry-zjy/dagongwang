@@ -1,15 +1,16 @@
 {
   "pages":[
-    "pages/money/accountdetail/accountdetail",
-
+  
     "pages/index/index",
     "pages/index/search/search",
     "pages/index/search/searchDetail/searchDetail", 
     "pages/index/jobDetail/jobDetail",
     "pages/mine/index",
     "pages/money/index",
-    
+    "pages/money/accountdetail/accountdetail",
+    "pages/money/accountwithdraw/withdrawfeedback/withdrawfeedback",
     "pages/money/accountwithdraw/accountwithdraw"
+    
   ],
   "window":{
     "backgroundTextStyle":"light",

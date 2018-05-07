@@ -1,4 +1,4 @@
-// pages/money/accountwithdraw/accountwithdraw.js
+// pages/money/accountwithdraw/withdrawfeedback/withdrawfeedback.js
 Page({
 
   /**
@@ -7,9 +7,9 @@ Page({
   data: {
   
   },
-  formSubmit: function () {
+  back(){
     wx.navigateTo({
-      url: 'withdrawfeedback/withdrawfeedback',
+      url: '../../accountwithdraw/accountwithdraw',
     })
   },
 

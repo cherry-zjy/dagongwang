@@ -1,2 +1,20 @@
-<!--pages/money/accountwithdraw/accountwithdraw.wxml-->
-<text>pages/money/accountwithdraw/accountwithdraw.wxml</text>
+<!--pages/login/login.wxml-->
+<!--input.wxml-->
+  <view class='login-form'>
+      <view class="flex-wrp" style="flex-direction:row;">
+    <view class="flex-item text"><text>提现人姓名：</text></view>
+    <view class="flex-item input"><input class='input-box' name="username" auto-focus/></view>
+  </view>
+  <view class="flex-wrp" style="flex-direction:row;">
+    <view class="flex-item text"><text>支付宝账号：</text></view>
+    <view class="flex-item input"><input class='input-box' name="username"/></view>
+  </view>
+  <view class="flex-wrp" style="flex-direction:row;">
+    <view class="flex-item text"><text>提现金额（元）：</text></view>
+    <view class="flex-item input"><input class='input-box' name="username"/></view>
+  </view>
+      <view class="btn-area">
+        <button class='btn' bindtap="formSubmit">确认</button>
+      </view>
+  </view>
+  

@@ -1,0 +1,12 @@
+<!--pages/money/accountwithdraw/withdrawfeedback/withdrawfeedback.wxml-->
+<view class="icon-box">
+    <icon class="icon-box-img" type="success" size="93" color="rgb(26,122,228)"></icon>
+    <view class="icon-box-ctn">
+      <view class="icon-box-title">提现成功</view>
+      <view class="icon-box-desc">所提的申请将会在7个工作日内完成</view>
+    </view>
+  </view>
+
+  <view class="btn-area">
+        <button class='btn' bindtap="back">返回</button>
+      </view>

@@ -1,1 +1,38 @@
 /* pages/money/accountwithdraw/accountwithdraw.wxss */
+page {
+  background-color: #fff;
+}
+.login-form {
+  padding: 90rpx 30rpx;
+}
+.btn {
+  background: rgb(26,122,228);
+  opacity: 0.9;
+  color: #fff;
+  margin-top: 90rpx;
+}
+
+.flex-wrp{
+  margin-top: 5rpx;
+  display:flex;
+  padding: 20rpx 30rpx;
+}
+.flex-item{
+  font-size: 28rpx;
+  align-items:center;
+  margin-top: 10rpx;
+}
+.input-box {
+  height: 60rpx;
+  background: rgba(245, 246, 247, 1);
+  opacity: 0.9;
+  padding: 0 40rpx;
+  font-size: 30rpx;
+  color: rgba(179, 179, 179, 1);
+}
+.text{
+  width: 40%;
+}
+.input{
+  width: 60%;
+}
