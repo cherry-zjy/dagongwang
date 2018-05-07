@@ -1,2 +1,35 @@
 <!--pages/money/store/storedetail/storedetail.wxml-->
-<text>pages/money/store/storedetail/storedetail.wxml</text>
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" width="100%" height="100%" />
+    </swiper-item>
+  </block>
+</swiper>
+<view class='store-name'>
+<image class="store-icon {{store.Type == 0? 'hideview' : ''}}" src='../../../../img/flag.png'></image>
+<image class="store-icon {{store.Type == 1? 'hideview' : ''}}" src='../../../../img/store.png'></image> 
+{{store.Name}}
+</view>
+<view class='store-info'>
+  <view class='store-work'>工作时间</view>
+  <view class='store-WorkTime'>{{store.WorkTime}}</view>
+</view>
+<view class='store-address'>
+  <view class='store-add'>门店地址</view>
+  <view class='address'>{{store.Address}}</view>
+  <view class='store-distance'>距离{{store.Distance}}</view>
+  <view><image class="store-arrow" src='../../../../img/right.png'></image></view>
+</view>
+ <view class='store-agent'>
+  <view class='store-work'>经纪人</view>
+  <view class='agent-box'>
+    <image class="store-img" src="{{store.Icon}}"></image>
+    <view class='agent-msg'>
+      <view class='store-agentname'>{{store.Agent}}</view>
+      <view class='store-phone'>{{store.Phone}}</view>
+    </view>
+  </view>
+    <image class="store-call" src='../../../../img/connect.png'></image>
+    <image class="store-arrow" src='../../../../img/right.png'></image>
+</view> 

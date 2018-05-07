@@ -1,5 +1,7 @@
 /* pages/money/store/store.wxss */
-
+page{
+  background-color: #fff;
+}
 .flex-wrp{
   display:flex;
 }
