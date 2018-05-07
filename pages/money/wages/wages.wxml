@@ -1,2 +1,28 @@
 <!--pages/money/wages/wages.wxml-->
-<text>pages/money/wages/wages.wxml</text>
+
+<view class='list-info'>
+  <image class='list-img' src='../../../../img/msg.png'></image>
+  <view class='list-name'>基本信息</view>
+</view>
+<view class='msg-info'>
+  <view class='list'>真实姓名：{{msg.Name}}</view>
+  <view class='list'>工牌号：{{msg.Number}}</view>
+  <view class='list'>公司名称：{{msg.CompanyName}}</view>
+</view>
+
+<view class='list-info wage'>
+  <image class='list-img' src='../../../../img/wage.png'></image>
+  <view class='list-name'>工资明细</view>
+</view>
+<view class='msg-info'>
+  <view class='list'>工时：<text class='money'>￥{{msg.Number}}</text></view>
+  <view class='list'>单价：<text class='money'>￥{{msg.Number}}</text></view>
+  <view class='list'>餐补：<text class='money'>￥{{msg.Number}}</text></view>
+  <view class='list'>工资：<text class='money'>￥{{msg.Number}}</text></view>
+  <view class='list'>借支：<text class='money'>￥{{msg.Number}}</text></view>
+  <view class='list'>其他补贴：<text class='money'>￥{{msg.Number}}</text></view>
+  <view class='list'>个人所得税：<text class='money'>￥{{msg.Number}}</text></view>
+  <view class='list'>其他扣款：<text class='money'>￥{{msg.Number}}</text></view>
+  <view class='list'>应发工资<text class='money'>￥{{msg.Number}}</text></view>
+  <view class='list bigtitle1'>实发工资：<text class='money bigtitle2'>￥{{msg.Number}}</text></view>
+</view>

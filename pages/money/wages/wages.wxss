@@ -1,1 +1,54 @@
 /* pages/money/wages/wages.wxss */
+
+page{
+  font-size: 28rpx;
+  background-color: rgb(245,245,245);
+}
+.list-info {
+  padding: 0 40rpx;
+  height: 100rpx;
+  background-color: #fff;
+  overflow: hidden;
+  font-size: 30rpx;
+  border-bottom: 1rpx solid rgb(245,245,245);
+}
+
+.list-img {
+  height: 40rpx;
+  width: 60rpx;
+  float: left;
+  margin-top: 30rpx;
+}
+
+.list-name {
+  float: left;
+  line-height: 100rpx;
+  font-size: 32rpx;
+}
+
+.icon-list {
+  float: right;
+  width: 60rpx;
+  height: 60rpx;
+  margin-top: 20rpx;
+}
+.msg-info{
+  background-color: #fff;
+  padding: 20rpx 40rpx;
+}
+.list{
+  margin: 20rpx 0;
+}
+.wage{
+  margin-top: 30rpx;
+}
+.money{
+  float: right;
+}
+.bigtitle1{
+  font-size: 35rpx;
+}
+.bigtitle2{
+  font-size: 35rpx;
+  color: #e8604f;
+}

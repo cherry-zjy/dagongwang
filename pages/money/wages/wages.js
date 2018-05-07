@@ -5,7 +5,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    msg:{
+      Name: '张三',
+      Number: '5000',
+      CompanyName:'某某某科技有限公司',
+    }
   },
 
   /**
