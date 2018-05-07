@@ -1,0 +1,49 @@
+/* pages/money/store/store.wxss */
+
+.flex-wrp{
+  display:flex;
+}
+.flex-item.icon{
+  width: 5%;
+}
+.flex-item.msg{
+  width: 90%;
+  margin-left: 5%;
+  border-bottom: 1px solid rgb(173,173,173);
+}
+.store-icon{
+  width: 30rpx;
+  height: 30rpx;
+}
+.store-icon.hideview{
+  display: none;
+}
+.addressbox{
+  font-size: 25rpx;
+  background-color: rgb(245,245,245);
+  width: 100%;
+  padding-left: 30rpx;
+}
+.flex-wrp{
+  padding: 20rpx 0 20rpx 30rpx;
+}
+.store-distance{
+  float: right;
+}
+.store-distance{
+  margin-right: 30rpx;
+}
+.store-name{
+  font-weight: bolder;
+  font-size: 30rpx;
+}
+.store-address{
+  font-size: 25rpx;
+  margin-top: 10rpx;
+  color: #8a8a8a;
+  margin-bottom: 10rpx;
+}
+.store-distance{
+  font-size: 25rpx;
+  color: #8a8a8a;
+}

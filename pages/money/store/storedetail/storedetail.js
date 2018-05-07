@@ -1,46 +1,11 @@
-// pages/money/index.js
+// pages/money/store/storedetail/storedetail.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    accountshow:true,
-  },
-  open(){
-    this.setData({
-      accountshow: false
-    })
-  },
-  close() {
-    this.setData({
-      accountshow: true
-    })
-  },
-  accountdetail(){
-    wx.navigateTo({
-      url: 'accountdetail/accountdetail'
-    })
-  },
-  accountwithdraw(){
-    wx.navigateTo({
-      url: 'accountwithdraw/accountwithdraw'
-    })
-  },
-  store(){
-    wx.navigateTo({
-      url: 'store/store'
-    })
-  },
-  wages() {
-    wx.navigateTo({
-      url: 'wages/wages'
-    })
-  },
-  sister() {
-    wx.navigateTo({
-      url: 'sister/sister'
-    })
+  
   },
 
   /**

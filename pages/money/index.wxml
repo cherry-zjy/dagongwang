@@ -20,8 +20,8 @@
   </view>
 <view class="section list">
   <view class="flex-wrp" style="flex-direction:row;">
-    <view class="flex-item store"><image src='../../../img/company.png' class="list-icon"></image><view class='list-text'>线下门店</view></view>
-    <view class="flex-item wages"><image src='../../../img/company.png' class="list-icon"></image><view class='list-text'>工资信息</view></view>
-    <view class="flex-item sister"><image src='../../../img/company.png' class="list-icon"></image><view class='list-text'>学姐</view></view>
+    <view class="flex-item store" bindtap='store'><image src='../../../img/company.png' class="list-icon"></image><view class='list-text'>线下门店</view></view>
+    <view class="flex-item wages" bindtap='wages'><image src='../../../img/company.png' class="list-icon"></image><view class='list-text'>工资信息</view></view>
+    <view class="flex-item sister" bindtap='sister'><image src='../../../img/company.png' class="list-icon"></image><view class='list-text'>学姐</view></view>
   </view>
 </view>
