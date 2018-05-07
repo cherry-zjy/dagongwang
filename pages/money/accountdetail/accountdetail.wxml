@@ -1,2 +1,9 @@
-<!--pages/money/accountdetail/accountdetail.wxml-->
-<text>pages/money/accountdetail/accountdetail.wxml</text>
+<view class="section list">
+  <view class="flex-wrp" style="flex-direction:column;">
+    <view class="flex-item" wx:for="{{datalist}}">
+    <view class='list-name'>{{item.Name}}</view>
+    <view class='list-moneybox'><text class='list-money'>{{item.Time}}</text></view>
+    <view class='list-other'>￥{{item.money}}</view>
+    </view>
+  </view>
+</view>

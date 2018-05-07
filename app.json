@@ -1,13 +1,14 @@
 {
   "pages":[
-    "pages/money/index",
+    "pages/money/accountdetail/accountdetail",
 
     "pages/index/index",
     "pages/index/search/search",
     "pages/index/search/searchDetail/searchDetail", 
     "pages/index/jobDetail/jobDetail",
     "pages/mine/index",
-    "pages/money/accountdetail/accountdetail",
+    "pages/money/index",
+    
     "pages/money/accountwithdraw/accountwithdraw"
   ],
   "window":{

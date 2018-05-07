@@ -1,1 +1,33 @@
 /* pages/money/accountdetail/accountdetail.wxss */
+
+page {
+  background-color: #fff;
+}
+/* 列表 */
+.list{
+  width: 100%;
+}
+.list .flex-item{
+  color: #000;
+  text-align: left;
+  margin-left: 50rpx;
+  border-bottom: 1px solid rgb(245,245,245);
+  margin-top: 20rpx;
+}
+.list-other{
+  position: absolute;
+  right: 100rpx;
+  top: 40rpx;
+  color: rgb(173,173,173);
+}
+.list-moneybox{
+  margin: 10rpx 0;
+}
+.list-money{
+  font-size: 22rpx;
+  padding: 5rpx 0rpx;
+}
+.list .flex-item{
+  position: relative;
+  width: 100%;
+}
