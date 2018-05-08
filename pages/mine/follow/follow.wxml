@@ -1,2 +1,32 @@
-<!--pages/mine/follow/follow.wxml-->
-<text>pages/mine/follow/follow.wxml</text>
+<view class='info-list' wx:for="{{jobList}}" wx:key="index" data-id="{{item.ID}}" bindtap='jobDetail'>
+  <view class='list-img'>
+    <image class='img-msg' src='{{item.Display_Image}}'></image>
+    <view class='job-size'>6000人</view>
+  </view>
+  <view class='job-line'></view>
+  <view class='list-jobtext'>
+    <view class='job-list'>
+      <text class='job-title'>3800~4500<text class='job-address'>元</text>
+      </text>
+      <view class="page-section-spacing">
+        <view class="flex-wrp" style="flex-direction:row;">
+          <view class="flex-item job-tag">环境好</view>
+          <view class="flex-item job-tag">流水线</view>
+          <view class="flex-item job-tag">妹子多</view>
+        </view>
+      </view>
+      <text class='job-address'>{{item.Address}}</text>
+    </view>
+  </view>
+  <view class='subsidy-list'>
+    <view class='subsidy'>补贴</view>
+    <view class='subsidy-money'>200元</view>
+  </view>
+</view>
+
+<view wx:if="{{none}}" class='none'>
+<image src='../../../../img/icon.png' class="icon"></image>
+<view class="btn-area">
+  <button class='btn' bindtap="formSubmit">立即推荐</button>
+</view>
+</view>

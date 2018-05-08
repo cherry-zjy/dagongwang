@@ -1,1 +1,125 @@
-/* pages/mine/follow/follow.wxss */
+/*首页info列表  */
+
+.info-listbtn {
+  width: 710rpx;
+  background-color: #1a1723;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  padding-bottom: 20rpx;
+}
+
+.info-list {
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+}
+
+/*列表图片  */
+
+.list-img {
+  padding: 20rpx;
+  position: relative;
+}
+
+.img-msg {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+.job-size{
+  position: absolute;
+  bottom: 12rpx;
+  font-size: 26rpx;
+  text-align: center;
+  border-radius: 3px;
+  color: rgb(80,164,237);
+  background-color: rgb(219,247,255);
+  width: 100rpx;
+}
+
+.job-line{
+  height: 120rpx;
+  width: 1rpx;
+  margin-top: 20rpx;
+  background-color: rgb(173,173,173);
+}
+
+/*列表信息  */
+
+ .list-jobtext {
+  padding-left: 20rpx;
+} 
+.job-list{
+  margin-top: 10rpx;
+}
+.job-title {
+  font-size: 32rpx;
+  color: rgb(248,85,120);
+  line-height: 39rpx;
+  font-weight: 600;
+}
+.job-text {
+  height: 84rpx;
+  font-size: 23rpx;
+  color: rgba(102, 102, 102, 1);
+  line-height: 39rpx;
+  margin-top: 20rpx;
+}
+.flex-wrp{
+  margin-top: 5rpx;
+  display:flex;
+}
+.flex-item{
+  font-size: 22rpx;
+  padding: 0 10rpx;
+  text-align: center;
+  border: 1px solid rgb(80,164,237);
+  border-radius: 3px;
+  color: rgb(80,164,237);
+}
+.job-tag{
+  margin: 0 5rpx;
+  background-color: rgb(241,251,255)
+}
+.job-address{
+  font-size: 26rpx;
+  color:rgb(173,173,173);
+}
+
+/* 补贴信息 */
+
+.subsidy-list{
+  position: absolute;
+  right: 30rpx;
+  margin-top: 30rpx;
+  text-align: center;
+  border: 1px solid rgb(80,164,237);
+}
+.subsidy{
+  font-size: 26rpx;
+  color: #fff;
+  background-color: rgb(80,164,237);
+  padding: 5rpx 40rpx;
+}
+.subsidy-money{
+  font-size: 26rpx;
+  color: rgb(248,85,120);
+  padding: 5rpx 40rpx;
+}
+
+.none{
+  text-align: center;
+}
+.btn {
+  background: rgb(26,122,228);
+  opacity: 0.9;
+  color: #fff;
+  margin-top: 90rpx;
+  width: 200rpx;
+  font-size: 30rpx;
+}
+.icon{
+  width: 300rpx;
+  height: 300rpx;
+  margin-top: 100rpx;
+}
