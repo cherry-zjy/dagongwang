@@ -1,15 +1,10 @@
-// pages/mine/index.js
+// pages/mine/userInfo/userInfo.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    isLogin:true,
-    userInfo:{
-      Icon:"../../img/icon.png",
-      Username:'zjy'
-    }
   
   },
 

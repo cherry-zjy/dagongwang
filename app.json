@@ -8,6 +8,8 @@
     "pages/index/jobDetail/jobDetail",
     
     "pages/money/index",
+    "pages/login/login",
+    "pages/mine/userInfo/userInfo",
     "pages/money/accountdetail/accountdetail",
     "pages/money/store/store",
     "pages/money/wages/wages",

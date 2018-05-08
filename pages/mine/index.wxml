@@ -1,2 +1,60 @@
-<!--pages/mine/index.wxml-->
-<text>pages/mine/index.wxml</text>
+<!--已经登录  -->
+<navigator url='userInfo/userInfo' open-type="navigate" hover-class="none" wx:if="{{isLogin}}">
+  <view class='top-info'>
+    <image class='user-img' src='{{userInfo.Icon}}'></image>
+    <view class='user-info'>
+      <view class='user-name'>{{userInfo.Username}}</view>
+    </view>
+    <image class='icon-enter' src='../../img/right.png'></image>
+  </view>
+</navigator>
+<!--未登录  -->
+<navigator url='../login/login' open-type="navigate" hover-class="none" wx:else>
+  <view class='top-info'>
+    <image class='user-img' src='../../img/icon.png'></image>
+    <view class='user-info'>
+      <view style='line-height:90rpx;color:#fff;font-size:30rpx;'>点击登录</view>
+    </view>
+    <image class='icon-enter' src='../../img/right.png'></image>
+  </view>
+</navigator>
+
+<!--列表  -->
+<navigator url='myActivity/myActivity' open-type="navigate" hover-class="none">
+  <view class='list-info'>
+    <image class='list-img' src='../../img/screen.png'></image>
+    <view class='list-name'>我的经纪人</view>
+    <image class='icon-list' src='../../img/right.png'></image>
+  </view>
+</navigator>
+
+<navigator url='../shop/address/address' open-type="navigate" hover-class="none">
+  <view class='list-info' style='margin-top:20rpx;'>
+    <image class='list-img' src='../../img/screen.png'></image>
+    <view class='list-name'>关注的工作</view>
+    <image class='icon-list' src='../../img/right.png'></image>
+  </view>
+</navigator>
+<view class='list-info' bindtap='vipClub'>
+  <image class='list-img' src='../../img/screen.png'></image>
+  <view class='list-name'>工作经历</view>
+  <image class='icon-list' src='../../img/right.png'></image>
+</view>
+
+<navigator url='../shop/address/address' open-type="navigate" hover-class="none">
+  <view class='list-info' style='margin-top:20rpx;'>
+    <image class='list-img' src='../../img/screen.png'></image>
+    <view class='list-name'>账户明细</view>
+    <image class='icon-list' src='../../img/right.png'></image>
+  </view>
+</navigator>
+<view class='list-info' bindtap='vipClub'>
+  <image class='list-img' src='../../img/screen.png'></image>
+  <view class='list-name'>关于我们</view>
+  <image class='icon-list' src='../../img/right.png'></image>
+</view>
+<view class='list-info' bindtap='vipClub'>
+  <image class='list-img' src='../../img/screen.png'></image>
+  <view class='list-name'>意见反馈</view>
+  <image class='icon-list' src='../../img/right.png'></image>
+</view>

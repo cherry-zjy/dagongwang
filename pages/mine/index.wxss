@@ -1,1 +1,139 @@
 /* pages/mine/index.wxss */
+.top-info {
+  width: 730rpx;
+  height: 180rpx;
+  overflow: hidden;
+  padding: 80rpx 0 80rpx 20rpx;
+  margin-bottom: 20rpx;
+  background-size: 100% 100%;
+  background: linear-gradient(to right, rgb(26,122,228) , rgb(0,215,229));
+}
+.user-img {
+  float: left;
+  width: 180rpx;
+  height: 180rpx;
+  margin-right: 25rpx;
+  border-radius: 50%;
+}
+
+.user-info {
+  float: left;
+  padding: 60rpx 0;
+}
+
+.user-name {
+  font-size: 36rpx;
+  color: #fff;
+  line-height: 50rpx;
+}
+
+.user-vip {
+  font-size: 24rpx;
+  color: rgba(212, 172, 93, 1);
+  line-height: 50rpx;
+}
+
+.icon-vip {
+  float: left;
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 10rpx;
+}
+
+.icon-enter {
+  float: right;
+  width: 72rpx;
+  height: 72rpx;
+  line-height: 180rpx;
+  margin-top: 50rpx;
+  margin-right: 20rpx;
+}
+
+/*我的订单  */
+
+.my-order {
+  height: 300rpx;
+  background-color: #fff;
+  margin-bottom: 20rpx;
+  opacity: 0.9;
+}
+
+.icon-order {
+  width: 60rpx;
+  height: 60rpx;
+  float: right;
+  margin-top: 25rpx;
+}
+
+.look-order {
+  overflow: hidden;
+  height: 110rpx;
+  border-bottom: 1rpx solid #efefef;
+  line-height: 110rpx;
+  margin-left: 20rpx;
+  font-weight: 600;
+  font-size: 32rpx;
+}
+
+.all-order {
+  float: right;
+  color: #818181;
+  font-weight: 200;
+}
+
+.title-btnbox {
+  display: flex;
+}
+
+.title-btnbox .title-btn {
+  width: 33.33%;
+  text-align: center;
+  margin-top: 20rpx;
+  z-index: 1000;
+}
+
+.title-btnbox .title-btn .title-imgbtn {
+  width: 100rpx;
+  height: 100rpx;
+  z-index: 1000;
+}
+
+.title-name {
+  font-size: 28rpx;
+  color: rgba(102, 102, 102, 1);
+  position: relative;
+  top: -10rpx;
+}
+
+/*列表  */
+
+.list-info {
+  height: 100rpx;
+  background-color: #fff;
+  overflow: hidden;
+  border-bottom: 1rpx solid #efefef;
+  opacity: 0.9;
+}
+
+.list-img {
+  height: 50rpx;
+  width: 50rpx;
+  float: left;
+  margin-top: 20rpx;
+  padding: 10rpx;
+  /* margin-left: 20rpx; */
+}
+
+.list-name {
+  float: left;
+  line-height: 100rpx;
+  font-size: 30rpx;
+}
+
+.icon-list {
+  float: right;
+  width: 30rpx;
+  height: 30rpx;
+  margin-top: 40rpx;
+  margin-right: 20rpx;
+}
