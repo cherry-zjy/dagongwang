@@ -35,7 +35,7 @@
     <image class='icon-list' src='../../img/right.png'></image>
   </view>
 </navigator>
-<view class='list-info' bindtap='vipClub'>
+<view class='list-info' bindtap='experience'>
   <image class='list-img' src='../../img/screen.png'></image>
   <view class='list-name'>工作经历</view>
   <image class='icon-list' src='../../img/right.png'></image>

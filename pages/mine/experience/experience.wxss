@@ -1,0 +1,126 @@
+/* pages/mine/experience/experience.wxss */
+/*首页info列表  */
+
+.info-listbtn {
+  width: 710rpx;
+  background-color: #1a1723;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  padding-bottom: 20rpx;
+}
+
+.info-list {
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  border-bottom: 1px solid rgb(173,173,173);
+  padding: 20rpx 0;
+}
+
+/*列表图片  */
+
+.list-img {
+  padding: 20rpx;
+  position: relative;
+}
+
+.img-msg {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+.job-size{
+  position: absolute;
+  bottom: 12rpx;
+  font-size: 26rpx;
+  text-align: center;
+  border-radius: 3px;
+  color: rgb(80,164,237);
+  background-color: rgb(219,247,255);
+  width: 100rpx;
+}
+
+.job-line{
+  height: 120rpx;
+  width: 1rpx;
+  margin-top: 20rpx;
+  background-color: rgb(173,173,173);
+}
+
+/*列表信息  */
+
+.list-jobtext {
+  padding-left: 20rpx;
+} 
+.job-list{
+  margin-top: 10rpx;
+}
+.job-title {
+  font-size: 33rpx;
+  color: rgb(237,139,104);
+  line-height: 39rpx;
+  font-weight: 600;
+}
+.job-text {
+  height: 84rpx;
+  font-size: 23rpx;
+  color: rgba(102, 102, 102, 1);
+  line-height: 39rpx;
+  margin-top: 20rpx;
+}
+.job-name{
+  font-size: 30rpx;
+}
+.job-address{
+  font-size: 28rpx;
+  color:#8a8a8a;
+}
+.job-time{
+  font-size: 25rpx;
+  color:rgb(173,173,173);
+}
+
+/* 上传图片 */
+.subsidy-list{
+  position: absolute;
+  right: 30rpx;
+  margin-top: 60rpx;
+}
+.image{
+  width: 50rpx;
+  height: 50rpx;
+}
+/* 底部按钮 */
+.footer-btn {
+  position: fixed;
+  bottom: 0;
+  width: 750rpx;
+  height: 98rpx;
+  background: rgb(26,122,228);
+  opacity: 0.96;
+  text-align: center;
+}
+
+.buy-btn {
+  width: 118rpx;
+  font-size: 30rpx;
+  color: rgba(255, 255, 255, 1);
+  line-height: 98rpx;
+}
+/* 无经验 */
+.none{
+  text-align: center;
+}
+.btn {
+  background: rgb(26,122,228);
+  opacity: 0.9;
+  color: #fff;
+  margin-top: 90rpx;
+  width: 250rpx;
+  font-size: 30rpx;
+}
+.icon{
+  width: 300rpx;
+  height: 300rpx;
+  margin-top: 100rpx;
+}

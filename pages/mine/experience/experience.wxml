@@ -1,0 +1,24 @@
+<view class='info-list' wx:for="{{jobList}}" wx:key="index" data-id="{{item.ID}}" bindtap='jobDetail' wx:if="{{!none}}">
+  <view class='list-jobtext'>
+    <view class='job-list'>
+      <view class='job-name'>{{item.Name}}<text class='job-address'></text>
+      </view>
+      <view class='job-title'>{{item.Price}}</view>
+      <view class='job-address'>入职手机号：{{item.Address}}</view>
+      <view class='job-time'>{{item.Address}}</view>
+    </view>
+  </view>
+  <view class='subsidy-list'>
+    <image src='../../../../img/AK-MN_fill.png' class="image"></image>
+  </view>
+</view>
+<view class='footer-btn' bindtap='addexp' wx:if="{{!none}}">
+  <text class='buy-btn'>添加工作经验</text>
+</view>
+
+<view wx:if="{{none}}" class='none'>
+<image src='../../../../img/icon.png' class="icon"></image>
+<view class="btn-area">
+  <button class='btn' bindtap='addexp'>添加工作经验</button>
+</view>
+</view>

@@ -1,7 +1,5 @@
 {
   "pages":[
-    "pages/mine/follow/follow",
-    
     "pages/index/index",
     "pages/index/search/search",
     "pages/index/search/searchDetail/searchDetail", 
@@ -9,7 +7,9 @@
     "pages/money/index",
     "pages/mine/index",
     "pages/mine/userInfo/userInfo",
-    
+    "pages/mine/follow/follow",
+    "pages/mine/experience/experience",
+    "pages/mine/experience/addexperience/addexperience",
     "pages/login/login",
     "pages/money/accountdetail/accountdetail",
     "pages/money/store/store",

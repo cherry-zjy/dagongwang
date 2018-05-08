@@ -1,0 +1,42 @@
+page{
+  font-size: 28rpx;
+}
+.weui-cells_after-title{
+  background-color: #fff;
+}
+.weui-cell {
+  padding:10px 15px;
+  position:relative;
+  display:-webkit-box;
+  display:-webkit-flex;
+  display:flex;
+  -webkit-box-align:center;
+  -webkit-align-items:center;
+  align-items:center;
+}
+.weui-cell__bd {
+  -webkit-box-flex:1;
+  -webkit-flex:1;
+  flex:1;
+}
+
+.weui-label {
+  width:10em;
+}
+.weui-label {
+  width:130px;
+  word-wrap:break-word;
+  word-break:break-all;
+}
+.save{
+  background-color: rgb(26,122,228);
+  color: #fff;
+}
+.picture{
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+.weui-uploader__img{
+  width: 100rpx;
+  height: 100rpx;
+}
