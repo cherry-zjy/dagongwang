@@ -1,0 +1,18 @@
+/* pages/money/recommend/recommend.wxss */
+page{
+  text-align: center;
+  background-color: #fff;
+}
+.btn {
+  background: rgb(26,122,228);
+  opacity: 0.9;
+  color: #fff;
+  margin-top: 90rpx;
+  width: 200rpx;
+  font-size: 30rpx;
+}
+.icon{
+  width: 300rpx;
+  height: 300rpx;
+  margin-top: 100rpx;
+}

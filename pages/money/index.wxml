@@ -15,7 +15,7 @@
 </view>
 <view class='recommend'>
     <view class='recommendfriend'>
-    <button class="mini-btn recommend-btn">推好友></button>
+    <button class="mini-btn recommend-btn" bindtap='recommend'>推好友></button>
     </view>
   </view>
 <view class="section list">

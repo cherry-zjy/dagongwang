@@ -1,0 +1,48 @@
+.bg{
+  background-color: #fff;
+  font-size: 28rpx;
+  padding-bottom: 20rpx;
+}
+.btn {
+  height: 88rpx;
+  background: rgb(26,122,228);
+  color: #fff;
+  font-size: 28rpx;
+  line-height: 88rpx;
+  
+}
+.flex-wrp{
+  display:flex;
+}
+.flex-item.icon{
+  width: 5%;
+}
+.flex-item.msg{
+  width: 90%;
+  margin-left: 5%;
+  border-bottom: 1px solid rgb(173,173,173);
+  padding: 20rpx 0;
+}
+.flex-wrp{
+  padding: 20rpx 0 20rpx 30rpx;
+}
+.sister-icon{
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 30rpx;
+}
+.connectbox{
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+.last .flex-item.msg{
+  border-bottom: unset;
+}
+.phone{
+  text-align: center;
+  margin-top: 50rpx;
+}
+.blue{
+  color: rgb(26,122,228);
+  font-weight: bolder;
+}
