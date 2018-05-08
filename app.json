@@ -10,6 +10,8 @@
     "pages/mine/follow/follow",
     "pages/mine/experience/experience",
     "pages/mine/experience/addexperience/addexperience",
+    "pages/mine/aboutus/aboutus",
+    "pages/mine/feedback/feedback",
     "pages/login/login",
     "pages/money/accountdetail/accountdetail",
     "pages/money/store/store",

@@ -1,0 +1,9 @@
+<!--pages/mine/feedback/feedback.wxml-->
+<view class="page-section">
+  <view class="textarea-wrp">
+    <textarea auto-focus="true" style="height: 8em" placeholder='吐槽小程序，程序员立马收到哦'/>
+  </view>
+</view>
+<view class="btn-area">
+      <button formType="submit" class='save'>保存</button>
+    </view>

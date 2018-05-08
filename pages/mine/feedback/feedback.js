@@ -1,31 +1,11 @@
-// pages/mine/index.js
+// pages/mine/feedback/feedback.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    isLogin:true,
-    userInfo:{
-      Icon:"../../img/icon.png",
-      Username:'zjy'
-    }
   
-  },
-  experience(){
-    wx.navigateTo({
-      url: 'experience/experience'
-    })
-  },
-  aboutus(){
-    wx.navigateTo({
-      url: 'aboutus/aboutus'
-    })
-  },
-  feedback(){
-    wx.navigateTo({
-      url: 'feedback/feedback'
-    })
   },
 
   /**

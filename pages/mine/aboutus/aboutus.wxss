@@ -1,0 +1,4 @@
+/* pages/mine/aboutus/aboutus.wxss */
+page{
+  text-align: center;
+}

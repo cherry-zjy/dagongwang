@@ -1,0 +1,16 @@
+/* pages/mine/feedback/feedback.wxss */
+
+textarea {
+  font-size: 30rpx;
+  width: 700rpx;
+  padding: 25rpx 0;
+}
+.textarea-wrp {
+  padding: 0 25rpx;
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+.save{
+  background-color: rgb(26,122,228);
+  color: #fff;
+}

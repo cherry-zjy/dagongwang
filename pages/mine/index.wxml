@@ -20,7 +20,7 @@
 </navigator>
 
 <!--列表  -->
-<navigator url='myActivity/myActivity' open-type="navigate" hover-class="none">
+<navigator url='../money/sister/sister' open-type="navigate" hover-class="none">
   <view class='list-info'>
     <image class='list-img' src='../../img/screen.png'></image>
     <view class='list-name'>我的经纪人</view>
@@ -41,19 +41,19 @@
   <image class='icon-list' src='../../img/right.png'></image>
 </view>
 
-<navigator url='../shop/address/address' open-type="navigate" hover-class="none">
+<navigator url='../money/accountdetail/accountdetail' open-type="navigate" hover-class="none">
   <view class='list-info' style='margin-top:20rpx;'>
     <image class='list-img' src='../../img/screen.png'></image>
     <view class='list-name'>账户明细</view>
     <image class='icon-list' src='../../img/right.png'></image>
   </view>
 </navigator>
-<view class='list-info' bindtap='vipClub'>
+<view class='list-info' bindtap='aboutus'>
   <image class='list-img' src='../../img/screen.png'></image>
   <view class='list-name'>关于我们</view>
   <image class='icon-list' src='../../img/right.png'></image>
 </view>
-<view class='list-info' bindtap='vipClub'>
+<view class='list-info' bindtap='feedback'>
   <image class='list-img' src='../../img/screen.png'></image>
   <view class='list-name'>意见反馈</view>
   <image class='icon-list' src='../../img/right.png'></image>
