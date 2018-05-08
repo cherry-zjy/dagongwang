@@ -28,7 +28,7 @@
   </view>
 </navigator>
 
-<navigator url='../shop/address/address' open-type="navigate" hover-class="none">
+<navigator url='follow/follow' open-type="navigate" hover-class="none">
   <view class='list-info' style='margin-top:20rpx;'>
     <image class='list-img' src='../../img/screen.png'></image>
     <view class='list-name'>关注的工作</view>

@@ -1,2 +1,41 @@
 <!--pages/mine/userInfo/userInfo.wxml-->
-<text>pages/mine/userInfo/userInfo.wxml</text>
+<view class='info-listone'>头像
+  <view class='info-right'>
+    <image class='user-img' src='{{userInfoIcon}}' bindtap='changeImg'></image>
+    <image class='enter-imgone' src='../../../img/right.png'></image>
+  </view>
+</view>
+<view class='info-list'>名字
+  <view class='info-right' bindtap="showDialogBtn">
+    <text class='info-text'>{{Username}}</text>
+    <image class='enter-img' src='../../../img/right.png'></image>
+  </view>
+</view>
+<view class='info-list'>性别
+  <view class='info-right' data-text="{{Sex == 0?'男':'女'}}" bindtap="actionSheetTap">
+    <text class='info-text'>{{Sex == 0?'男':'女'}}</text>
+    <image class='enter-img' src='../../../img/right.png'></image>
+  </view>
+</view>
+<view class='info-list'>手机号
+  <view class='info-right' data-text="{{Phone == null?'':Phone}}">
+    <text class='info-text'>{{Phone == null?"":Phone}}</text>
+  </view>
+</view>
+<!--弹窗-->
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}" animation="{{animationData}}">
+  <view class="modal-title">修改信息</view>
+  <view class="modal-content">
+    <view class="modal-input">
+      <input placeholder-class="input-holder" type="text" bindinput="ChangeName" class="input" placeholder="请输入名字" value='{{Username}}'></input>
+    </view>
+  </view>
+  <view class="modal-footer">
+    <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
+    <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">确定</view>
+  </view>
+</view>
+<view class='footer-btn' bindtap='delLogin'>
+  <text class='buy-btn'>退出登录</text>
+</view>
