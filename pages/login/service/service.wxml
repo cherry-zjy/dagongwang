@@ -1,0 +1,2 @@
+<!--pages/login/service/service.wxml-->
+<view class='servicebox'>{{service}}</view>

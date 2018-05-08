@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    isLogin:true,
+    isLogin:false,
     userInfo:{
       Icon:"../../img/icon.png",
       Username:'zjy'

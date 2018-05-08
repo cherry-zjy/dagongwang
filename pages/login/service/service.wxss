@@ -1,0 +1,4 @@
+/* pages/login/service/service.wxss */
+page{
+  background-color: #fff;
+}
