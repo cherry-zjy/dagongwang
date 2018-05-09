@@ -1,4 +1,5 @@
 // pages/mine/userInfo/userInfo.js
+const app = getApp()
 Page({
 
   /**
@@ -6,10 +7,80 @@ Page({
    */
   data: {
     showModal: false,
-    userInfoIcon:"../../../../img/icon.png",
-    Username:"zjy",
-    Sex:1,
-    Phone:'18258773565'
+    UserInfoIcon:"",
+    userInfo:[],
+    NickName:'',
+    Sex:''
+  },
+  getInfo(){
+    var tt = this
+    wx.getStorage({
+      key: 'token',
+      success: function (res) {
+        tt.setData({
+          isLogin: true
+        })
+        app.ajax({
+          method: 'get',
+          url: app.mainUrl + 'api/User/Info',
+          header: {
+            "Authorization": res.data
+          },
+          success: function (res) {
+            wx.hideLoading()
+            if (res.data.Status == 1) {
+              tt.setData({
+                userInfo: res.data.Result,
+                NickName: res.data.Result.NickName,
+                Sex: res.data.Result.Sex,
+                UserInfoIcon: app.mainUrl + res.data.Result.Image,
+              })
+            } else if (res.data.Status == 40002) {
+              tt.setData({
+                isLogin: false
+              })
+              wx.showModal({
+                title: '提示',
+                content: res.data.Result,
+                success: function (res) {
+                  if (res.confirm) {
+                    wx.removeStorage({
+                      key: 'token',
+                      success: function (res) {
+                        console.log("删除token，保证只提醒一次")
+                      },
+                    })
+                    wx.navigateTo({
+                      url: '../login/login',
+                    })
+                  } else if (res.cancel) {
+                    console.log('用户点击取消')
+                  }
+                }
+              })
+            }
+            else {
+              wx.showModal({
+                showCancel: false,
+                title: '提示',
+                content: res.data.Result,
+              })
+            }
+
+          },
+          error: function () {
+            wx.hideLoading()
+          }
+        })
+      },
+      fail: function (res) {
+        tt.setData({
+          isLogin: false
+        })
+      },
+      complete: function (res) {
+      },
+    })
   },
 
   /**
@@ -30,7 +101,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    this.getInfo()
   },
 
   /**
@@ -71,10 +142,10 @@ Page({
    * 弹窗
    */
   showDialogBtn: function (e) {
-    var num = e.currentTarget.dataset.num
+    console.log(e)
     var text = e.currentTarget.dataset.text
     this.setData({
-      Username: text
+        NickName: text,
     })
     // 显示遮罩层  
     var animation = wx.createAnimation({
@@ -86,14 +157,12 @@ Page({
     animation.translateY(-500).step()
     this.setData({
       animationData: animation.export(),
-      num: num,
       showModal: true
     })
     setTimeout(function () {
       animation.translateY(0).step()
       this.setData({
         animationData: animation.export(),
-        num: num,
         showModal: true
       })
     }.bind(this), 200)
@@ -123,51 +192,47 @@ Page({
   onConfirm: function () {
     this.hideModal();
     var tt = this
-    // 如果没有token着获取失败，不能在success中调用getInfo
     wx.getStorage({
       key: 'token',
       success: function (res) {
         tt.setData({
           token: res.data,
         })
-        var Content;
-        Content = tt.data.Username
-        // app.ajax({
-        //   method: 'get',
-        //   url: app.mainUrl + 'api/User/EditInfoByVixin',
-        //   data: {
-        //     Content: Content,
-        //     Type: tt.data.num
-        //   },
-        //   header: {
-        //     "Authorization": res.data
-        //   },
-        //   success: function (res) {
-        //     wx.hideLoading()
-        //     if (res.data.Status == 1) {
-        //       tt.getInfo()
-        //     } else {
-        //       wx.showModal({
-        //         showCancel: false,
-        //         title: '提示',
-        //         content: res.data.Result,
-        //       })
-        //     }
+        app.ajax({
+          method: 'get',
+          url: app.mainUrl + 'api/User/UpdateForName',
+          data: {
+            name: tt.data.NickName
+          },
+          header: {
+            "Authorization": res.data
+          },
+          success: function (res) {
+            wx.hideLoading()
+            if (res.data.Status == 1) {
+              tt.getInfo()
+            } else {
+              wx.showModal({
+                showCancel: false,
+                title: '提示',
+                content: res.data.Result,
+              })
+            }
 
-        //   },
-        //   error: function () {
-        //     wx.hideLoading()
-        //     wx.showModal({
-        //       showCancel: false,
-        //       title: '提示',
-        //       content: "修改失败",
-        //     })
-        //   }
-        // })
+          },
+          error: function () {
+            wx.hideLoading()
+            wx.showModal({
+              showCancel: false,
+              title: '提示',
+              content: "修改失败",
+            })
+          }
+        })
       },
       fail: function (res) {
-        tt.setData({
-          isLogin: false
+        wx.navigateTo({
+          url: '../../login/login'
         })
       },
       complete: function (res) {
@@ -177,29 +242,136 @@ Page({
   // 监听input值改变，获取输入信息
   ChangeName(e) {
     this.setData({
-      Username: e.detail.value
+      NickName: e.detail.value
     });
   },
   // 退出登录
   delLogin() {
-    wx.removeStorage({
-      key: 'token',
+    wx.showModal({
+      // title: '提示',
+      content: '确定要退出登录吗',
       success: function (res) {
-        wx.navigateBack({
-        })
-      },
-      fail: function (res) { },
-      complete: function (res) { },
+        if (res.confirm) {
+          wx.removeStorage({
+            key: 'token',
+            success: function (res) {
+              wx.navigateBack({
+              })
+            },
+            fail: function (res) { },
+            complete: function (res) { },
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
     })
+    
   },
   actionSheetTap: function () {
+    var tt = this
     wx.showActionSheet({
       itemList: ['男', '女'],
       success: function (e) {
-        this.setData({
+        tt.setData({
           Sex: e.tapIndex
         });
+        tt.hideModal();
+        wx.getStorage({
+          key: 'token',
+          success: function (res) {
+            tt.setData({
+              token: res.data,
+            })
+            app.ajax({
+              method: 'get',
+              url: app.mainUrl + 'api/User/UpdateForSex',
+              data: {
+                t: tt.data.Sex
+              },
+              header: {
+                "Authorization": res.data
+              },
+              success: function (res) {
+                wx.hideLoading()
+                if (res.data.Status == 1) {
+                  tt.getInfo()
+                } else {
+                  wx.showModal({
+                    showCancel: false,
+                    title: '提示',
+                    content: res.data.Result,
+                  })
+                }
+
+              },
+              error: function () {
+                wx.hideLoading()
+                wx.showModal({
+                  showCancel: false,
+                  title: '提示',
+                  content: "修改失败",
+                })
+              }
+            })
+          },
+          fail: function (res) {
+            wx.navigateTo({
+              url: '../../login/login'
+            })
+          },
+          complete: function (res) {
+          },
+        })
       }
     })
-  }
+  },
+  changeImg() {
+    var tt = this
+    wx.chooseImage({
+      count: 1, // 默认9
+      success: function (res) {
+        var tempFilePaths = res.tempFilePaths
+        // tt.setData({
+        //   userInfoIcon: tempFilePaths[0]
+        // })
+        tt.uploadImg(tempFilePaths[0])
+      }
+    })
+  },
+  uploadImg(imgurl) {
+    var _t = this
+    wx.getStorage({
+      key: 'token',
+      success: function (res) {
+        wx.uploadFile({
+          url: app.mainUrl + 'api/User/UpdateForImage',
+          filePath: imgurl,
+          name: 'file',
+          header: {
+            // "chartset": "utf-8",
+            "Authorization": res.data,
+            "content-type": "multipart/form-data"
+          },
+          // formData: {
+          // },
+          success: function (res) {
+            console.log(res)
+            var data = res.data
+            //do something
+            _t.getInfo()
+          },
+        })
+      },
+      fail: function (res) {
+        wx.navigateTo({
+          url: '../../login/login'
+        })
+      },
+      complete: function (res) {
+      },
+    })
+    console.log(imgurl)
+    
+  },
 })
