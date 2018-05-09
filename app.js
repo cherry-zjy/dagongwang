@@ -1,5 +1,9 @@
 //app.js
 App({
+  // data: {
+  mainUrl: "http://192.168.1.125/Working/",
+  ajax: require('utils/ajax.js'),
+  token: "",
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
@@ -31,6 +35,19 @@ App({
           })
         }
       }
+    })
+    var tt = this
+    wx.getStorage({
+      key: 'token',
+      success: function (res) {
+        tt.token = res.data
+      },
+    })
+  },
+  scrollBackTop() {
+    wx.pageScrollTo({
+      scrollTop: 0,
+      duration: 300
     })
   },
   globalData: {

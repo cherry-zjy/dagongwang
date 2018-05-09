@@ -1,4 +1,5 @@
 // pages/login/login.js
+const app = getApp()
 var interval = null //倒计时函数
 Page({
 
@@ -9,7 +10,80 @@ Page({
     date: '请选择日期',
     fun_id: 2,
     time: '获取验证码', //倒计时 
-    currentTime: 61
+    currentTime: 61,
+    tip: '',
+    code:'',
+    Phone:'',
+  },
+  formSubmit: function (e) {
+    console.log(e.detail.value)
+    if (e.detail.value.Phone.length == 0 || e.detail.value.code.length == 0) {
+      this.setData({
+        tip: '提示：手机号和验证码不能为空！',
+        Phone: '',
+        code: '',
+      })
+      var that = this
+      setTimeout(() => {
+        that.setData({
+          tip: '',
+        })
+      }, 1000)
+    } else {
+      this.setData({
+        tip: "",
+        Phone: e.detail.value.Phone,
+        code: e.detail.value.code,
+      })
+      var tt = this
+      wx.login({
+        success: function (res) {
+          console.log(res)
+          if (res.code) {
+            // 发起网络请求
+            app.ajax({
+              method: 'POST',
+              url: app.mainUrl + 'api/User/Register',
+              data: {
+                "Phone": tt.data.Phone,
+                "Code": tt.data.code,
+                "Pwd": "-1",
+                "Lng": "-1",
+                "Lat": "-1",
+                "ID": "-1"
+              },
+              success: function (res) {
+                wx.hideLoading()
+                if (res.data.Status == 1) {
+                  wx.setStorage({
+                    key: 'token',
+                    data: res.data.Result,
+                    success: function () {
+                      wx.navigateBack()
+                    }
+                  })
+                } else {
+                  wx.showModal({
+                    showCancel: false,
+                    title: '提示',
+                    content: res.data.Result,
+                  })
+                }
+              },
+              error: function () {
+                wx.hideLoading()
+              }
+            })
+          } else {
+            wx.showModal({
+              showCancel: false,
+              title: '提示',
+              content: '获取用户登录态失败！' + res.errMsg,
+            })
+          }
+        }
+      })
+    }
   },
   getCode: function (options) {
     var that = this;

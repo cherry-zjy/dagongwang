@@ -55,5 +55,10 @@ Page({
     wx.navigateTo({
       url: 'search/search'
     })
+  },
+  recommend(){
+    wx.navigateTo({
+      url: '../money/recommend/recommend'
+    })
   }
 })

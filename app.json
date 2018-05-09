@@ -1,6 +1,6 @@
 {
   "pages":[
-    "pages/login/service/service",
+    "pages/mine/index",
     
     "pages/index/index",
     "pages/index/search/search",
@@ -8,8 +8,8 @@
     "pages/index/jobDetail/jobDetail",
     "pages/money/index",
     "pages/login/login",
+    "pages/login/service/service",
     
-    "pages/mine/index",
     "pages/mine/userInfo/userInfo",
     "pages/mine/follow/follow",
     "pages/mine/experience/experience",

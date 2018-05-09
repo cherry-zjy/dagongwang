@@ -1,9 +1,9 @@
 <!--已经登录  -->
 <navigator url='userInfo/userInfo' open-type="navigate" hover-class="none" wx:if="{{isLogin}}">
   <view class='top-info'>
-    <image class='user-img' src='{{userInfo.Icon}}'></image>
+    <image class='user-img' src='{{UserInfoIcon}}'></image>
     <view class='user-info'>
-      <view class='user-name'>{{userInfo.Username}}</view>
+      <view class='user-name'>{{userInfo.NickName}}</view>
     </view>
     <image class='icon-enter' src='../../img/right.png'></image>
   </view>

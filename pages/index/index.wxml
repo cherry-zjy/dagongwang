@@ -8,7 +8,7 @@
       <image bindtap='searchImg' class='search-icon' src='../../img/serach.png'></image>
     </view>
     <view class="serachimgbox">
-      <image bindtap='searchImg' class='search-icon' src='../../img/tuijian.png'></image>
+      <image bindtap='searchImg' class='search-icon' src='../../img/tuijian.png' bindtap='recommend'></image>
     </view>
   </view>
 </view>
