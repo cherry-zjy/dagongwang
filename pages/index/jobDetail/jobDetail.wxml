@@ -1,20 +1,24 @@
-<scroll-view scroll-y="true" style="height:{{scrollHeight}}px;" upper-threshold	= "{{upperThreshold}}"  bindscrolltoupper="upper" lower-threshold = "{{lowerThreshold}}" bindscrolltoupper="lower">  
+<!-- <scroll-view scroll-y="true" style="height:{{scrollHeight}}px;" upper-threshold	= "{{upperThreshold}}"  bindscrolltoupper="upper" lower-threshold = "{{lowerThreshold}}" bindscrolltoupper="lower">   -->
 <view class="page-section-spacing">
   <view class="flex-wrp" style="flex-direction:row;">
-    <view class="flex-item job-tag">环境好</view>
-    <view class="flex-item job-tag">流水线</view>
-    <view class="flex-item job-tag">妹子多</view>
-    <view class='job-size'>公司规模：6000人</view>
+    <view class="flex-item job-tag" wx:for="{{detailInfo.Tag}}">{{item}}</view>
+    <view class='job-size'>公司规模：{{detailInfo.EnterprisePeople}}人</view>
   </view>
 </view>
 
 <view class="table">
-  <block wx:for="{{listData}}" wx:key="{{code}}">
-    <view class="onetr">
-      <view class="one-td1">{{item.code}}</view>
-      <view class="one-td2">{{item.text}}</view>
-    </view>
-  </block>
+  <view class="onetr">
+    <view class="one-td1">综合薪资</view>
+    <view class="one-td2">{{detailInfo.Salary}}元</view>
+  </view>
+  <view class="onetr">
+    <view class="one-td1">工作方式</view>
+    <view class="one-td2">{{detailInfo.WorkStyle}}</view>
+  </view>
+  <view class="onetr">
+    <view class="one-td1">发薪日</view>
+    <view class="one-td2">{{detailInfo.SalaryDate}}</view>
+  </view>
 </view>
 
 <view class="swipebox">
@@ -37,63 +41,40 @@
     </view>
     <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="{{indicatorColor}}"
       indicator-active-color="{{indicatorActiveColor}}" class="swipelist {{currentTab == 0? 'showview':'hideview'}}">
-      <block wx:for="{{addressimg}}">
+      <block wx:for="{{Images}}" wx:if = "{{item.Type == 0}}">
         <swiper-item>
-          <image src="{{item.img}}" class="slide-image" data-src="{{item.img}}" bindtap="previewImageaddress" />
+          <image src="{{item.Image}}" class="slide-image" data-src="{{item.img}}" data-index="{{data-index}}" bindtap="previewImage" data-type="{{item.Type}}"/>
           <text class='swipe-text'>{{item.text}}</text>
         </swiper-item>
       </block>
     </swiper>
     <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="{{indicatorColor}}"
       indicator-active-color="{{indicatorActiveColor}}" class="swipelist {{currentTab == 1? 'showview':'hideview'}}">
-      <block wx:for="{{eatimg}}">
+      <block wx:for="{{Images}}" wx:if = "{{item.Type == 1}}">
         <swiper-item>
-          <image src="{{item.img}}" class="slide-image" data-src="{{item.img}}" bindtap="previewImageeat" />
+          <image src="{{item.Image}}" class="slide-image" data-src="{{item.img}}" data-index="{{data-index}}" bindtap="previewImage" data-type="{{item.Type}}"/>
           <text class='swipe-text'>{{item.text}}</text>
         </swiper-item>
       </block>
     </swiper>
     <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="{{indicatorColor}}"
       indicator-active-color="{{indicatorActiveColor}}" class="swipelist {{currentTab == 2? 'showview':'hideview'}}">
-      <block wx:for="{{sleepimg}}">
+      <block wx:for="{{Images}}" wx:if = "{{item.Type == 2}}">
         <swiper-item>
-          <image src="{{item.img}}" class="slide-image" data-src="{{item.img}}" bindtap="previewImagesleep" />
+          <image src="{{item.Image}}" class="slide-image" data-src="{{item.img}}" data-index="{{data-index}}" bindtap="previewImage" data-type="{{item.Type}}" />
           <text class='swipe-text'>{{item.text}}</text>
         </swiper-item>
       </block>
     </swiper>
     <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="{{indicatorColor}}"
       indicator-active-color="{{indicatorActiveColor}}" class="swipelist {{currentTab == 3? 'showview':'hideview'}}">
-      <block wx:for="{{moneyimg}}">
+      <block wx:for="{{Images}}" wx:if = "{{item.Type == 3}}">
         <swiper-item>
-          <image src="{{item.img}}" class="slide-image" data-src="{{item.img}}" bindtap="previewImagemoney" />
+          <image src="{{item.Image}}" class="slide-image" data-src="{{item.img}}" data-index="{{data-index}}" bindtap="previewImage" data-type="{{item.Type}}" />
           <text class='swipe-text'>{{item.text}}</text>
         </swiper-item>
       </block>
     </swiper>
-  </view>
-</view>
-
-<view class="section foot">
-  <view class="flex-wrp flexfoot" style="flex-direction:row;">
-    <view class="flex-item floow">
-      <view>
-        <image bindtap='searchImg' class='search-icon' src='../../../img/floow.png'></image>
-      </view>
-      <view>关注</view>
-    </view>
-    <view class="flex-item call">
-      <view>
-        <image bindtap='searchImg' class='search-icon' src='../../../img/call.png'></image>
-      </view>
-      <view>咨询</view>
-    </view>
-    <view class="flex-item attend">
-      <view>
-        <image bindtap='searchImg' class='search-icon' src='../../../img/attend.png'></image>
-      </view>
-      <view>免费报名</view>
-    </view>
   </view>
 </view>
 
@@ -106,83 +87,148 @@
 </view>
 <!-- 工资说明 -->
 
-<view bindscroll="scroll">
+<!--wxs语法过滤器  -->
+<wxs module="utilTitle">
+  var sub = function(val) {
+    if (val == null) {
+      val = ' '
+      return val
+    }
+    return val
+  }
+  module.exports.sub = sub;
+</wxs>
+
+<!-- <view bindscroll="scroll"> -->
 <view class='moneybox' id='start'>
   <view class='tb-title'>基本情况</view>
   <view class="table">
-    <block wx:for="{{basic}}" wx:key="{{code}}">
-      <view class="onetr">
-        <view class="basic-td1">{{item.code}}</view>
-        <view class="basic-td2">{{item.text}}</view>
-        <view class="basic-td3">{{item.title}}</view>
-      </view>
-    </block>
+    <view class="onetr">
+      <view class="basic-td1">1</view>
+      <view class="basic-td2">综合薪资</view>
+      <view class="basic-td3">{{detailInfo.Salary}}元</view>
+    </view>
+    <view class="onetr">
+      <view class="basic-td1">2</view>
+      <view class="basic-td2">发薪日</view>
+      <view class="basic-td3">{{detailInfo.SalaryDate}}</view>
+    </view>
+    <view class="onetr">
+      <view class="basic-td1">3</view>
+      <view class="basic-td2">底薪</view>
+      <view class="basic-td3">{{detailInfo.BasicSalary}}</view>
+    </view>
+    <view class="onetr">
+      <view class="basic-td1">4</view>
+      <view class="basic-td2">薪资结构</view>
+      <view class="basic-td3">{{detailInfo.SalaryExplain}}</view>
+    </view>
   </view>
 
   <view class='tb-title'>食宿介绍</view>
   <view class="table">
-    <block wx:for="{{basic}}" wx:key="{{code}}">
       <view class="onetr">
-        <view class="basic-td1">{{item.code}}</view>
-        <view class="basic-td2">{{item.text}}</view>
-        <view class="basic-td3">{{item.title}}</view>
+        <view class="basic-td1">1</view>
+        <view class="basic-td2">伙食</view>
+        <view class="basic-td3">{{utilTitle.sub(detailInfo.SSEat)}}</view>
       </view>
-    </block>
+      <view class="onetr">
+        <view class="basic-td1">2</view>
+        <view class="basic-td2">住宿</view>
+        <view class="basic-td3">{{utilTitle.sub(detailInfo.SSStay)}}</view>
+      </view>
     <view class="table">
-      <block wx:for="{{listData}}" wx:key="{{code}}">
         <view class="onetr">
-          <view class="one-td1">{{item.code}}</view>
-          <view class="one-td2">{{item.text}}</view>
+          <view class="one-td1">合同说明</view>
+          <view class="one-td2">{{utilTitle.sub(detailInfo.Contract)}}</view>
         </view>
-      </block>
+        <view class="onetr">
+          <view class="one-td1">工资发放</view>
+          <view class="one-td2">{{utilTitle.sub(detailInfo.PayMoney)}}</view>
+        </view>
+        <view class="onetr">
+          <view class="one-td1">保险说明</view>
+          <view class="one-td2">{{utilTitle.sub(detailInfo.Insurance)}}</view>
+        </view>
+        <view class="onetr">
+          <view class="one-td1">温馨提示</view>
+          <view class="one-td2">{{utilTitle.sub(detailInfo.Prompt)}}</view>
+        </view>
     </view>
   </view>
 </view>
 
 <!-- 岗位说明 -->
 <view class='workbox'>
-  <view class='tb-bigtitle'>岗位说明</view>
+  <!-- <view class='tb-bigtitle'>岗位说明</view> -->
   <view class='tb-title'>岗位状态</view>
   <view class="table">
-    <block wx:for="{{basic}}" wx:key="{{code}}">
-      <view class="onetr">
-        <view class="basic-td1">{{item.code}}</view>
-        <view class="basic-td2">{{item.text}}</view>
-        <view class="basic-td3">{{item.title}}</view>
-      </view>
-    </block>
+    <view class="onetr">
+      <view class="basic-td1">1</view>
+      <view class="basic-td2">工作内容</view>
+      <view class="basic-td3">{{utilTitle.sub(detailInfo.WorkContent)}}</view>
+    </view>
+    <view class="onetr">
+      <view class="basic-td1">2</view>
+      <view class="basic-td2">两班倒</view>
+      <view class="basic-td3">{{utilTitle.sub(detailInfo.Changework)}}</view>
+    </view>
+    <view class="onetr">
+      <view class="basic-td1">3</view>
+      <view class="basic-td2">工作环境</view>
+      <view class="basic-td3">{{utilTitle.sub(detailInfo.WorkEnvir)}}</view>
+    </view>
   </view>
 
   <view class='tb-title'>录用条件</view>
   <view class="table">
-    <block wx:for="{{basic}}" wx:key="{{code}}">
+    <block wx:for="{{rule}}">
       <view class="onetr">
-        <view class="basic-td1">{{item.code}}</view>
-        <view class="basic-td2">{{item.text}}</view>
-        <view class="basic-td3">{{item.title}}</view>
+        <view class="basic-td1">{{index+1}}</view>
+        <view class="basic-td2">{{item.Title}}</view>
+        <view class="basic-td3">{{item.Content}}</view>
       </view>
     </block>
-    <view class="table">
-      <block wx:for="{{listData}}" wx:key="{{code}}">
-        <view class="onetr">
-          <view class="one-td1">{{item.code}}</view>
-          <view class="one-td2">{{item.text}}</view>
-        </view>
-      </block>
-    </view>
   </view>
 </view>
 
 <!-- 企业说明 -->
+
 <view class='qiyebox'>
-  <view class='tb-bigtitle'>企业说明</view>
-  <view class='qiyetext'>企业说明企业说明企业说明企业说明企业说明企业说明企业说明企业说明企业说明企业说明企业说明企业说明企业说明企业说明企业说明企业说明企业说明企业说明企业说明企业说明企业说明企业说明企业说明企业说明企业说明企业说明企业说明企业说明企业说明企业说明企业说明企业说明企业说明企业说明企业说明企业说明企业说明企业说明企业说明企业说明企业说明企业说明企业说明企业说明企业说明企业说明企业说明</view>
+<view class='tb-title'>企业说明</view>
   <view class="table qiyetable">
+  <view class="onetr">
+      <view class="one-td1">企业说明：</view>
+      <view class="one-td2">{{detailInfo.EnterpriseExplain}}</view>
+    </view>
     <view class="onetr">
       <view class="one-td1">公司地址：</view>
-      <view class="one-td2">公司地址公司地址公司地址公司地址</view>
+      <view class="one-td2">{{detailInfo.Adress}}</view>
     </view>
   </view>
 </view>
+<!-- </view> -->
+<!-- </scroll-view> -->
+<view class="section foot">
+  <view class="flex-wrp flexfoot" style="flex-direction:row;">
+    <view class="flex-item floow" bindtap='floow'>
+      <view>
+        <image class='search-icon' src='../../../img/floow.png' wx:if = "{{isfloow}}"></image>
+        <image class='search-icon' src='../../../img/del.png' wx:if = "{{isfloow == false}}"></image>
+      </view>
+      <view>关注</view>
+    </view>
+    <view class="flex-item call" bindtap='makePhoneCall'>
+      <view>
+        <image class='search-icon' src='../../../img/call.png'></image>
+      </view>
+      <view>咨询</view>
+    </view>
+    <view class="flex-item attend" bindtap='attend'>
+      <view>
+        <image class='search-icon' src='../../../img/attend.png'></image>
+      </view>
+      <view>免费报名</view>
+    </view>
+  </view>
 </view>
-</scroll-view>

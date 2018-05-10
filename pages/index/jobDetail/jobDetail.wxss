@@ -3,6 +3,7 @@
 /* 表格样式 */
 .table {
   border: 0px solid darkgray;
+  background-color: #fff;
 }
 .onetr {
   display: flex;
@@ -17,16 +18,17 @@
   justify-content: center;
   text-align: right;
   padding-right: 50rpx;
-  font-size: 25rpx;
+  font-size: 30rpx;
+  background-color: #EEEEEE;
+  color: #666666;
 }
 .one-td2{
   width: 70%;
   text-align: lest;
   padding-left: 50rpx;
   justify-content: center;
-  color: rgb(248,85,120);
-  font-size: 25rpx;
-  border-left: 1px solid rgb(173,173,173);
+  font-size: 30rpx;
+  border-left: 1px solid #EEEEEE;
 }
 .th {
   width: 40%;
@@ -42,33 +44,32 @@
   padding: 20rpx;
   position: relative;
   background-color:#fff;
-  margin-bottom:20rpx;
-
+  margin-bottom: 20rpx;
 }
 .page-section-spacing .flex-item{
   font-size: 22rpx;
   padding: 0 10rpx;
   text-align: center;
-  border: 1px solid rgb(80,164,237);
+  border: 1px solid #D33A31;
   border-radius: 3px;
-  color: rgb(80,164,237);
+  color: #D33A31;
 }
 .job-tag{
   margin: 0 5rpx;
-  background-color: rgb(241,251,255)
 }
 .job-size{
   position: absolute;
   right: 20rpx;
-  font-size: 25rpx;
+  font-size: 30rpx;
+  color: #666666;
 }
 
 /* swipe */
 .swipebox {
-  width: 96%;
-  margin-left: 1.5%;
-  margin-top: 20rpx;
+  padding : 0 1.5%;
+  padding-top: 20rpx;
   position: relative;
+  background-color: #fff;
 }
 .slide-image {
   width: 100%;
@@ -82,7 +83,7 @@
   left: 0;
   width: 100%;
   color: #fff;
-  font-size:25rpx;
+  font-size:30rpx;
   height:80rpx;
   text-align: center;
 }
@@ -101,10 +102,10 @@
   opacity: 0.8;
 }
 .swipebox .flex-item{
-  height: 25%;
+  height: 24.5%;
   width: 100%;
   color: #fff;
-  font-size: 25rpx;
+  font-size: 30rpx;
   padding: 0;
   text-align: center;
   align-items:center;
@@ -135,7 +136,7 @@
   padding: 0;
 }
 .flex-wrp.flexfoot .flex-item{
-  border: 1px solid rgb(173,173,173);
+  border: 1px solid #EEEEEE;
   font-size: 25rpx;
   text-align: center;
 }
@@ -157,19 +158,19 @@
 }
 /* 表格 */
 .moneybox , .workbox , .qiyebox{
-  padding:20rpx 0;
+  background-color: #fff;
 }
 .tb-bigtitle{
   font-size: 35rpx;
   margin-left: 1.5%;
   padding: 10rpx 0;
-  border-bottom: 1px solid rgb(173,173,173);
+  border-bottom: 1px solid #EEEEEE;
 }
 .section.type{
-  width: 96%;
-  margin-left: 1.5%;
   font-size: 30rpx;
-  background-color: rgb(240,240,240);
+  background-color: #fff;
+  border-bottom: 1px solid #EEEEEE;
+  margin-top: 20rpx;
 }
 .section.type .flex-wrp{
   background-color: unset;
@@ -185,32 +186,36 @@
    width: 15%; 
   justify-content: center;
   text-align: center;
-  font-size: 25rpx;
-  border-right: 1px solid rgb(173,173,173);
+  font-size: 30rpx;
+  border-right: 1px solid #EEEEEE;
 }
 .basic-td2{
    width: 35%; 
   text-align: center;
   justify-content: center;
-  font-size: 25rpx;
+  font-size: 30rpx;
   height: 100%;
+  border-right: 1px solid #EEEEEE;
+  background-color: #EEEEEE;
+  color: #666666
 }
 .basic-td3{
   width: 50%; 
   justify-content: center;
-  border-left: 1px solid rgb(173,173,173);
-  font-size: 25rpx;
+  font-size: 30rpx;
+  margin-left: 20rpx;
 }
 .tb-title{
   font-size: 30rpx;
   padding: 10rpx 0;
   margin-left: 1.5%;
+  color: #333333
 }
 .onetr{
-  border: 1px solid rgb(173,173,173);
+  border: 1px solid #EEEEEE;
 }
 .qiyetext{
-  font-size: 25rpx;
+  font-size: 30rpx;
   padding: 10rpx 1.5% 0 1.5%;
   background-color: #fff;
 }

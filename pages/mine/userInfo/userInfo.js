@@ -374,4 +374,5 @@ Page({
     console.log(imgurl)
     
   },
+  
 })
