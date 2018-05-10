@@ -1,48 +1,147 @@
+
 <view class="page-section-spacing search-box">
   <view class="flex-wrp" style="flex-direction:row;">
     <view class="serachimgbox">
-      <!-- <image bindtap='searchImg' class='search-icon' src='../../img/locat.png'></image> -->
     </view>
     <view class="serachbox">
       <input class='search' bindtap='gotosearch' placeholder='输入您想搜索的内容'></input>
       <image bindtap='searchImg' class='search-icon' src='../../img/serach.png'></image>
     </view>
-    <view class="serachimgbox">
-      <image bindtap='searchImg' class='search-icon' src='../../img/tuijian.png' bindtap='recommend'></image>
-    </view>
   </view>
 </view>
 
-<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-  <block wx:for="{{imgUrls}}">
-    <swiper-item>
-      <image src="{{item}}" class="slide-image" width="100%" height="100%" />
-    </swiper-item>
-  </block>
-</swiper>
-
-<view class='info-list' wx:for="{{jobList}}" wx:key="index" data-id="{{item.ID}}" bindtap='jobDetail'>
-  <view class='list-img'>
-    <image class='img-msg' src='{{item.Display_Image}}'></image>
-    <view class='job-size'>6000人</view>
+<view class='bannerbox'>
+  <view class='today-recommend'>
+    <view class='today-title'>今日推荐</view>
+    <view class='today-wage'>{{recommendList.Salary}}元</view>
+    <view class='today-wage'>{{recommendList.Name}}</view>
+    <view><text class='today-subsidy'>补贴{{recommendList.Subsidy}}元</text></view>
   </view>
-  <view class='job-line'></view>
+  <image src='../../img/suc.png' class='swiper-left'></image>
+  <image src='../../img/sucyi.png' class='swiper-right'></image>
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" width="100%" height="100%" />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+<!--wxs语法截取字符串  -->
+<wxs module="utilTitle">
+  var sub = function(val) {
+    if (val == '0') {
+      val = '补贴'
+      return val
+    } else if (val == '1') {
+      val = '工价'
+      return val
+    }
+    else {
+      val = '收费'
+      return val
+    }
+  }
+  module.exports.sub = sub;
+</wxs>
+
+<view wx:if="{{jobList1.length > 0}}" class='baby'>
+  宝宝，这<text class='red'>20</text>个<text class='red'>[超级适合]</text>你哦
+</view>
+<view class='info-list' wx:for="{{jobList1}}" wx:key="index" data-id="{{item.ID}}" bindtap='jobDetail' wx:for-index="index">
+  <view class='list-img'>
+    <image class='img-msg' src='{{mainurl+item.Logo}}'></image>
+    <view class='job-size'>{{item.EnterprisePeople}}人</view>
+  </view>
   <view class='list-jobtext'>
     <view class='job-list'>
-      <text class='job-title'>3800~4500<text class='job-address'>元</text>
-      </text>
+      <text class='job-title'>{{item.Salary}}元</text>
+      <view class='job-address'>{{item.Name}}</view>
       <view class="page-section-spacing">
         <view class="flex-wrp" style="flex-direction:row;">
-          <view class="flex-item job-tag">环境好</view>
-          <view class="flex-item job-tag">流水线</view>
-          <view class="flex-item job-tag">妹子多</view>
+          <view class="flex-item job-tag" wx:for="{{item.Tag}}" wx:for-item="items" wx:key="index">{{items}}</view>
         </view>
       </view>
-      <text class='job-address'>{{item.Address}}</text>
     </view>
   </view>
   <view class='subsidy-list'>
-    <view class='subsidy'>补贴</view>
-    <view class='subsidy-money'>200元</view>
+    <view class='subsidy'>{{utilTitle.sub(item.SubsidyType)}}</view>
+    <view class='subsidy-money'>{{item.Subsidy}}元</view>
+  </view>
+</view>
+
+<view wx:if="{{jobList2.length > 0}}" class='baby'>
+  宝宝，下面这<text class='red'>20</text>个也是可以考虑的
+</view>
+<view class='info-list' wx:for="{{jobList2}}" wx:key="index" data-id="{{item.ID}}" bindtap='jobDetail' wx:for-index="index">
+  <view class='list-img'>
+    <image class='img-msg' src='{{mainurl+item.Logo}}'></image>
+    <view class='job-size'>{{item.EnterprisePeople}}人</view>
+  </view>
+  <view class='list-jobtext'>
+    <view class='job-list'>
+      <text class='job-title'>{{item.Salary}}元</text>
+      <view class='job-address'>{{item.Name}}</view>
+      <view class="page-section-spacing">
+        <view class="flex-wrp" style="flex-direction:row;">
+          <view class="flex-item job-tag" wx:for="{{item.Tag}}" wx:for-item="items" wx:key="index">{{items}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='subsidy-list'>
+    <view class='subsidy'>{{utilTitle.sub(item.SubsidyType)}}</view>
+    <view class='subsidy-money'>{{item.Subsidy}}元</view>
+  </view>
+</view>
+
+<view wx:if="{{jobList3.length > 0}}" class='baby'>
+  宝宝，接下来这<text class='red'>20</text>个其实...一般啦
+</view>
+<view class='info-list' wx:for="{{jobList3}}" wx:key="index" data-id="{{item.ID}}" bindtap='jobDetail' wx:for-index="index">
+  <view class='list-img'>
+    <image class='img-msg' src='{{mainurl+item.Logo}}'></image>
+    <view class='job-size'>{{item.EnterprisePeople}}人</view>
+  </view>
+  <view class='list-jobtext'>
+    <view class='job-list'>
+      <text class='job-title'>{{item.Salary}}元</text>
+      <view class='job-address'>{{item.Name}}</view>
+      <view class="page-section-spacing">
+        <view class="flex-wrp" style="flex-direction:row;">
+          <view class="flex-item job-tag" wx:for="{{item.Tag}}" wx:for-item="items" wx:key="index">{{items}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='subsidy-list'>
+    <view class='subsidy'>{{utilTitle.sub(item.SubsidyType)}}</view>
+    <view class='subsidy-money'>{{item.Subsidy}}元</view>
+  </view>
+</view>
+
+<view wx:if="{{jobList4.length > 0}}" class='baby'>
+  宝宝，后面的你就随意看看吧
+</view>
+<view class='info-list' wx:for="{{jobList4}}" wx:key="index" data-id="{{item.ID}}" bindtap='jobDetail' wx:for-index="index">
+  <view class='list-img'>
+    <image class='img-msg' src='{{mainurl+item.Logo}}'></image>
+    <view class='job-size'>{{item.EnterprisePeople}}人</view>
+  </view>
+  <view class='list-jobtext'>
+    <view class='job-list'>
+      <text class='job-title'>{{item.Salary}}元</text>
+      <view class='job-address'>{{item.Name}}</view>
+      <view class="page-section-spacing">
+        <view class="flex-wrp" style="flex-direction:row;">
+          <view class="flex-item job-tag" wx:for="{{item.Tag}}" wx:for-item="items" wx:key="index">{{items}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='subsidy-list'>
+    <view class='subsidy'>{{utilTitle.sub(item.SubsidyType)}}</view>
+    <view class='subsidy-money'>{{item.Subsidy}}元</view>
   </view>
 </view>
