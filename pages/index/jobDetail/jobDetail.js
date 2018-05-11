@@ -211,74 +211,145 @@ Page({
   },
 
   floow(){
-    var tt = this
-    wx.getStorage({
-      key: 'token',
-      success: function (res) {
-        app.ajax({
-          method: 'get',
-          url: app.mainUrl + 'api/Home/AddAttention',
-          data: {
-            "ID": tt.data.detailid
-          },
-          header: {
-            "Authorization": res.data
-          },
-          success: function (res) {
-            wx.hideLoading()
-            if (res.data.Status == 1) {
-              wx.showToast({
-                title: res.data.Result
-              })
-              tt.setData({
-                isfloow: true
-              })
-            } else if (res.data.Status == 40002) {
-              tt.setData({
-                isLogin: false
-              })
-              wx.showModal({
-                title: '提示',
-                content: res.data.Result,
-                success: function (res) {
-                  if (res.confirm) {
-                    wx.removeStorage({
-                      key: 'token',
-                      success: function (res) {
-                        console.log("删除token，保证只提醒一次")
-                      },
-                    })
-                    wx.navigateTo({
-                      url: '../login/login',
-                    })
-                  } else if (res.cancel) {
-                    console.log('用户点击取消')
+    if (this.data.isfloow){
+      var tt = this
+      wx.getStorage({
+        key: 'token',
+        success: function (res) {
+          app.ajax({
+            method: 'get',
+            url: app.mainUrl + 'api/Home/DelLikeJob',
+            data: {
+              "ID": tt.data.detailid
+            },
+            header: {
+              "Authorization": res.data
+            },
+            success: function (res) {
+              wx.hideLoading()
+              if (res.data.Status == 1) {
+                wx.showToast({
+                  title: res.data.Result
+                })
+                tt.setData({
+                  isfloow: false
+                })
+              } else if (res.data.Status == 40002) {
+                tt.setData({
+                  isLogin: false
+                })
+                wx.showModal({
+                  title: '提示',
+                  content: res.data.Result,
+                  success: function (res) {
+                    if (res.confirm) {
+                      wx.removeStorage({
+                        key: 'token',
+                        success: function (res) {
+                          console.log("删除token，保证只提醒一次")
+                        },
+                      })
+                      wx.navigateTo({
+                        url: '../login/login',
+                      })
+                    } else if (res.cancel) {
+                      console.log('用户点击取消')
+                    }
                   }
-                }
-              })
-            }
-            else {
-              wx.showModal({
-                showCancel: false,
-                title: '提示',
-                content: res.data.Result,
-              })
-            }
+                })
+              }
+              else {
+                wx.showModal({
+                  showCancel: false,
+                  title: '提示',
+                  content: res.data.Result,
+                })
+              }
 
-          },
-          error: function () {
-            wx.hideLoading()
-          }
-        })
-      },
-      fail: function (res) {
-        tt.setData({
-          isLogin: false
-        })
-      },
-      complete: function (res) {
-      },
-    })
+            },
+            error: function () {
+              wx.hideLoading()
+            }
+          })
+        },
+        fail: function (res) {
+          tt.setData({
+            isLogin: false
+          })
+        },
+        complete: function (res) {
+        },
+      })
+    }else{
+      var tt = this
+      wx.getStorage({
+        key: 'token',
+        success: function (res) {
+          app.ajax({
+            method: 'get',
+            url: app.mainUrl + 'api/Home/AddAttention',
+            data: {
+              "ID": tt.data.detailid
+            },
+            header: {
+              "Authorization": res.data
+            },
+            success: function (res) {
+              wx.hideLoading()
+              if (res.data.Status == 1) {
+                wx.showToast({
+                  title: res.data.Result
+                })
+                tt.setData({
+                  isfloow: true
+                })
+              } else if (res.data.Status == 40002) {
+                tt.setData({
+                  isLogin: false
+                })
+                wx.showModal({
+                  title: '提示',
+                  content: res.data.Result,
+                  success: function (res) {
+                    if (res.confirm) {
+                      wx.removeStorage({
+                        key: 'token',
+                        success: function (res) {
+                          console.log("删除token，保证只提醒一次")
+                        },
+                      })
+                      wx.navigateTo({
+                        url: '../login/login',
+                      })
+                    } else if (res.cancel) {
+                      console.log('用户点击取消')
+                    }
+                  }
+                })
+              }
+              else {
+                wx.showModal({
+                  showCancel: false,
+                  title: '提示',
+                  content: res.data.Result,
+                })
+              }
+
+            },
+            error: function () {
+              wx.hideLoading()
+            }
+          })
+        },
+        fail: function (res) {
+          tt.setData({
+            isLogin: false
+          })
+        },
+        complete: function (res) {
+        },
+      })
+    }
   },
   // 打电话
   makePhoneCall: function () {

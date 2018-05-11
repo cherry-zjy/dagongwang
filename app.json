@@ -1,21 +1,19 @@
 {
   "pages":[
-    "pages/mine/follow/follow",
-    
     "pages/index/index",
     "pages/index/search/search",
     "pages/index/search/searchDetail/searchDetail",
     "pages/index/jobDetail/jobDetail",
-    "pages/money/index",
     "pages/login/login",
     "pages/login/service/service",
     "pages/mine/index",
     "pages/mine/userInfo/userInfo",
-    
+    "pages/mine/follow/follow",
     "pages/mine/experience/experience",
     "pages/mine/experience/addexperience/addexperience",
     "pages/mine/aboutus/aboutus",
     "pages/mine/feedback/feedback",
+    "pages/money/index",
     "pages/money/accountdetail/accountdetail",
     "pages/money/store/store",
     "pages/money/wages/wages",

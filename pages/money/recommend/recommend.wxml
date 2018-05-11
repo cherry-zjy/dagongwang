@@ -1,5 +1,4 @@
 <!--pages/money/recommend/recommend.wxml-->
-<image src='../../../../img/icon.png' class="icon"></image>
 <view class="btn-area">
-  <button class='btn' bindtap="formSubmit">立即推荐</button>
+  <button class='btn' bindtap="formSubmit">立即邀请</button>
 </view>
