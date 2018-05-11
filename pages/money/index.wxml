@@ -13,7 +13,7 @@
     <view class='withdraw' bindtap='accountwithdraw'>提现</view>
   </view>
 </view>
-  <view class='recommend'>
+  <view class='recommend' bindtap='gotoindex'>
     <image src='../../../img/qzs_advertising.png' class='recommend-img'></image>
   </view>
   <view class='recommend2'>

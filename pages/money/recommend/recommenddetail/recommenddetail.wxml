@@ -1,44 +1,20 @@
-
-<!-- <view class='bg'>
+<!--pages/login/login.wxml-->
+<!--input.wxml-->
+<view class='bg'>
   <view class='login-form'>
     <form bindsubmit="formSubmit" bindreset="formReset">
       <view class="section">
-      <image src='../../../../img/call.png' class="account-icon"></image>
-        <input class='input-box' name="username" placeholder="用户名" auto-focus/>
+        <input class='input-box' name="username" placeholder="请填写好友真实姓名" auto-focus/>
+        <image class='search-icon' src='../../../../img/yqhy_name.png'></image>
       </view>
       <view class="section">
-      <image src='../../../../img/call.png' class="account-icon"></image>
-        <input class='input-box' name="password" password type="text" maxlength="18" placeholder='密码' />
+        <input class='input-box' name="password" type="text" placeholder='请填写好友手机号' />
+        <image class='search-icon' src='../../../../img/yqhy_phone.png'></image>
       </view>
+      <view class="errod">{{tip}}</view>
       <view class="btn-area">
         <button class='btn' formType="submit">立即推荐</button>
       </view>
     </form>
   </view>
-</view> -->
-
-<view class='bg'>
- <view class="flex-wrp" style="flex-direction:row;">
-    <view class="flex-item icon">
-      <image class="sister-icon" src='../../../../img/call.png'></image>
-    </view>
-    <view class="flex-item msg">
-    <view class='postage'>
-      <input class='input-box' name="username" placeholder="请填写好友真实姓名" auto-focus/>
-    </view>
-    </view>
-  </view>
-  <view class="flex-wrp" style="flex-direction:row;">
-    <view class="flex-item icon">
-      <image class="sister-icon" src='../../../../img/call.png'></image>
-    </view>
-    <view class="flex-item msg">
-    <view class='postage'>
-      <input class='input-box' name="username" placeholder="请填写好友手机号" auto-focus/>
-    </view>
-    </view>
-  </view>
-    <view class="btn-area">
-        <button class='btn' formType="submit">立即推荐</button>
-      </view>
-  </view>
+</view>

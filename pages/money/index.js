@@ -17,6 +17,11 @@ Page({
       accountshow: true
     })
   },
+  gotoindex(){
+    wx.switchTab({
+      url: '../index/index'
+    })
+  },
   accountdetail(){
     wx.navigateTo({
       url: 'accountdetail/accountdetail'

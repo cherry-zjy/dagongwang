@@ -8,8 +8,20 @@ Page({
   
   },
   formSubmit(){
-    wx.navigateTo({
-      url: 'recommenddetail/recommenddetail'
+    wx.getStorage({
+      key: 'token',
+      success: function (res) {
+        wx.navigateTo({
+          url: 'recommenddetail/recommenddetail'
+        })
+      },
+      fail: function (res) {
+        wx.navigateTo({
+          url: '../login/login'
+        })
+      },
+      complete: function (res) {
+      },
     })
   },
 

@@ -23,7 +23,6 @@
     "pages/money/store/storedetail/storedetail",
     "pages/money/accountwithdraw/withdrawfeedback/withdrawfeedback",
     "pages/money/accountwithdraw/accountwithdraw"
-    
   ],
   "window":{
     "backgroundTextStyle":"light",

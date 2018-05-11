@@ -1,13 +1,103 @@
 // pages/money/recommend/recommenddetail/recommenddetail.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    tip: '',
+    userName: '',
+    password: '',
   },
   formSubmit: function (e) {
+    var that = this
+    console.log(e.detail.value)
+    if (e.detail.value.username.length == 0 || e.detail.value.password.length == 0) {
+      that.setData({
+        tip: '提示：姓名和手机号不能为空！',
+        userName: '',
+        password: '',
+      })
+      setTimeout(() => {
+        that.setData({
+          tip: '',
+        })
+      }, 1000)
+    } else {
+      this.setData({
+        tip: "",
+        userName: e.detail.value.username,
+        password: e.detail.value.password,
+      })
+      wx.getStorage({
+        key: 'token',
+        success: function (res) {
+          app.ajax({
+            method: 'get',
+            url: app.mainUrl + 'api/Home/InviteFriends',
+            data: {
+              "Name": that.data.userName,
+              "Phone": that.data.password,
+            },
+            header: {
+              "Authorization": res.data
+            },
+            success: function (res) {
+              wx.hideLoading()
+              if (res.data.Status == 1) {
+                wx.showToast({
+                  title: res.data.Result
+                })
+              } else {
+                wx.showModal({
+                  showCancel: false,
+                  title: '提示',
+                  content: res.data.Result,
+                })
+              }
+            },
+            error: function () {
+              wx.hideLoading()
+            }
+          })
+        },
+        fail: function (res) {
+          app.ajax({
+            method: 'get',
+            url: app.mainUrl + 'api/Home/WorkDetails',
+            data: {
+              "ID": options.id,
+            },
+            success: function (res) {
+              wx.hideLoading()
+              if (res.data.Status == 1) {
+                console.log(res.data.Result)
+                that.setData({
+                  detailInfo: res.data.Result,
+                  rule: res.data.Result.Rule,
+                  Images: res.data.Result.Images,
+                  isfloow: res.data.Result.Isattention
+                })
+
+              } else {
+                wx.showModal({
+                  showCancel: false,
+                  title: '提示',
+                  content: res.data.Result,
+                })
+              }
+            },
+            error: function () {
+              wx.hideLoading()
+            }
+          })
+        },
+        complete: function (res) {
+        },
+      })
+
+    }
   },
 
   /**
