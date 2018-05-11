@@ -1,4 +1,5 @@
 // pages/mine/follow/follow.js
+const app = getApp()
 Page({
 
   /**
@@ -9,12 +10,67 @@ Page({
     jobList: [],
   
   },
+  getInfo() {
+    var that = this;
+    wx.getStorage({
+      key: 'token',
+      success: function (res) {
+        app.ajax({
+          method: 'get',
+          url: app.mainUrl + 'api/Home/MyAttention',
+          header: {
+            "Authorization": res.data
+          },
+          success: function (res) {
+            wx.hideLoading()
+            if (res.data.Status == 1) {
+              that.setData({
+                jobList:res.data.Result
+              })
+              if (res.data.Result.length == 0) {
+                that.setData({
+                  none: true
+                })
+              }
+            } else {
+              wx.showModal({
+                showCancel: false,
+                title: '提示',
+                content: res.data.Result,
+              })
+            }
+          },
+          error: function () {
+            wx.hideLoading()
+          }
+        })
+      },
+      fail: function (res) {
+        wx.navigateTo({
+          url: '../login/login'
+        })
+      },
+      complete: function (res) {
+      },
+    })
+  },
+  goto(){
+    wx.switchTab({
+      url: '../../index/index'
+    })
+  },
+  jobDetail(event) {
+    var id = event.currentTarget.dataset.id
+    wx.navigateTo({
+      url: '../../index/jobDetail/jobDetail?id=' + id,
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this.getInfo()
   },
 
   /**
@@ -28,12 +84,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var that = this;
-    if (that.data.jobList.length == 0){
-      that.setData({
-        none: true
-      })
-    }
+    
   },
 
   /**
