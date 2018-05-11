@@ -21,12 +21,16 @@ Page({
     rule:[],
     Images:[],
     isfloow:false,
-    Upphone:''
+    Upphone:'',
+    detailid:''
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({
+      detailid: options.id
+    })
     // 获取参数id
     // console.dir(options.id)
     var that = this
@@ -213,7 +217,7 @@ Page({
           method: 'get',
           url: app.mainUrl + 'api/Home/AddAttention',
           data: {
-            "ID": options.id,
+            "ID": tt.data.detailid
           },
           header: {
             "Authorization": res.data
@@ -222,7 +226,7 @@ Page({
             wx.hideLoading()
             if (res.data.Status == 1) {
               wx.showToast({
-                title: res.data.Resul
+                title: res.data.Result
               })
               tt.setData({
                 isfloow: true
@@ -293,7 +297,7 @@ Page({
           method: 'get',
           url: app.mainUrl + 'api/Home/ApplyWork',
           data: {
-            "WorkID": options.id,
+            "WorkID": tt.data.detailid
           },
           header: {
             "Authorization": res.data

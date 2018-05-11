@@ -4,11 +4,7 @@ const app = getApp()
 
 Page({
   data: {
-    imgUrls: [
-      'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-      // 'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
-      // 'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
-    ],
+    imgUrls: [],
     indicatorDots: true,
     autoplay: true,
     interval: 5000,
@@ -41,7 +37,6 @@ Page({
               jobList1: res.data.Result.result.Works,
             })
           } else if (that.data.pageIndex == 2){
-            console.log('111')
             that.setData({
               jobList2: res.data.Result.result.Works,
             })
@@ -62,9 +57,9 @@ Page({
           that.data.pageIndex = that.data.pageIndex + 1
           that.data.listlenth = res.data.Result.result.Works.length
           that.setData({
-            // imgUrls: [
-            //   app.mainUrl + res.data.Result.BannerImage
-            // ],
+            imgUrls: [
+              app.mainUrl + res.data.Result.BannerImage
+            ],
             recommendList: res.data.Result.result,
             IsNext: res.data.Result.IsNext
           })
@@ -145,11 +140,10 @@ onLoad: function (options) {
     this.setData({
       pageIndex: 1
     })
-    var that = this
     app.ajax({
       method: 'get',
       url: app.mainUrl + 'api/Home/WorkHome',
-      data: { pageIndex: Number(that.data.pageIndex), pageSize: that.data.group, Keyword: -1 },
+      data: { pageIndex: Number(that.data.pageIndex), pageSize: that.data.group, Keyword: -1, City: -1, Type: 0},
       success: function (res) {
         wx.hideLoading();
         wx.hideNavigationBarLoading() //完成停止加载
@@ -181,9 +175,9 @@ onLoad: function (options) {
           that.data.pageIndex = that.data.pageIndex + 1
           that.data.listlenth = res.data.Result.result.Works.length
           that.setData({
-            // imgUrls: [
-            //   app.mainUrl + res.data.Result.BannerImage
-            // ],
+            imgUrls: [
+              app.mainUrl + res.data.Result.BannerImage
+            ],
             recommendList: res.data.Result.result,
             IsNext: res.data.Result.IsNext
           })

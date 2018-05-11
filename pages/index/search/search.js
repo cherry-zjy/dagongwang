@@ -1,26 +1,52 @@
 // pages/index/search/search.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    taglist:[
-      '临时工',
-      '昆山',
-      '司机',
-      '无锡',
-      '郑州富士康',
-      '无锡夏普',
-      '瑞仪',
-      '昆山百',
-      '无锡',
-      '深圳',
-    ]
+    taglist:[],
+    searchvalue:''
   },
-  searchDetail(){
+  getInfo() {
+    var that = this
+    app.ajax({
+      method: 'get',
+      url: app.mainUrl + 'api/Home/FindTags',
+      success: function (res) {
+        wx.hideLoading()
+        if (res.data.Status == 1) {
+          that.setData({
+            taglist:res.data.Result.list
+          })
+        } else {
+          wx.showModal({
+            showCancel: false,
+            title: '提示',
+            content: res.data.Result,
+          })
+        }
+      },
+      error: function () {
+        wx.hideLoading()
+      }
+    })
+  },
+  searchDetail(e){
+    var text = e.currentTarget.dataset.text
     wx.navigateTo({
-      url: 'searchDetail/searchDetail'
+      url: 'searchDetail/searchDetail?id=' + text,
+    })
+  },
+  searchInput(e){
+    this.setData({
+      searchvalue: e.detail.value
+    })
+  },
+  search(e){
+    wx.navigateTo({
+      url: 'searchDetail/searchDetail?id=' + this.data.searchvalue
     })
   },
 
@@ -42,7 +68,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    this.getInfo();
   },
 
   /**
