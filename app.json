@@ -2,7 +2,6 @@
   "pages":[
     "pages/index/search/searchDetail/searchDetail",
     
-
     "pages/index/index",
     "pages/index/search/search",
     
@@ -36,18 +35,26 @@
     "enablePullDownRefresh": false
   },
   "tabBar": {
+    "color": "#CDCDCD",
+    "selectedColor": "#D33A31",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "找工作"
+        "text": "找工作",
+        "iconPath": "img/sy_job_search_no.png",
+        "selectedIconPath": "img/sy_job_search.png"
       },
       {
         "pagePath": "pages/money/index",
-        "text": "钱助手"
+        "text": "钱助手",
+        "iconPath": "img/sy_purse.png",
+        "selectedIconPath": "img/sy_purse.png"
       },
       {
         "pagePath": "pages/mine/index",
-        "text": "我的"
+        "text": "我的",
+        "iconPath": "img/sy_my_no.png",
+        "selectedIconPath": "img/sy_my.png"
       }
     ]
   },

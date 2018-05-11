@@ -224,11 +224,12 @@
       </view>
       <view>咨询</view>
     </view>
-    <view class="flex-item attend" bindtap='attend'>
+    <view class="flex-item attend {{isattend ? 'on':''}}" bindtap='attend'>
       <view>
         <image class='search-icon' src='../../../img/attend.png'></image>
       </view>
-      <view>免费报名</view>
+      <view wx:if="{{!isattend}}">免费报名</view>
+      <view wx:if="{{isattend}}">已报名</view>
     </view>
   </view>
 </view>

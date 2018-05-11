@@ -1,36 +1,33 @@
 /* pages/index/search/searchDetail/searchDetail.wxss */
 
-page {
-  background-color: #fff;
-}
 /* 搜索框 */
 .search-box {
   width: 100%;
   border-bottom: 1px solid rgb(245,245,245);
   position: relative;
-  z-index: 80;
-  height: 100rpx;
 }
 .serachbox{
   margin-left: 5%;
-  width: 90%;
+  width: 80%;
 }
-.pick-header .section{
-  z-index: 80;
-  height: 80rpx;
+.serachtext{
+  position: absolute;
+  right: 2%;
+  top: 30rpx;
+  width: 10%
 }
 .search {
   height: 60rpx;
   background-color: rgb(245,245,245);
   font-size: 30rpx;
-  padding: 0 30%;
+  padding-left: 30rpx;
   margin: 20rpx 0;
 }
 /* 筛选、排序 */
 .flex-wrp{
   margin-top: 5rpx;
   display:flex;
-  z-index: 80;
+  background-color: #fff;
 }
 .flex-item{
   font-size: 30rpx;
@@ -46,6 +43,9 @@ page {
 .sort{
   border-bottom: 1px solid rgb(245,245,245);
 }
+.sort.on{
+  color: #D33A31;
+}
 .search-icon{
   width: 26rpx;
   height: 26rpx;
@@ -56,6 +56,7 @@ page {
   position: absolute;
   top: 180rpx;
   z-index: 20;
+  background-color: #fff;
 }
 .list .flex-item{
   color: #000;
@@ -82,78 +83,3 @@ page {
   position: relative;
   width: 100%;
 }
-/* 筛选下拉菜单 */
-/*根布局*/
-.content-container {
-  width: 100%;
-  position: absolute;
-}
-
-/*筛选头部*/
-.pick-header {
-  width: 100%;
-  height: 180rpx;
-  z-index: 80;
-  position: fixed;
-  background-color: #fff;
-}
-
-/*筛选项容器布局*/
-.pick-container {
-  width: 100%;
-  height: 300rpx;
-  position: absolute;
-  z-index: 50;
-  top: -300rpx;
-}
-
-/*筛选项隐藏 显示动画 start*/
-@keyframes slidown {
-  from {
-    transform: translateY(0%);
-    top:-300rpx;
-  }
-
-  to {
-    transform: translateY(100%);
-    top:-120rpx;
-  }
-}
-
-.slidown {
-  display: block;
-  animation: slidown 0.1s ease-in both;
-}
-
-@keyframes slidup {
-  from {
-    transform: translateY(100%);
-  }
-
-  to {
-    transform: translateY(0%);
-  }
-}
-
-.slidup {
-  display: block;
-  animation: slidup 0.2s ease-in both;
-}
-/*筛选项隐藏 显示动画 end*/
-
-/*筛选项显示出来的时候的阴影*/
-/* .shadow {
-  width: 100%;
-  background-color: rgba(1, 1, 1, 0.2);
-  position: absolute;
-  z-index: 40;
-  top: 72rpx;
-} */
-
-/*内容容器布局*/
-/* .content {
-  width: 100%;
-  position: absolute;
-  top: 72rpx;
-  z-index: 20;
-} */

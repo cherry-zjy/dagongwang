@@ -20,7 +20,8 @@ Page({
     detailInfo:[],
     rule:[],
     Images:[],
-    isfloow:false,
+    isfloow: false,
+    isattend:false,
     Upphone:'',
     detailid:''
   },
@@ -307,6 +308,9 @@ Page({
             if (res.data.Status == 1) {
               wx.showToast({
                 title: res.data.Result
+              })
+              tt.setData({
+                isattend: true
               })
             } else if (res.data.Status == 40002) {
               tt.setData({

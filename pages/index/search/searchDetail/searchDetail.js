@@ -10,16 +10,25 @@ Page({
     detailid:'',
     pageIndex:1,
     IsNext:false,
-    openPicker: false,
-    needAnimation: false,
-    contentHeight: 0
+    inputTxt:'',
+    array: ['上海市', '昆山市', '吴江市', '常州市', '无锡市', '苏州市'],
+    index: 0,
+    ascending:false,
+    Type:0,
+    City:-1
   },
   getInfo(){
     var that = this
     app.ajax({
       method: 'get',
       url: app.mainUrl + 'api/Home/WorkHome',
-      data: { pageIndex: Number(that.data.pageIndex), pageSize: 3, Keyword: that.data.detailid, City: -1, Type: 0 },
+      data: { 
+        pageIndex: Number(that.data.pageIndex), 
+        pageSize: 20, 
+        Keyword: that.data.detailid, 
+        City: that.data.City, 
+        Type: that.data.Type 
+      },
       success: function (res) {
         wx.hideLoading()
         if (res.data.Status == 1) {
@@ -32,7 +41,6 @@ Page({
             datalist: that.data.datalist,
             IsNext: res.data.Result.IsNext
           })
-          
         } else {
           wx.showModal({
             showCancel: false,
@@ -46,10 +54,60 @@ Page({
       }
     })
   },
-  onPickHeaderClick: function () {
+  // 文本框监听
+  searchInput(e) {
     this.setData({
-      openPicker: !this.data.openPicker,
-      needAnimation: true
+      detailid: e.detail.value
+    })
+  },
+  // 搜索
+  search(e) {
+    if (this.data.detailid == ''){
+      this.setData({
+        detailid: '-1',
+        pageIndex:1
+      })
+    }else{
+      this.setData({
+        detailid: this.data.detailid,
+        pageIndex: 1
+      })
+    }
+    this.getInfo()
+  },
+  // picker
+  bindPickerChange: function (e) {
+    console.log(this.data.array[e.detail.value])
+    this.setData({
+      inputTxt: this.data.array[e.detail.value],
+      City: this.data.array[e.detail.value],
+      pageIndex: 1
+    })
+    this.getInfo()
+  },
+  // 降序
+  sort(){
+    if (this.data.Type == 0){
+      this.setData({
+        Type: 1,
+        pageIndex: 1
+      })
+    }else{
+      this.setData({
+        Type: 0,
+        pageIndex: 1
+      })
+    }
+    this.setData({
+      ascending: !this.data.ascending,
+    })
+    this.getInfo()
+  },
+  // 点击跳转详情页
+  jobDetail(event) {
+    var id = event.currentTarget.dataset.id
+    wx.navigateTo({
+      url: '../../jobDetail/jobDetail?id=' + id,
     })
   },
 
@@ -67,6 +125,9 @@ Page({
         detailid: '-1'
       })
     }
+    this.setData({
+      inputTxt: options.id
+    })
     this.getInfo()
   },
 
@@ -110,7 +171,13 @@ Page({
     app.ajax({
       method: 'get',
       url: app.mainUrl + 'api/Home/WorkHome',
-      data: { pageIndex: Number(that.data.pageIndex), pageSize: 1, Keyword: that.data.detailid },
+      data: {
+        pageIndex: Number(that.data.pageIndex),
+        pageSize: 20,
+        Keyword: that.data.detailid,
+        City: that.data.City,
+        Type: that.data.Type
+      },
       success: function (res) {
         wx.hideLoading();
         wx.hideNavigationBarLoading() //完成停止加载

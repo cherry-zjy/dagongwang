@@ -154,7 +154,10 @@
 .flex-item.attend{
   width: 60%;
   color: #fff;
-  background-color: rgb(26,122,228)
+  background-color: #D33A31
+}
+.attend.on{
+  background-color: #A5A4A4
 }
 /* 表格 */
 .moneybox , .workbox , .qiyebox{

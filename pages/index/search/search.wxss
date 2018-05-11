@@ -16,7 +16,7 @@ page {
   height: 60rpx;
   background-color: rgb(245,245,245);
   font-size: 30rpx;
-  padding-left: 30%;
+  padding-left: 70rpx;
   border-radius:50px;
   margin: 20rpx 0;
   opacity:0.5;
@@ -26,6 +26,13 @@ page {
   right: 30rpx;
   top: 10rpx;
   font-size: 30rpx; 
+}
+.serachbox .search-icon {
+  position: absolute;
+  left: 60rpx;
+  width: 40rpx;
+  height: 40rpx;
+  top:10rpx;
 }
 
 /* 热度搜索 */
@@ -49,13 +56,12 @@ page {
    margin-top: -10rpx;
    float: left;
 }
-.search-icon{
-  width: 40rpx;
-  height: 40rpx;
+.tag-icon{
+  width: 60rpx;
+  height: 60rpx;
 }
 .smalltitle{
-  font-size: 25rpx;
-  margin-top: -10rpx;
+  font-size: 30rpx;
 }
 .flex-wrp{
   margin-top: 5rpx;

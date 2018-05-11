@@ -27,7 +27,7 @@ Page({
     app.ajax({
       method: 'get',
       url: app.mainUrl + 'api/Home/WorkHome',
-      data: { pageIndex: Number(that.data.pageIndex), pageSize: that.data.group, Keyword:-1},
+      data: { pageIndex: Number(that.data.pageIndex), pageSize: that.data.group, Keyword: -1, City: -1, Type: 0},
       success: function (res) {
         wx.hideLoading()
         if (res.data.Status == 1) {

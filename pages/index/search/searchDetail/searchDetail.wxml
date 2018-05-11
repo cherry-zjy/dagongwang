@@ -1,54 +1,45 @@
-<view class="content-container">
-  <view class="pick-header">
-    <view class="page-section-spacing search-box">
-  <view class="flex-wrp" style="flex-direction:row;">
-    <view class="serachimgbox">
-    </view>
-    <view class="serachbox">
-      <input class='search' bindtap='gotosearch' placeholder='输入您想搜索的内容'></input>
-    </view>
+<view class="flex-wrp" style="flex-direction:row;">
+  <view class="serachimgbox">
+  </view>
+  <view class="serachbox">
+    <input class='search' bindinput="searchInput" placeholder='输入您想搜索的内容' value="{{inputTxt}}"></input>
+  </view>
+  <view class="serachtext" bindtap="search">
+    搜索
   </view>
 </view>
 
 <view class="section">
   <view class="flex-wrp" style="flex-direction:row;">
+  
     <view class="flex-item screen" bindtap="onPickHeaderClick">
-    筛选
-    <image class='search-icon' src='../../../../img/screen.png'></image>
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+      筛选
+      <image class='search-icon' src='../../../../img/screen.png'></image>
+    </picker>
     </view>
-    <view class="flex-item sort">补贴由高到低</view>
+    <view class="flex-item sort {{ascending? 'on' : ''}}" bindtap="sort">补贴由高到低</view>
   </view>
 </view>
-  </view>
-
-  <view class="pick-container {{needAnimation ? (openPicker ? 'slidown' : 'slidup') : ''}}" >
-    筛选项 pick-container view z-index:50
-  </view>
-</view>
-
+<!-- 
  <wxs module="utilTitle">
-  var sub = function(val) {
-    if (val == '0') {
-      val = '补贴'
-      return val
-    } else if (val == '1') {
-      val = '工价'
-      return val
-    }
-    else {
-      val = '收费'
-      return val
-    }
-  }
+  var sub = function(val) { 
+  if (val == '0') { 
+    val = '补贴' return val 
+  } else if (val == '1') { 
+    val = '工价' return val 
+  } else {
+    val = '收费' return val } 
+  } 
   module.exports.sub = sub;
-</wxs>
+</wxs>  -->
 
-<view class="section list {{needAnimation? 'on' : ''}}">
-  <view class="flex-wrp" style="flex-direction:column;">
-    <view class="flex-item" wx:for="{{datalist}}">
+  <view class="section list">
+  <view class=" flex-wrp" style="flex-direction:column" wx:for="{{datalist}}" data-id="{{item.ID}}" bindtap='jobDetail'>
+    <view class="flex-item ">
     <view class='list-name'>{{item.Name}}</view>
     <view class='list-moneybox'><text class='list-money'>￥{{item.Salary}}元</text></view>
     <view class='list-other'>{{utilTitle.sub(item.SubsidyType)}}{{item.Subsidy}}元</view>
     </view>
   </view>
-</view> 
+  </view>  
