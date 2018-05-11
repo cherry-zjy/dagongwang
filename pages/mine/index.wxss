@@ -6,7 +6,7 @@
   padding: 80rpx 0 80rpx 20rpx;
   margin-bottom: 20rpx;
   background-size: 100% 100%;
-  background: linear-gradient(to right, rgb(26,122,228) , rgb(0,215,229));
+  background: #fff;
 }
 .user-img {
   float: left;
@@ -14,19 +14,24 @@
   height: 180rpx;
   margin-right: 25rpx;
   border-radius: 50%;
-  border: 1px solid rgb(173,173,173);
 }
 
 .user-info {
   float: left;
-  padding: 60rpx 0;
+  padding: 30rpx 0;
 }
 
 .user-name {
   font-size: 36rpx;
-  color: #fff;
   line-height: 50rpx;
 }
+.user-phone{
+  font-size: 32rpx;
+  line-height:50rpx;
+  color: #BBBBBB;
+  margin-top: 10rpx;
+}
+
 
 .user-vip {
   font-size: 24rpx;
@@ -120,7 +125,7 @@
   height: 50rpx;
   width: 50rpx;
   float: left;
-  margin-top: 20rpx;
+  margin-top: 15rpx;
   padding: 10rpx;
   /* margin-left: 20rpx; */
 }

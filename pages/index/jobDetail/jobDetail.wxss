@@ -46,13 +46,17 @@
   background-color:#fff;
   margin-bottom: 20rpx;
 }
+.page-section-spacing .flex-wrp{
+  height: 50rpx;
+}
 .page-section-spacing .flex-item{
-  font-size: 22rpx;
+  font-size: 25rpx;
   padding: 0 10rpx;
   text-align: center;
   border: 1px solid #D33A31;
   border-radius: 3px;
   color: #D33A31;
+  line-height: 50rpx;
 }
 .job-tag{
   margin: 0 5rpx;

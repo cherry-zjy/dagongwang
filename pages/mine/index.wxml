@@ -4,6 +4,7 @@
     <image class='user-img' src='{{UserInfoIcon}}'></image>
     <view class='user-info'>
       <view class='user-name'>{{userInfo.NickName}}</view>
+      <view class='user-phone'>{{userInfo.Phone}}</view>
     </view>
     <image class='icon-enter' src='../../img/right.png'></image>
   </view>
@@ -20,41 +21,37 @@
 </navigator>
 
 <!--列表  -->
-<navigator url='../money/sister/sister' open-type="navigate" hover-class="none">
-  <view class='list-info'>
-    <image class='list-img' src='../../img/screen.png'></image>
+  <view class='list-info' bindtap='economic'>
+    <image class='list-img' src='../../img/wd_economic_man.png'></image>
     <view class='list-name'>我的经纪人</view>
     <image class='icon-list' src='../../img/right.png'></image>
   </view>
-</navigator>
 
-<navigator url='follow/follow' open-type="navigate" hover-class="none">
-  <view class='list-info' style='margin-top:20rpx;'>
-    <image class='list-img' src='../../img/screen.png'></image>
+  <view class='list-info' style='margin-top:20rpx;' bindtap='work'>
+    <image class='list-img' src='../../img/wd_work.png'></image>
     <view class='list-name'>关注的工作</view>
     <image class='icon-list' src='../../img/right.png'></image>
   </view>
-</navigator>
+
 <view class='list-info' bindtap='experience'>
-  <image class='list-img' src='../../img/screen.png'></image>
+  <image class='list-img' src='../../img/wd_work_experience.png'></image>
   <view class='list-name'>工作经历</view>
   <image class='icon-list' src='../../img/right.png'></image>
 </view>
 
-<navigator url='../money/accountdetail/accountdetail' open-type="navigate" hover-class="none">
-  <view class='list-info' style='margin-top:20rpx;'>
-    <image class='list-img' src='../../img/screen.png'></image>
+  <view class='list-info' style='margin-top:20rpx;' bindtap='accountdetail'>
+    <image class='list-img' src='../../img/wd_account_details.png'></image>
     <view class='list-name'>账户明细</view>
     <image class='icon-list' src='../../img/right.png'></image>
   </view>
-</navigator>
+
 <view class='list-info' bindtap='aboutus'>
-  <image class='list-img' src='../../img/screen.png'></image>
+  <image class='list-img' src='../../img/wd_about_us.png'></image>
   <view class='list-name'>关于我们</view>
   <image class='icon-list' src='../../img/right.png'></image>
 </view>
 <view class='list-info' bindtap='feedback'>
-  <image class='list-img' src='../../img/screen.png'></image>
+  <image class='list-img' src='../../img/wd_feedback.png'></image>
   <view class='list-name'>意见反馈</view>
   <image class='icon-list' src='../../img/right.png'></image>
 </view>

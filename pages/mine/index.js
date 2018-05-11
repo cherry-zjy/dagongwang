@@ -30,11 +30,88 @@ Page({
       },
     })
   },
+  // 经纪人
+  economic(){
+    var tt = this
+    wx.getStorage({
+      key: 'token',
+      success: function (res) {
+        wx.navigateTo({
+          url: '../money/sister/sister'
+        })
+      },
+      fail: function (res) {
+        wx.navigateTo({
+          url: '../login/login'
+        })
+      },
+      complete: function (res) {
+      },
+    })
+  },
+  work(){
+    var tt = this
+    wx.getStorage({
+      key: 'token',
+      success: function (res) {
+        wx.navigateTo({
+          url: 'follow/follow'
+        })
+      },
+      fail: function (res) {
+        wx.navigateTo({
+          url: '../login/login'
+        })
+      },
+      complete: function (res) {
+      },
+    })
+  },
+  // 工作经历
+  experience(){
+    var tt = this
+    wx.getStorage({
+      key: 'token',
+      success: function (res) {
+        wx.navigateTo({
+          url: 'experience/experience'
+        })
+      },
+      fail: function (res) {
+        wx.navigateTo({
+          url: '../login/login'
+        })
+      },
+      complete: function (res) {
+      },
+    })
+  },
+  // 关于我们
   aboutus(){
     wx.navigateTo({
       url: 'aboutus/aboutus'
     })
   },
+  // 账户明细
+  accountdetail(){
+    var tt = this
+    wx.getStorage({
+      key: 'token',
+      success: function (res) {
+        wx.navigateTo({
+          url: '../money/accountdetail/accountdetail'
+        })
+      },
+      fail: function (res) {
+        wx.navigateTo({
+          url: '../login/login'
+        })
+      },
+      complete: function (res) {
+      },
+    })
+  },
+  // 意见反馈
   feedback(){
     var tt = this
     wx.getStorage({
