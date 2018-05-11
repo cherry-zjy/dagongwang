@@ -11,9 +11,10 @@ Page({
     pageIndex:1,
     IsNext:false,
     inputTxt:'',
-    array: ['上海市', '昆山市', '吴江市', '常州市', '无锡市', '苏州市'],
+    array: ['无', '上海市', '昆山市', '吴江市', '常州市', '无锡市', '苏州市'],
     index: 0,
-    ascending:false,
+    ascending: false,
+    issort:false,
     Type:0,
     City:-1
   },
@@ -77,12 +78,19 @@ Page({
   },
   // picker
   bindPickerChange: function (e) {
-    console.log(this.data.array[e.detail.value])
-    this.setData({
-      inputTxt: this.data.array[e.detail.value],
-      City: this.data.array[e.detail.value],
-      pageIndex: 1
-    })
+    if (this.data.array[e.detail.value] == '无'){
+      this.setData({
+        City: '-1', 
+        issort: false,
+        pageIndex: 1
+      })
+    }else{
+      this.setData({
+        City: this.data.array[e.detail.value],
+        issort:true,
+        pageIndex: 1
+      })
+    }
     this.getInfo()
   },
   // 降序

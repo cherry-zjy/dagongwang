@@ -57,6 +57,7 @@ Page({
                 Images: res.data.Result.Images,
                 isfloow: res.data.Result.Isattention,
                 Upphone: res.data.Result.Upphone,
+                isattend: res.data.Result.Isapply,
               })
             } else {
               wx.showModal({

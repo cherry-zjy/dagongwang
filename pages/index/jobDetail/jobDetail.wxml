@@ -213,23 +213,29 @@
   <view class="flex-wrp flexfoot" style="flex-direction:row;">
     <view class="flex-item floow" bindtap='floow'>
       <view>
-        <image class='search-icon' src='../../../img/floow.png' wx:if = "{{isfloow}}"></image>
-        <image class='search-icon' src='../../../img/del.png' wx:if = "{{isfloow == false}}"></image>
+        <image class='search-icon' src='../../../img/xq_focus.png' wx:if = "{{isfloow}}"></image>
+        <image class='search-icon' src='../../../img/xq_focus_no.png' wx:if = "{{isfloow == false}}"></image>
       </view>
       <view>关注</view>
     </view>
     <view class="flex-item call" bindtap='makePhoneCall'>
       <view>
-        <image class='search-icon' src='../../../img/call.png'></image>
+        <image class='search-icon' src='../../../img/xq_consulting_no.png'></image>
       </view>
       <view>咨询</view>
     </view>
-    <view class="flex-item attend {{isattend ? 'on':''}}" bindtap='attend'>
+    <view class="flex-item attend" bindtap='attend' wx:if="{{!isattend}}">
       <view>
         <image class='search-icon' src='../../../img/attend.png'></image>
       </view>
-      <view wx:if="{{!isattend}}">免费报名</view>
-      <view wx:if="{{isattend}}">已报名</view>
+      <view>免费报名</view>
+    </view>
+
+    <view class="flex-item attend on" wx:if="{{isattend}}">
+      <view>
+        <image class='search-icon' src='../../../img/xq_apply.png'></image>
+      </view>
+      <view>已报名</view>
     </view>
   </view>
 </view>

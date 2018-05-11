@@ -1,10 +1,10 @@
 {
   "pages":[
-    "pages/index/search/searchDetail/searchDetail",
+    
     
     "pages/index/index",
     "pages/index/search/search",
-    
+    "pages/index/search/searchDetail/searchDetail",
     "pages/index/jobDetail/jobDetail",
     "pages/money/index",
     "pages/login/login",

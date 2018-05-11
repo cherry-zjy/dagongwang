@@ -12,10 +12,11 @@
 <view class="section">
   <view class="flex-wrp" style="flex-direction:row;">
   
-    <view class="flex-item screen" bindtap="onPickHeaderClick">
+    <view class="flex-item screen {{issort? 'on' : ''}}" bindtap="onPickHeaderClick">
     <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
       筛选
-      <image class='search-icon' src='../../../../img/screen.png'></image>
+      <image class='search-icon' src='../../../../img/ss_screening_no.png' wx:if="{{!issort}}"></image>
+      <image class='search-icon' src='../../../../img/ss_screening.png' wx:if="{{issort}}"></image>
     </picker>
     </view>
     <view class="flex-item sort {{ascending? 'on' : ''}}" bindtap="sort">补贴由高到低</view>
