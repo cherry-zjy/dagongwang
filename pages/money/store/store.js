@@ -1,61 +1,30 @@
 // pages/money/store/store.js
+var util = require('../../../utils/util.js')
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    store: [
-		   {
-        City: "虎丘区",
-				Company: [{
-					Name: "苏州马涧集散",
-					Address: "江苏省苏州市虎丘区朝红路168号",
-          Distance:"12868公里",
-          Type:'0'
-				}]
-			}, {
-        City: "吴江区",
-        Company: [{
-          Name: "吴江集散",
-          Address: "江苏省苏州市吴江开发区三里江南桥",
-          Distance: "12868公里",
-          Type: '0'
-				}, {
-            Name: "吴江三里桥门店",
-            Address: "江苏省苏州市吴江开发区三兴路787",
-            Distance: "12868公里",
-            Type: '1'
-				}]
-			},
-      {
-        City: "昆山市",
-        Company: [{
-          Name: "南星渎门店",
-          Address: "江苏省昆山市商业中心300号",
-          Distance: "12868公里",
-          Type: '1'
-        }, {
-            Name: "博悦集散",
-            Address: "江苏省昆山市开发区博悦广场B区1002号",
-            Distance: "12868公里",
-            Type: '0'
-        }]
-      },
-
-		]
+    store: [],
+    Longitude:'',
+    Latitude:''
   },
-  storedetail(){
+  
+  storedetail(event) {
+    console.log(event)
+    var id = event.currentTarget.dataset.id
     wx.navigateTo({
-      url: 'storedetail/storedetail'
+      url: 'storedetail/storedetail?id=' + id,
     })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-  
+  onLoad: function () {
+      
   },
 
   /**
@@ -69,7 +38,42 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    var tt = this
+    wx.getLocation({
+      success: function (res) {
+        console.log(res)
+        tt.setData({
+          Longitude: res.longitude,
+          Latitude: res.latitude
+        })
+        app.ajax({
+          method: 'get',
+          url: app.mainUrl + 'api/Home/WorkStore',
+          data: {
+            Longitude: tt.data.Longitude,
+            Latitude: tt.data.Latitude,
+          },
+          success: function (res) {
+            wx.hideLoading()
+            if (res.data.Status == 1) {
+              tt.setData({
+                store: res.data.Result
+              })
+            } else {
+              wx.showModal({
+                showCancel: false,
+                title: '提示',
+                content: res.data.Result,
+              })
+            }
+
+          },
+          error: function () {
+            wx.hideLoading()
+          }
+        })
+      }
+    })
   },
 
   /**

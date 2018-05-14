@@ -1,35 +1,42 @@
 <!--pages/money/store/storedetail/storedetail.wxml-->
-<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-  <block wx:for="{{imgUrls}}">
-    <swiper-item>
-      <image src="{{item}}" class="slide-image" width="100%" height="100%" />
-    </swiper-item>
-  </block>
-</swiper>
+<wxs module="util">
+  var sub = function(val) {
+    if (val == null) {
+      val = ''
+      return val
+    }
+    return val
+  }
+  module.exports.sub = sub;
+</wxs>
+<image src='{{mainurl+store.Image}}' class='banner'></image>
 <view class='store-name'>
-<image class="store-icon {{store.Type == 0? 'hideview' : ''}}" src='../../../../img/flag.png'></image>
-<image class="store-icon {{store.Type == 1? 'hideview' : ''}}" src='../../../../img/store.png'></image> 
+<image class="store-icon" src='../../../../img/ssmd_stores.png'></image>
+<!-- <image class="store-icon {{store.Type == 0? 'hideview' : ''}}" src='../../../../img/flag.png'></image> -->
+<!-- <image class="store-icon {{store.Type == 1? 'hideview' : ''}}" src='../../../../img/store.png'></image>  -->
 {{store.Name}}
 </view>
 <view class='store-info'>
   <view class='store-work'>工作时间</view>
-  <view class='store-WorkTime'>{{store.WorkTime}}</view>
+  <view class='store-WorkTime'>{{store.Intro}}</view>
 </view>
-<view class='store-address'>
+<view class='store-address' bindtap='openLocation'>
   <view class='store-add'>门店地址</view>
-  <view class='address'>{{store.Address}}</view>
+  <view class='address'>{{util.sub(store.Adress)}}</view>
   <view class='store-distance'>距离{{store.Distance}}</view>
   <view><image class="store-arrow" src='../../../../img/right.png'></image></view>
 </view>
  <view class='store-agent'>
   <view class='store-work'>经纪人</view>
   <view class='agent-box'>
-    <image class="store-img" src="{{store.Icon}}"></image>
+    <image class="store-img" src="{{Icon}}"></image>
     <view class='agent-msg'>
-      <view class='store-agentname'>{{store.Agent}}</view>
+      <view class='store-agentname'>{{store.Phone}}</view>
       <view class='store-phone'>{{store.Phone}}</view>
     </view>
   </view>
+  <view bindtap='makePhoneCall'>
     <image class="store-call" src='../../../../img/connect.png'></image>
     <image class="store-arrow" src='../../../../img/right.png'></image>
+    </view>
 </view> 

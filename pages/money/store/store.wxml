@@ -1,17 +1,33 @@
 <!--pages/money/store/store.wxml-->
+<wxs module="util">
+  var sub = function(val) {
+    if (val == null) {
+      val = ''
+      return val
+    }
+    return val
+  }
+  module.exports.sub = sub;
+</wxs>
 <view wx:for="{{store}}" wx:key="index">
-<view class='addressbox'>{{item.City}}</view>
- <view class="flex-wrp" style="flex-direction:row;" wx:for="{{item.Company}}" wx:for-item="items" wx:key="index" bindtap='storedetail'>
+<view class='addressbox'>
+  <image class="store-icon1" src='../../../../img/qzs_region.png'></image>
+  <text class='store-Name'>{{item.Name}}</text>
+</view>
+ <view class="flex-wrp" style="flex-direction:row;" wx:for="{{item.Store}}" wx:for-item="items" wx:key="index" data-id="{{items.ID}}" bindtap='storedetail'>
+
     <view class="flex-item icon">
-      <image class="store-icon {{items.Type == 0? 'hideview' : ''}}" src='../../../../img/flag.png'></image>
-      <image class="store-icon {{items.Type == 1? 'hideview' : ''}}" src='../../../../img/store.png'></image> 
+      <image class="store-icon" src='../../../../img/ssmd_stores.png'></image>
+      <!-- <image class="store-icon {{items.Type == 0? 'hideview' : ''}}" src='../../../../img/flag.png'></image> -->
+      <!-- <image class="store-icon {{items.Type == 1? 'hideview' : ''}}" src='../../../../img/store.png'></image>  -->
     </view>
     <view class="flex-item msg">
     <view class='postage'>
       <text class='store-name'>{{items.Name}}</text>
       <text class='store-distance'>距离{{items.Distance}}</text>
     </view>
-      <view class='store-address'>{{items.Address}}</view>
+      <view class='store-address'>{{util.sub(items.Adress)}}</view>
     </view>
+
   </view>
   </view>

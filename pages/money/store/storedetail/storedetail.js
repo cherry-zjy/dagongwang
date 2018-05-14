@@ -1,36 +1,77 @@
 // pages/money/store/storedetail/storedetail.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    imgUrls: [
-      'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
-    ],
-    indicatorDots: true,
-    autoplay: true,
-    interval: 5000,
-    duration: 1000,
-    store:{
-      Name: '苏州马涧集散',
-      WorkTime: '周一到周五 09:00~18:00',
-      Address: '江苏省苏州市虎丘区朝红路168号',
-      Distance: "12868公里",
-      Agent: "学姐",
-      Phone: "18258773565",
-      Type:0,
-      Icon:'../../../../img/icon.png'
-    }
+    store:[],
+    Icon: '../../../../img/icon.png',
+    detailid:'',
+    mainurl:''
+  },
+  openLocation: function () {
+    wx.openLocation({
+      longitude: Number(this.data.store.Longitude),
+      latitude: Number(this.data.store.Latitude),
+      address: this.data.store.Adress
+    })
+  },
+  makePhoneCall: function () {
+    wx.makePhoneCall({
+      phoneNumber: this.data.store.StorePhone,
+      success: function () {
+        console.log("成功拨打电话")
+      }
+    })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this.setData({
+      detailid: options.id,
+      mainurl: app.mainUrl
+    })
+    var that = this
+    wx.getLocation({
+      success: function (res) {
+        console.log(res)
+        that.setData({
+          Longitude: res.longitude,
+          Latitude: res.latitude
+        })
+        console.log(options.id)
+        app.ajax({
+          method: 'get',
+          url: app.mainUrl + 'api/Home/WorkStoreDetail',
+          data: {
+            "ID": options.id,
+            "Longitude": that.data.Longitude,
+            "Latitude": that.data.Latitude,
+          },
+          success: function (res) {
+            wx.hideLoading()
+            if (res.data.Status == 1) {
+              that.setData({
+                store: res.data.Result,
+              })
+            } else {
+              wx.showModal({
+                showCancel: false,
+                title: '提示',
+                content: res.data.Result,
+              })
+            }
+          },
+          error: function () {
+            wx.hideLoading()
+          }
+        })
+      }
+    })
   },
 
   /**
