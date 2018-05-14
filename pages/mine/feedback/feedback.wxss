@@ -11,6 +11,6 @@ textarea {
   margin-top: 20rpx;
 }
 .save{
-  background-color: rgb(26,122,228);
+  background-color: #D33A31;
   color: #fff;
 }
