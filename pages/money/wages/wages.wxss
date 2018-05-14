@@ -14,16 +14,17 @@ page{
 }
 
 .list-img {
-  height: 40rpx;
-  width: 60rpx;
+  height: 50rpx;
+  width: 50rpx;
   float: left;
-  margin-top: 30rpx;
+  margin-top: 27rpx;
 }
 
 .list-name {
   float: left;
   line-height: 100rpx;
   font-size: 32rpx;
+  padding-left: 10rpx;
 }
 
 .icon-list {
@@ -44,6 +45,10 @@ page{
 }
 .money{
   float: right;
+  color: #8C8C8C;
+}
+.grey{
+  color: #8C8C8C;
 }
 .bigtitle1{
   font-size: 35rpx;

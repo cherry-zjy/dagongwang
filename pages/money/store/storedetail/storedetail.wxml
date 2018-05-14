@@ -14,7 +14,7 @@
 <image class="store-icon" src='../../../../img/ssmd_stores.png'></image>
 <!-- <image class="store-icon {{store.Type == 0? 'hideview' : ''}}" src='../../../../img/flag.png'></image> -->
 <!-- <image class="store-icon {{store.Type == 1? 'hideview' : ''}}" src='../../../../img/store.png'></image>  -->
-{{store.Name}}
+<text class='store-bigname'>{{store.Name}}</text>
 </view>
 <view class='store-info'>
   <view class='store-work'>工作时间</view>
