@@ -26,36 +26,29 @@ page{
 }
 .sister-name{
   float: left;
-  margin: 70rpx 0 0 30rpx;
+  margin: 50rpx 0 0 30rpx;
+  font-size: 32rpx;
 }
-.sister-zan{
-  float: right;
-  width: 50rpx;
-  height: 50rpx;
-  margin-top: 70rpx;
-  margin-right: 30rpx;
+.sister-phone{
+  color: #BBBBBB
 }
 
 /* 联系方式 */
 .flex-wrp{
   display:flex;
 }
-.flex-item.icon{
-  width: 5%;
-}
+
 .flex-item.msg{
-  width: 90%;
-  margin-left: 5%;
-  border-bottom: 1px solid rgb(173,173,173);
+  margin-left: 3%;
   padding: 20rpx 0;
 }
 .flex-wrp{
-  padding: 20rpx 0 20rpx 30rpx;
+  padding: 20rpx;
+  border-bottom: 1px solid #EEEEEE;
 }
 .sister-icon{
-  width: 40rpx;
-  height: 40rpx;
-  padding: 20rpx 0;
+  width: 80rpx;
+  height: 80rpx;
 }
 .connectbox{
   background-color: #fff;
@@ -69,6 +62,6 @@ page{
   margin-top: 50rpx;
 }
 .blue{
-  color: rgb(26,122,228);
+  color: #D33A31;
   font-weight: bolder;
 }

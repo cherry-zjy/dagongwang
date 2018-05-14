@@ -2,40 +2,42 @@
 
  <view class='sister-agent'>
   <view class='agent-box'>
-    <image class="sister-img" src="{{sister.Icon}}"></image>
-    <view class="sister-name">{{sister.Name}}</view>
-    <image class="sister-zan" src="../../../../img/zan.png"></image>
+    <image class="sister-img" src="{{mainurl+list.Image}}"></image>
+    <view class="sister-name">
+      <view class="name">{{list.NickName}}</view>
+      <view class="sister-phone">{{list.Phone}}</view>
+    </view>
   </view>
 </view>
 
 <view class='connectbox'>
  <view class="flex-wrp" style="flex-direction:row;">
     <view class="flex-item icon">
-      <image class="sister-icon" src='../../../../img/flag.png'></image>
+      <image class="sister-icon" src='../../../../img/qzs_senior_wechat.png'></image>
     </view>
     <view class="flex-item msg">
     <view class='postage'>
-      <text class='sister-connect'>18258773565</text>
+      <text class='sister-connect'>{{list.Vixin}}</text>
     </view>
     </view>
   </view>
   <view class="flex-wrp" style="flex-direction:row;">
     <view class="flex-item icon">
-      <image class="sister-icon" src='../../../../img/flag.png'></image>
+      <image class="sister-icon" src='../../../../img/qzs_senior_qq.png'></image>
     </view>
     <view class="flex-item msg">
     <view class='postage'>
-      <text class='sister-connect'>18258773565</text>
+      <text class='sister-connect'>{{list.QQ}}</text>
     </view>
     </view>
   </view>
   <view class="flex-wrp last" style="flex-direction:row;">
     <view class="flex-item icon">
-      <image class="sister-icon" src='../../../../img/flag.png'></image>
+      <image class="sister-icon" src='../../../../img/qzs_senior_call.png'></image>
     </view>
     <view class="flex-item msg">
     <view class='postage'>
-      <text class='sister-connect'>18258773565</text>
+      <text class='sister-connect'>{{list.Phone}}</text>
     </view>
     </view>
   </view>
