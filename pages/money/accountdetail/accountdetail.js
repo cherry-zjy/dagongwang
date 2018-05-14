@@ -1,37 +1,12 @@
-// pages/index/search/searchDetail/searchDetail.js
+
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    datalist: [
-      {
-        Name: 'XXX收入',
-        Time: '2017-09-25 10:26:00',
-        money: '50'
-      },
-      {
-        Name: 'XXX收入',
-        Time: '2017-09-25 10:26:00',
-        money: '50'
-      },
-      {
-        Name: 'XXX收入',
-        Time: '2017-09-25 10:26:00',
-        money: '50'
-      },
-      {
-        Name: 'XXX收入',
-        Time: '2017-09-25 10:26:00',
-        money: '50'
-      },
-      {
-        Name: 'XXX收入',
-        Time: '2017-09-25 10:26:00',
-        money: '50'
-      },
-    ]
+    datalist: []
 
   },
 
@@ -53,7 +28,44 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    var tt = this
+    wx.getStorage({
+      key: 'token',
+      success: function (res) {
+        app.ajax({
+          method: 'get',
+          url: app.mainUrl + 'api/Home/UserCashDetail',
+          header: {
+            "Authorization": res.data
+          },
+          success: function (res) {
+            wx.hideLoading()
+            if (res.data.Status == 1) {
+              tt.setData({
+                datalist: res.data.Result,
+              })
+            }else {
+              wx.showModal({
+                showCancel: false,
+                title: '提示',
+                content: res.data.Result,
+              })
+            }
 
+          },
+          error: function () {
+            wx.hideLoading()
+          }
+        })
+      },
+      fail: function (res) {
+        wx.navigateTo({
+          url: '../../login/login'
+        })
+      },
+      complete: function (res) {
+      },
+    })
   },
 
   /**

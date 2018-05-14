@@ -1,5 +1,7 @@
 {
   "pages":[
+    
+
     "pages/index/index",
     "pages/index/search/search",
     "pages/index/search/searchDetail/searchDetail",
@@ -14,6 +16,7 @@
     "pages/mine/aboutus/aboutus",
     "pages/mine/feedback/feedback",
     "pages/money/index",
+    "pages/money/accountwithdraw/accountwithdraw",
     "pages/money/accountdetail/accountdetail",
     "pages/money/store/store",
     "pages/money/wages/wages",
@@ -21,8 +24,8 @@
     "pages/money/recommend/recommend",
     "pages/money/recommend/recommenddetail/recommenddetail",
     "pages/money/store/storedetail/storedetail",
-    "pages/money/accountwithdraw/withdrawfeedback/withdrawfeedback",
-    "pages/money/accountwithdraw/accountwithdraw"
+    "pages/money/accountwithdraw/withdrawfeedback/withdrawfeedback"
+    
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -44,7 +47,7 @@
       {
         "pagePath": "pages/money/index",
         "text": "钱助手",
-        "iconPath": "img/sy_purse.png",
+        "iconPath": "img/sy_purse_no.png",
         "selectedIconPath": "img/sy_purse.png"
       },
       {

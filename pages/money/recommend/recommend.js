@@ -17,7 +17,7 @@ Page({
       },
       fail: function (res) {
         wx.navigateTo({
-          url: '../login/login'
+          url: '../../login/login'
         })
       },
       complete: function (res) {

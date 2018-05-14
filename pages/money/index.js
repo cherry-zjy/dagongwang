@@ -1,4 +1,5 @@
 // pages/money/index.js
+const app = getApp()
 Page({
 
   /**
@@ -6,6 +7,7 @@ Page({
    */
   data: {
     accountshow:true,
+    Money:0
   },
   open(){
     this.setData({
@@ -71,7 +73,71 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    var tt = this
+    wx.getStorage({
+      key: 'token',
+      success: function (res) {
+        tt.setData({
+          isLogin: true
+        })
+        app.ajax({
+          method: 'get',
+          url: app.mainUrl + 'api/User/Info',
+          header: {
+            "Authorization": res.data
+          },
+          success: function (res) {
+            wx.hideLoading()
+            if (res.data.Status == 1) {
+              tt.setData({
+                Money: res.data.Result.Money,
+              })
+            } else if (res.data.Status == 40002) {
+              tt.setData({
+                isLogin: false
+              })
+              wx.showModal({
+                title: '提示',
+                content: res.data.Result,
+                success: function (res) {
+                  if (res.confirm) {
+                    wx.removeStorage({
+                      key: 'token',
+                      success: function (res) {
+                        console.log("删除token，保证只提醒一次")
+                      },
+                    })
+                    wx.navigateTo({
+                      url: '../login/login',
+                    })
+                  } else if (res.cancel) {
+                    console.log('用户点击取消')
+                  }
+                }
+              })
+            }
+            else {
+              wx.showModal({
+                showCancel: false,
+                title: '提示',
+                content: res.data.Result,
+              })
+            }
+
+          },
+          error: function () {
+            wx.hideLoading()
+          }
+        })
+      },
+      fail: function (res) {
+        tt.setData({
+          isLogin: false
+        })
+      },
+      complete: function (res) {
+      },
+    })
   },
 
   /**

@@ -1,38 +1,70 @@
 /* pages/money/accountwithdraw/accountwithdraw.wxss */
-page {
-  background-color: #fff;
-}
-.login-form {
-  padding: 90rpx 30rpx;
-}
 .btn {
-  background: rgb(26,122,228);
-  opacity: 0.9;
+  background: #D33A31;
   color: #fff;
-  margin-top: 90rpx;
+  margin-top: 60rpx;
 }
 
-.flex-wrp{
-  margin-top: 5rpx;
-  display:flex;
-  padding: 20rpx 30rpx;
-}
-.flex-item{
-  font-size: 28rpx;
-  align-items:center;
-  margin-top: 10rpx;
-}
 .input-box {
-  height: 60rpx;
-  background: rgba(245, 246, 247, 1);
-  opacity: 0.9;
+  height: 100rpx;
   padding: 0 40rpx;
-  font-size: 30rpx;
-  color: rgba(179, 179, 179, 1);
+  font-size: 50rpx;
+  width: 100%;
 }
-.text{
-  width: 40%;
+
+.moneybox{
+  background-color: #fff;
+  height: 170rpx;
+  margin: 20rpx 0;
+  padding: 30rpx 20rpx;
+}
+.money-text{
+  color: #BBBBBB;
+}
+.money-box{
+  float: left;
+  position: relative;
+}
+.money-input{
+  float: left;
+  font-size: 50rpx;
+}
+.money-fh{
+  float: left;
+  position: absolute;
+  bottom: 20rpx;
+  left: 0;
+  font-size: 35rpx;
+}
+.inputbox{
+  background-color: #fff;
+  float: left;
+  padding:0 20rpx;
+}
+.input-text{
+  float: left;
+}
+.input-input{
+  float: right;
+  padding-left: 20rpx;
+}
+.box{
+  float: left;
+  width: 100%;
+  padding: 20rpx 0rpx;
 }
 .input{
-  width: 60%;
+  color: #BBBBBB;
+  width: 100%;
+  text-align: right;
+  font-size: 30rpx;
+}
+.btn-area{
+  float: left;
+}
+.errod {
+  color: red;
+  font-size: 30rpx;
+  line-height: 43rpx;
+  padding-left: 30rpx;
 }

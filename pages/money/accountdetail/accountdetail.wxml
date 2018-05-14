@@ -1,9 +1,33 @@
+<!--wxs语法过滤器  -->
+<wxs module="utilTitle">
+  var sub = function(val) {
+    val = val.substring(0,10)
+    return val
+  }
+  module.exports.sub = sub;
+</wxs>
+
+<!--wxs语法过滤器  -->
+<wxs module="util">
+  var sub = function(val) {
+    if (val.indexOf('+')>=0) {
+      val = true
+      return val
+    }else{
+      val = false
+      return val
+    }
+    return val
+  }
+  module.exports.sub = sub;
+</wxs>
 <view class="section list">
   <view class="flex-wrp" style="flex-direction:column;">
     <view class="flex-item" wx:for="{{datalist}}">
-    <view class='list-name'>{{item.Name}}</view>
-    <view class='list-moneybox'><text class='list-money'>{{item.Time}}</text></view>
-    <view class='list-other'>￥{{item.money}}</view>
+      <view class='list-name'>{{item.Explain}}</view>
+      <view class='list-moneybox'><text class='list-money'>{{utilTitle.sub(item.CreateTime)}}</text></view>
+      <view class='list-other red' wx:if="{{util.sub(item.Money) == true}}">{{item.Money}}</view>
+      <view class='list-other black' wx:if="{{util.sub(item.Money) == false}}">{{item.Money}}</view>
     </view>
   </view>
 </view>

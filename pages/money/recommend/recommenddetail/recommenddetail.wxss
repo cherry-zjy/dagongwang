@@ -36,8 +36,7 @@
 .btn {
   width: 690rpx;
   height: 88rpx;
-  background: rgba(250, 192, 61, 1);
-  opacity: 0.9;
+  background: #D33A31;
   color: #fff;
   margin-top: 90rpx;
 }

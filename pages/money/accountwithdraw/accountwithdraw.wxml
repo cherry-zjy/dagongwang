@@ -1,20 +1,27 @@
 <!--pages/login/login.wxml-->
 <!--input.wxml-->
-  <view class='login-form'>
-      <view class="flex-wrp" style="flex-direction:row;">
-    <view class="flex-item text"><text>提现人姓名：</text></view>
-    <view class="flex-item input"><input class='input-box' name="username" auto-focus/></view>
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view class='moneybox'>
+    <view class='money-text'>提现金额（元）</view>
+    <view class="money-box">
+      <view class='money-fh'>￥</view>
+      <view class='money-input'><input class='input-box' name="money"/></view>
+    </view>
   </view>
-  <view class="flex-wrp" style="flex-direction:row;">
-    <view class="flex-item text"><text>支付宝账号：</text></view>
-    <view class="flex-item input"><input class='input-box' name="username"/></view>
+
+  <view class='inputbox'>
+    <view class="box">
+      <view class='input-text'>提现人姓名</view>
+      <view class='input-input'><input class='input' name="name" placeholder='请填写提现人姓名'/></view>
+    </view>
+    <view class="box">
+      <view class='input-text'>支付宝号码</view>
+      <view class='input-input'><input class='input' name="phone" placeholder='请填写支付号号码'/></view>
+    </view>
   </view>
-  <view class="flex-wrp" style="flex-direction:row;">
-    <view class="flex-item text"><text>提现金额（元）：</text></view>
-    <view class="flex-item input"><input class='input-box' name="username"/></view>
+  <view class="errod">{{tip}}</view>
+
+  <view class="btn-area">
+    <button class='btn' formType="submit">确认</button>
   </view>
-      <view class="btn-area">
-        <button class='btn' bindtap="formSubmit">确认</button>
-      </view>
-  </view>
-  
+</form>

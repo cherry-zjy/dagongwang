@@ -5,7 +5,7 @@
     <image src='../../../img/closeeye.png' class="account-icon {{accountshow == true? 'showview' : ''}}" bindtap='open'></image>
   </view>
   <view class="blance {{accountshow == false? 'on' : ''}}">
-    <text>5000.00</text>
+    <text>{{Money}}</text>
     <image src='../../../img/openeye.png' class="account-icon {{accountshow == true? 'hideview' : ''}}" bindtap='close'></image>
   </view>
   <view class='account-right'>
