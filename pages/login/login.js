@@ -85,6 +85,11 @@ Page({
       })
     }
   },
+  Changephone(e){
+    this.setData({
+      Phone: e.detail.value
+    });
+  },
   getCode: function (options) {
     var that = this;
     var currentTime = that.data.currentTime
@@ -104,11 +109,48 @@ Page({
     }, 1000)
   },
   getVerificationCode() {
-    this.getCode();
-    var that = this
-    that.setData({
-      disabled: true
-    })
+    if (this.data.Phone == '') {
+      this.setData({
+        tip: '提示：手机号不能为空！',
+        Phone: '',
+        code: '',
+      })
+      var that = this
+      setTimeout(() => {
+        that.setData({
+          tip: '',
+        })
+      }, 1000)
+    } else {
+      var tt = this;
+      app.ajax({
+        method: 'POST',
+        url: app.mainUrl + 'api/VerifyCode/Send',
+        data: {
+          "phone": tt.data.Phone,
+        },
+        success: function (res) {
+          wx.hideLoading()
+          if (res.data.Status == 1) {
+            this.getCode();
+            var that = this
+            that.setData({
+              disabled: true
+            })
+          } else {
+            wx.showModal({
+              showCancel: false,
+              title: '提示',
+              content: res.data.Result,
+            })
+          }
+        },
+        error: function () {
+          wx.hideLoading()
+        }
+      })
+    }
+    
   },
   service(){
     wx.navigateTo({
