@@ -1,32 +1,37 @@
 /* pages/login/login.wxss */
-
+page{
+  background-color: #fff;
+  text-align: center;
+}
+.bg-icon{
+  width: 200rpx;
+  height: 200rpx;
+  margin-top: 50rpx;
+}
 .login-form {
   padding: 20rpx; 
-  margin: 200rpx 40rpx 0 40rpx;
-  box-shadow: 0 2px 2px 2px rgb(173,173,173);
+  margin: 30rpx 40rpx 0 40rpx;
   background-color: #fff;
 }
 
 .section {
-  margin-top: 20rpx;
+  margin-top: 80rpx;
   margin-bottom: 30rpx;
   border-bottom: 1px solid rgb(173,173,173);
   height:60rpx;
   overflow:hidden;
 
 }
-.login-icon{
-  width: 40rpx;
-  height: 40rpx;
+.input-number{
   float: left;
-  margin-top: 10rpx;
   margin-left: 10rpx;
 }
 .input-box {
+  text-align: left;
   float: left;
   background: #fff;
   padding: 0 30rpx;
-  font-size: 28rpx;
+  font-size: 30rpx;
   color: rgba(179, 179, 179, 1);
 }
 .codebox{
@@ -38,22 +43,23 @@
 .getcode{
   position: absolute;
   right: 10rpx;
-  color: rgb(26,122,228);
   font-size: 28rpx;
   top: 0;
   padding-left: 20rpx;
-  border-left: 1px solid rgb(173,173,173)
 }
 
 .errod {
   color: red;
-  font-size: 25rpx;
+  font-size: 28rpx;
   line-height: 43rpx;
   padding-left: 30rpx;
 }
-
+.btn-area{
+  padding: 0;
+}
 .btn {
-  background: linear-gradient(to right, rgb(26,122,228) , rgb(0,215,229));
+  background: #D33A31;
+  width: 100%;
   color: #fff;
   margin-top: 50rpx;
 }
@@ -67,6 +73,9 @@
   text-align: center;
   font-size: 25rpx;
 }
+.grey{
+  color: #BBBBBB;
+}
 .blue{
-  color: rgb(26,122,228)
+  color: #666666;
 }

@@ -1,14 +1,14 @@
 <!--pages/login/login.wxml-->
 <!--input.wxml-->
+<image src='../../img/1024.png' class='bg-icon'></image>
 <view class='bg'>
   <view class='login-form'>
     <form bindsubmit="formSubmit" bindreset="formReset">
       <view class="section">
-      <image src='../../img/phone.png' class='login-icon'></image>
+      <text class='input-number'>+86</text>
         <input class='input-box' name="Phone" placeholder="请输入手机号" auto-focus/>
       </view>
       <view class="section codebox">
-      <image src='../../img/code.png' class='login-icon'></image>
         <input class='input-box code' name="code" type="text" maxlength="18" placeholder='请输入验证码' />
         <text class='getcode' bindtap='getVerificationCode' disabled='{{disabled}}' data-id="2">{{time}}</text>
       </view>
@@ -18,5 +18,8 @@
       </view>
     </form>
   </view>
-  <view class='service'>注册登录即表示你已阅读并同意<text class='blue' bindtap='service'>《服务协议》</text></view>
+  <view class='service' class='grey'>
+    <checkbox value="cb" checked="true" color="#BBBBBB"/>
+    已阅读<text class='blue' bindtap='service'>《用户协议》</text>
+  </view>
 </view>
