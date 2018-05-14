@@ -1,6 +1,8 @@
 /* pages/mine/experience/experience.wxss */
 /*首页info列表  */
-
+.listbox{
+  padding-bottom: 98rpx;
+}
 .info-listbtn {
   width: 710rpx;
   background-color: #1a1723;
@@ -13,7 +15,7 @@
   width: 100%;
   background-color: #fff;
   display: flex;
-  border-bottom: 1px solid rgb(173,173,173);
+  border-bottom: 1px solid #ECECEC;
   padding: 20rpx 0;
 }
 
@@ -69,26 +71,26 @@
   margin-top: 20rpx;
 }
 .job-name{
-  font-size: 30rpx;
+  font-size: 32rpx;
 }
 .job-address{
   font-size: 28rpx;
-  color:#8a8a8a;
+  color:#999999;
 }
 .job-time{
-  font-size: 25rpx;
-  color:rgb(173,173,173);
+  font-size: 28rpx;
+  color:#999999;
 }
 
 /* 上传图片 */
 .subsidy-list{
   position: absolute;
   right: 30rpx;
-  margin-top: 60rpx;
+  margin-top: 30rpx;
 }
 .image{
-  width: 50rpx;
-  height: 50rpx;
+  width: 100rpx;
+  height: 100rpx;
 }
 /* 底部按钮 */
 .footer-btn {
@@ -96,8 +98,7 @@
   bottom: 0;
   width: 750rpx;
   height: 98rpx;
-  background: rgb(26,122,228);
-  opacity: 0.96;
+  background: #D33A31;
   text-align: center;
 }
 
@@ -112,11 +113,10 @@
   text-align: center;
 }
 .btn {
-  background: rgb(26,122,228);
-  opacity: 0.9;
+  background: #D33A31;
   color: #fff;
   margin-top: 90rpx;
-  width: 250rpx;
+  width: 80%;
   font-size: 30rpx;
 }
 .icon{
@@ -124,3 +124,103 @@
   height: 300rpx;
   margin-top: 100rpx;
 }
+.tip{
+  color: #666666;
+}
+
+/* view{
+
+    box-sizing: border-box;
+
+}
+
+.item-box{
+
+    width: 700rpx;
+
+    margin: 0 auto;
+
+    padding:40rpx 0;
+
+}
+
+.items{
+
+    width: 100%;
+
+}
+
+.item{
+
+    position: relative;
+
+    border-top: 2rpx solid #eee;
+
+    height: 120rpx;
+
+    line-height: 120rpx;
+
+    overflow: hidden;
+
+     
+
+}
+
+.item:last-child{
+
+    border-bottom: 2rpx solid#eee;
+
+}
+
+.inner{
+
+    position: absolute;
+
+    top:0;
+
+}
+
+.inner.txt{
+
+    background-color: #fff;
+
+    width: 100%;
+
+    z-index: 5;
+
+    padding:010rpx;
+
+    transition: left 0.2s ease-in-out;
+
+    white-space:nowrap;
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+
+}
+
+.inner.del{
+
+    background-color: #e64340;
+
+    width: 180rpx;
+    text-align: center;
+
+    z-index: 4;
+
+    right: 0;
+
+    color: #fff
+
+}
+
+.item-icon{
+
+    width: 64rpx;
+
+    vertical-align: middle;
+
+    margin-right: 16rpx
+
+} */

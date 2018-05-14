@@ -1,24 +1,55 @@
-<view class='info-list' wx:for="{{jobList}}" wx:key="index" data-id="{{item.ID}}" bindtap='jobDetail' wx:if="{{!none}}">
+ <wxs module="utilTitle">
+  var sub = function(val) {
+    val = val.substring(0,10)
+    return val
+  }
+  module.exports.sub = sub;
+</wxs>
+<view class='listbox'>
+ <view class='info-list' wx:for="{{list}}" wx:key="index" data-id="{{item.ID}}" bindtap='jobDetail' wx:if="{{!none}}">
   <view class='list-jobtext'>
     <view class='job-list'>
       <view class='job-name'>{{item.Name}}<text class='job-address'></text>
       </view>
-      <view class='job-title'>{{item.Price}}</view>
-      <view class='job-address'>入职手机号：{{item.Address}}</view>
-      <view class='job-time'>{{item.Address}}</view>
+      <view class='job-time'>{{utilTitle.sub(item.StartTime)}}~{{utilTitle.sub(item.StartTime)}}</view>
+      <view class='job-address' wx:if="{{item.Server !== '-1'}}">服务商：{{item.Server}}</view>
+      <view class='job-title'>{{item.MonthSalary}}元</view>
     </view>
   </view>
-  <view class='subsidy-list'>
-    <image src='../../../../img/AK-MN_fill.png' class="image"></image>
+  <view class='subsidy-list' wx:if="{{item.WorkCard !== ''}}">
+    <image src='{{mainurl+item.WorkCard}}' class="image"></image>
   </view>
+</view>
 </view>
 <view class='footer-btn' bindtap='addexp' wx:if="{{!none}}">
   <text class='buy-btn'>添加工作经验</text>
 </view>
 
 <view wx:if="{{none}}" class='none'>
-<image src='../../../../img/icon.png' class="icon"></image>
+<image src='../../../../img/gz_empty.png' class="icon"></image>
+<view class='tip'>宝宝，你目前还木有工作经历哦~</view>
 <view class="btn-area">
   <button class='btn' bindtap='addexp'>添加工作经验</button>
 </view>
-</view>
+</view> 
+
+
+<!-- <view class="item-box">
+
+  <view class="items">
+
+    <view wx:for="{{list}}" wx:key="{{index}}" class="item">
+
+     
+
+      <view bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" data-index="{{index}}" style="{{item.txtStyle}}" class="inner txt">
+
+      <image class="item-icon" mode="widthFix" src="{{item.icon}}"></image>{{item.txt}}</view>
+
+      <view data-index="{{index}}" bindtap = "delItem"class="inner del">删除</view>
+
+    </view>
+
+  </view>
+
+</view> -->

@@ -1,11 +1,11 @@
-<form class="page-body" bindsubmit="setNaivgationBarTitle">
+<form class="page-body" bindsubmit="formSubmit" bindreset="formReset">
     <view class="weui-cells weui-cells_after-title">
       <view class="weui-cell weui-cell_input">
         <view class="weui-cell__hd">
           <view class="weui-label">公司名称</view>
         </view>
         <view class="weui-cell__bd">
-          <input class="weui-input" type="text" placeholder="请填写公司名称" name="title"></input>
+          <input class="weui-input" type="text" placeholder="请填写公司名称" name="Name"></input>
         </view>
       </view>
       <view class="weui-cell weui-cell_input">
@@ -13,7 +13,7 @@
           <view class="weui-label">月综合薪资（元）</view>
         </view>
         <view class="weui-cell__bd">
-          <input class="weui-input" type="text" placeholder="请填写月综合薪资" name="title"></input>
+          <input class="weui-input" type="text" placeholder="请填写月综合薪资" name="MonthSalary"></input>
         </view>
       </view>
       <view class="weui-cell weui-cell_input">
@@ -41,7 +41,7 @@
           <view class="weui-label">服务商</view>
         </view>
         <view class="weui-cell__bd">
-          <input class="weui-input" type="text" placeholder="请填写中介/劳务（选填）" name="title"></input>
+          <input class="weui-input" type="text" placeholder="请填写中介/劳务（选填）" name="Server"></input>
         </view>
       </view>
     </view>
@@ -64,6 +64,7 @@
       </view>
       </view>
     </view>
+    <view class="errod">{{tip}}</view>
     <view class="btn-area">
       <button formType="submit" class='save'>保存</button>
     </view>

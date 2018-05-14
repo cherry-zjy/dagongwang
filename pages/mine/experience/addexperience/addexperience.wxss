@@ -29,7 +29,7 @@ page{
   word-break:break-all;
 }
 .save{
-  background-color: rgb(26,122,228);
+  background-color: #D33A31;
   color: #fff;
 }
 .picture{
@@ -39,4 +39,10 @@ page{
 .weui-uploader__img{
   width: 100rpx;
   height: 100rpx;
+}
+.errod {
+  color: #D33A31;
+  font-size: 30rpx;
+  line-height: 43rpx;
+  padding-left: 30rpx;
 }
