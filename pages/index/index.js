@@ -20,7 +20,8 @@ Page({
     pageIndex:1,
     recommendList:[],
     group:20,
-    listlenth:0
+    listlenth:0,
+    next:false
   },
   getInfo() {
     var that = this
@@ -200,8 +201,8 @@ onLoad: function (options) {
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    if (this.data.IsNext) {
-      var that = this
+    var that = this
+    if (that.data.IsNext) {
       if (that.data.pageIndex == 1) {
         that.setData({
           pageIndex: 2
@@ -209,9 +210,14 @@ onLoad: function (options) {
       }
       that.getInfo()
     } else {
-      wx.showToast({
-        title: '没有更多数据了',
-      })
+      if(that.data.next == false){
+        that.setData({
+          next: true
+        })
+        wx.showToast({
+          title: '没有更多数据了',
+        })
+      }
     }
   },
 

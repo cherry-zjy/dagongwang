@@ -92,7 +92,8 @@
   height: 80rpx;
 }
 .list-text{
-  font-size: 30rpx;
+  font-size: 28rpx;
+  line-height: 15rpx;
 }
 .account{
   height: 250rpx;
