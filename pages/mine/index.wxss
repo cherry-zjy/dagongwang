@@ -32,20 +32,6 @@
   margin-top: 10rpx;
 }
 
-
-.user-vip {
-  font-size: 24rpx;
-  color: rgba(212, 172, 93, 1);
-  line-height: 50rpx;
-}
-
-.icon-vip {
-  float: left;
-  width: 50rpx;
-  height: 50rpx;
-  margin-right: 10rpx;
-}
-
 .icon-enter {
   float: right;
   width: 72rpx;

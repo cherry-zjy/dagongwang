@@ -14,7 +14,7 @@
   <view class='top-info'>
     <image class='user-img' src='../../img/icon.png'></image>
     <view class='user-info'>
-      <view style='line-height:90rpx;color:#fff;font-size:30rpx;'>点击登录</view>
+      <view style='line-height:90rpx;font-size:32rpx;'>点击登录</view>
     </view>
     <image class='icon-enter' src='../../img/right.png'></image>
   </view>

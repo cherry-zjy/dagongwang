@@ -7,12 +7,26 @@ Page({
    */
   data: {
     accountshow:true,
-    Money:0
+    Money:0,
+    isLogin:false
   },
   open(){
-    this.setData({
-      accountshow: false
+    wx.getStorage({
+      key: 'token',
+      success: function (res) {
+        this.setData({
+          accountshow: false
+        })
+      },
+      fail: function (res) {
+        wx.navigateTo({
+          url: '../login/login'
+        })
+      },
+      complete: function (res) {
+      },
     })
+    
   },
   close() {
     this.setData({
@@ -25,13 +39,39 @@ Page({
     })
   },
   accountdetail(){
-    wx.navigateTo({
-      url: 'accountdetail/accountdetail'
+    var tt = this
+    wx.getStorage({
+      key: 'token',
+      success: function (res) {
+        wx.navigateTo({
+          url: 'accountdetail/accountdetail'
+        })
+      },
+      fail: function (res) {
+        wx.navigateTo({
+          url: '../login/login'
+        })
+      },
+      complete: function (res) {
+      },
     })
   },
   accountwithdraw(){
-    wx.navigateTo({
-      url: 'accountwithdraw/accountwithdraw'
+    var tt = this
+    wx.getStorage({
+      key: 'token',
+      success: function (res) {
+        wx.navigateTo({
+          url: 'accountwithdraw/accountwithdraw'
+        })
+      },
+      fail: function (res) {
+        wx.navigateTo({
+          url: '../login/login'
+        })
+      },
+      complete: function (res) {
+      },
     })
   },
   store(){
@@ -40,18 +80,57 @@ Page({
     })
   },
   wages() {
-    wx.navigateTo({
-      url: 'wages/wages'
+    var tt = this
+    wx.getStorage({
+      key: 'token',
+      success: function (res) {
+        wx.navigateTo({
+          url: 'wages/wages'
+        })
+      },
+      fail: function (res) {
+        wx.navigateTo({
+          url: '../login/login'
+        })
+      },
+      complete: function (res) {
+      },
     })
   },
   sister() {
-    wx.navigateTo({
-      url: 'sister/sister'
+    var tt = this
+    wx.getStorage({
+      key: 'token',
+      success: function (res) {
+        wx.navigateTo({
+          url: 'sister/sister'
+        })
+      },
+      fail: function (res) {
+        wx.navigateTo({
+          url: '../login/login'
+        })
+      },
+      complete: function (res) {
+      },
     })
   },
   recommend(){
-    wx.navigateTo({
-      url: 'recommend/recommend'
+    var tt = this
+    wx.getStorage({
+      key: 'token',
+      success: function (res) {
+        wx.navigateTo({
+          url: 'recommend/recommend'
+        })
+      },
+      fail: function (res) {
+        wx.navigateTo({
+          url: '../login/login'
+        })
+      },
+      complete: function (res) {
+      },
     })
   },
 
