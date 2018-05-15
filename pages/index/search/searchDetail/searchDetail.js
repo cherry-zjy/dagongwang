@@ -129,8 +129,7 @@ Page({
       })
     }else{
       this.setData({
-        // detailid: options.id
-        detailid: '-1'
+        detailid: options.id
       })
     }
     this.setData({

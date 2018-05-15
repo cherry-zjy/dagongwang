@@ -1,7 +1,5 @@
 {
   "pages":[
-    "pages/mine/experience/experience",
-    
     "pages/index/index",
     "pages/index/search/search",
     "pages/index/search/searchDetail/searchDetail",
@@ -11,7 +9,7 @@
     "pages/mine/index",
     "pages/mine/userInfo/userInfo",
     "pages/mine/follow/follow",
-    
+    "pages/mine/experience/experience",
     "pages/mine/experience/addexperience/addexperience",
     "pages/mine/aboutus/aboutus",
     "pages/mine/feedback/feedback",
