@@ -19,7 +19,9 @@
     </form>
   </view>
   <view class='service' class='grey'>
-    <checkbox value="cb" checked="true" color="#BBBBBB"/>
+  <checkbox-group bindchange="checkboxChange">
+    <checkbox value="true" checked="true" color="#BBBBBB" checked="false"/>
     已阅读<text class='blue' bindtap='service'>《用户协议》</text>
+    </checkbox-group>
   </view>
 </view>

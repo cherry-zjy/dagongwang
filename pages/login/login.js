@@ -8,45 +8,58 @@ Page({
    */
   data: {
     date: '请选择日期',
-    fun_id: 2,
     time: '获取验证码', //倒计时 
     currentTime: 61,
     tip: '',
     code:'',
     Phone:'',
+    xieyi:false
   },
   formSubmit: function (e) {
-    console.log(e.detail.value)
+    var that = this
     if (e.detail.value.Phone.length == 0 || e.detail.value.code.length == 0) {
-      this.setData({
+      that.setData({
         tip: '提示：手机号和验证码不能为空！',
-        Phone: '',
-        code: '',
       })
-      var that = this
       setTimeout(() => {
         that.setData({
           tip: '',
         })
       }, 1000)
-    } else {
-      this.setData({
+    } else if (e.detail.value.Phone.length !== 11 || !(/^1[34578]\d{9}$/.test(e.detail.value.Phone))){
+      that.setData({
+        tip: '提示：请输入正确的手机号！',
+      })
+      setTimeout(() => {
+        that.setData({
+          tip: '',
+        })
+      }, 1000)
+    } else if (this.data.xieyi == undefined){
+      that.setData({
+        tip: '提示：请先阅读《用户协议》！',
+      })
+      setTimeout(() => {
+        that.setData({
+          tip: '',
+        })
+      }, 1000)
+    }else {
+      that.setData({
         tip: "",
         Phone: e.detail.value.Phone,
         code: e.detail.value.code,
       })
-      var tt = this
       wx.login({
         success: function (res) {
-          console.log(res)
           if (res.code) {
             // 发起网络请求
             app.ajax({
               method: 'POST',
               url: app.mainUrl + 'api/User/Register',
               data: {
-                "Phone": tt.data.Phone,
-                "Code": tt.data.code,
+                "Phone": that.data.Phone,
+                "Code": that.data.code,
                 "Pwd": "-1",
                 "Lng": "-1",
                 "Lat": "-1",
@@ -155,6 +168,11 @@ Page({
   service(){
     wx.navigateTo({
       url: 'service/service'
+    })
+  },
+  checkboxChange: function (e) {
+    this.setData({
+      xieyi: e.detail.value[0]
     })
   },
 
