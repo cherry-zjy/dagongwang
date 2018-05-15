@@ -20,7 +20,7 @@ Page({
   },
   makePhoneCall: function () {
     wx.makePhoneCall({
-      phoneNumber: this.data.store.StorePhone,
+      phoneNumber: this.data.store.Phone,
       success: function () {
         console.log("成功拨打电话")
       }

@@ -1,4 +1,34 @@
 <!--pages/money/recommend/recommend.wxml-->
-<view class="btn-area">
+<view class="bg" wx:if="{{none}}">
   <button class='btn' bindtap="formSubmit">立即邀请</button>
+</view>
+<wxs module="utilTitle">
+  var sub = function(val) {
+    if (val == '未入职') {
+      val = 'red'
+      return val
+    }
+    return val
+  }
+  module.exports.sub = sub;
+</wxs>
+<view wx:else class='bg1'>
+<scroll-view scroll-y style="height: 60%;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+  <view class="table">
+    <view class="onetr th">
+      <view class="basic-td1">姓名</view>
+      <view class="basic-td2">手机号</view>
+      <view class="basic-td3">入职状态</view>
+    </view>
+    <view wx:for="{{list}}">
+    <view class="onetr">
+      <view class="basic-td1">{{item.Name}}</view>
+      <view class="basic-td2">{{item.Phone}}</view>
+      <view class="basic-td3 red" wx:if="{{utilTitle.sub(item.Type) == 'red'}}">{{item.Type}}</view>
+      <view class="basic-td3" wx:else>{{item.Type}}</view>
+    </view>
+    </view>
+  </view>
+  </scroll-view>
+  <button class='btn1' bindtap="formSubmit">继续推荐</button> 
 </view>

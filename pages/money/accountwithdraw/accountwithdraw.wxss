@@ -53,6 +53,9 @@
   width: 100%;
   padding: 20rpx 0rpx;
 }
+.box:first-child{
+  border-bottom: 1px solid #EEEEEE;
+}
 .input{
   color: #BBBBBB;
   width: 100%;
