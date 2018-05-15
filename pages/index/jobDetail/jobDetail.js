@@ -199,7 +199,7 @@ Page({
       imgArr.push(img[i - 1]["Image"]);
     }
     wx.previewImage({
-      current: imgArr[index],//当前图片地址
+      current: this.data.Images[index],//当前图片地址
       urls: imgArr
     })
   },

@@ -105,6 +105,13 @@
   background-color: #000;
   opacity: 0.8;
 }
+.lookimg{
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  right: 20rpx;
+  top: 20rpx;
+}
 .swipebox .flex-item{
   height: 24.5%;
   width: 100%;
