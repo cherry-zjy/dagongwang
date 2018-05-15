@@ -2,6 +2,10 @@
 page{
   text-align: center;
 }
+image{
+  width: 300rpx;
+  height: 300rpx
+}
 .icon-box{
   margin-top: 200rpx;
 }
@@ -21,10 +25,9 @@ page{
   text-align: center;
 }
 .btn {
-  background: #fff;
-  width: 180rpx;
+  background: #D33A31;
   opacity: 0.9;
-  color: rgb(26,122,228);
+  color: #fff;
   margin-top: 90rpx;
   font-size: 30rpx;
 }

@@ -125,7 +125,7 @@
   height: 50rpx;
   width: 50rpx;
   float: left;
-  margin-top: 15rpx;
+  margin-top: 19rpx;
   padding: 10rpx;
   /* margin-left: 20rpx; */
 }

@@ -1,7 +1,5 @@
 {
   "pages":[
-    
-    
     "pages/index/index",
     "pages/index/search/search",
     "pages/index/search/searchDetail/searchDetail",
@@ -17,15 +15,14 @@
     "pages/mine/feedback/feedback",
     "pages/money/index",
     "pages/money/accountwithdraw/accountwithdraw",
+    "pages/money/accountwithdraw/withdrawfeedback/withdrawfeedback",
     "pages/money/accountdetail/accountdetail",
     "pages/money/store/store",
     "pages/money/wages/wages",
     "pages/money/sister/sister",
     "pages/money/recommend/recommend",
     "pages/money/recommend/recommenddetail/recommenddetail",
-    "pages/money/store/storedetail/storedetail",
-    "pages/money/accountwithdraw/withdrawfeedback/withdrawfeedback"
-    
+    "pages/money/store/storedetail/storedetail"
   ],
   "window":{
     "backgroundTextStyle":"light",

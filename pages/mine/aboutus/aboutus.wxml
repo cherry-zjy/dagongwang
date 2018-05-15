@@ -1,2 +1,8 @@
 <!--pages/mine/aboutus/aboutus.wxml-->
-<image src='../../../../img/icon.png'></image>
+<image src='../../../../img/1024.png' class='image'></image>
+<view class='text'>我要打工网</view>
+<view class='text'>v1.0</view>
+
+<view class='box'>
+让更多在外打工的人，有一个依靠有一个归属，有一个想家一样的打工平台，不再奔东奔西，不再上当受骗
+</view>

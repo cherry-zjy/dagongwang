@@ -15,7 +15,7 @@ Page({
     var that = this
     console.log(e.detail.value)
     if (e.detail.value.money.length == 0 || e.detail.value.name.length == 0 || e.detail.value.phone.length == 0) {
-      that.setData({
+      that.setData({ 
         tip: '提示：请填写信息！',
         money: '',
         name: '',
@@ -50,8 +50,8 @@ Page({
             success: function (res) {
               wx.hideLoading()
               if (res.data.Status == 1) {
-                wx.showToast({
-                  title: res.data.Result
+                wx.navigateTo({
+                  url: 'withdrawfeedback/withdrawfeedback'
                 })
               } else {
                 wx.showModal({
@@ -67,34 +67,8 @@ Page({
           })
         },
         fail: function (res) {
-          app.ajax({
-            method: 'get',
-            url: app.mainUrl + 'api/Home/WorkDetails',
-            data: {
-              "ID": options.id,
-            },
-            success: function (res) {
-              wx.hideLoading()
-              if (res.data.Status == 1) {
-                console.log(res.data.Result)
-                that.setData({
-                  detailInfo: res.data.Result,
-                  rule: res.data.Result.Rule,
-                  Images: res.data.Result.Images,
-                  isfloow: res.data.Result.Isattention
-                })
-
-              } else {
-                wx.showModal({
-                  showCancel: false,
-                  title: '提示',
-                  content: res.data.Result,
-                })
-              }
-            },
-            error: function () {
-              wx.hideLoading()
-            }
+          wx.navigateTo({
+            url: '../../login/login'
           })
         },
         complete: function (res) {
