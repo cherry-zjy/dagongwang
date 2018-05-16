@@ -5,7 +5,7 @@ const app = getApp()
 Page({
   data: {
     imgUrls: [],
-    indicatorDots: true,
+    // indicatorDots: true,
     autoplay: true,
     interval: 5000,
     duration: 1000,

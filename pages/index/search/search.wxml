@@ -3,7 +3,7 @@
 
  <view class="page-section-spacing search-box">
     <view class="serachbox">
-      <input class='search' placeholder='输入您想搜索的内容' bindfocus="wxSerchFocus" bindinput="wxSearchInput" bindblur="wxSearchBlur" value="{{searchvalue}}"></input>
+      <input class='search' placeholder='输入您想搜索的内容' bindfocus="wxSerchFocus" bindinput="wxSearchInput" bindblur="wxSearchBlur" value="{{searchvalue}}" placeholder-class="center"></input>
       <image class='search-icon' src='../../../../img/sy_search.png'></image>
       <view class="serachimgbox" bindtap='wxSearchFn'>
         搜索

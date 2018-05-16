@@ -113,21 +113,8 @@ Page({
   },
   // 意见反馈
   feedback(){
-    var tt = this
-    wx.getStorage({
-      key: 'token',
-      success: function (res) {
-        wx.navigateTo({
-          url: 'feedback/feedback'
-        })
-      },
-      fail: function (res) {
-        wx.navigateTo({
-          url: '../login/login'
-        })
-      },
-      complete: function (res) {
-      },
+    wx.navigateTo({
+      url: 'feedback/feedback'
     })
   },
 
