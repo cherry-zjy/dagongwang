@@ -66,8 +66,8 @@ Page({
         })
       },
       fail: function (res) {
-        wx.navigateTo({
-          url: '../../login/login'
+        wx.showToast({
+          title: "获取信息失败，请重新登录"
         })
       },
       complete: function (res) {

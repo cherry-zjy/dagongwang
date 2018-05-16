@@ -122,33 +122,34 @@ Page({
     }, 1000)
   },
   getVerificationCode() {
-    if (this.data.Phone == '') {
-      this.setData({
+    var that = this
+    if (that.data.Phone == '') {
+      that.setData({
         tip: '提示：手机号不能为空！',
         Phone: '',
         code: '',
       })
-      var that = this
       setTimeout(() => {
         that.setData({
           tip: '',
         })
       }, 1000)
     } else {
-      var tt = this;
       app.ajax({
-        method: 'POST',
+        method: 'GET',
         url: app.mainUrl + 'api/VerifyCode/Send',
         data: {
-          "phone": tt.data.Phone,
+          "phone": that.data.Phone,
         },
         success: function (res) {
           wx.hideLoading()
           if (res.data.Status == 1) {
-            this.getCode();
-            var that = this
+            that.getCode();
             that.setData({
               disabled: true
+            })
+            wx.showToast({
+              title: "发送验证码成功"
             })
           } else {
             wx.showModal({
