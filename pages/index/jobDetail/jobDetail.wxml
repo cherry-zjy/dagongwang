@@ -228,7 +228,7 @@
     </view>
     <view class="flex-item attend" bindtap='attend' wx:if="{{!isattend}}">
       <view>
-        <image class='search-icon' src='../../../img/attend.png'></image>
+        <image class='search-icon' src='../../../img/xq_apply.png'></image>
       </view>
       <view>免费报名</view>
     </view>

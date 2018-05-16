@@ -1,31 +1,10 @@
-
-<!-- <view class='listbox'>
- <view class='info-list' wx:for="{{list}}" wx:key="index" data-id="{{item.ID}}" bindtap='jobDetail' wx:if="{{!none}}">
-  <view class='list-jobtext'>
-    <view class='job-list'>
-      <view class='job-name'>{{item.Name}}<text class='job-address'></text>
-      </view>
-      <view class='job-time'>{{utilTitle.sub(item.StartTime)}}~{{utilTitle.sub(item.StartTime)}}</view>
-      <view class='job-address' wx:if="{{item.Server !== '-1'}}">服务商：{{item.Server}}</view>
-      <view class='job-title'>{{item.MonthSalary}}元</view>
-    </view>
-  </view>
-  <view class='subsidy-list' wx:if="{{item.WorkCard !== ''}}">
-    <image src='{{mainurl+item.WorkCard}}' class="image"></image>
-  </view>
-</view>
-</view>
-<view class='footer-btn' bindtap='addexp' wx:if="{{!none}}">
-  <text class='buy-btn'>添加工作经验</text>
-</view>
-
 <view wx:if="{{none}}" class='none'>
-<image src='../../../../img/gz_empty.png' class="icon"></image>
-<view class='tip'>宝宝，你目前还木有工作经历哦~</view>
-<view class="btn-area">
-  <button class='btn' bindtap='addexp'>添加工作经验</button>
+  <image src='../../../../img/gz_empty.png' class="icon"></image>
+  <view class='tip'>宝宝，你目前还木有工作经历哦~</view>
+  <view class="btn-area">
+    <button class='btn' bindtap='addexp'>添加工作经验</button>
+  </view>
 </view>
-</view> -->
 
 <wxs module="utilTitle">
   var sub = function(val) {
@@ -34,7 +13,7 @@
   }
   module.exports.sub = sub;
 </wxs>
-
+<scroll-view scroll-y style="height: calc(100% - 98rpx)" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
  <view class="item-box">
   <view class="items">
     <view wx:for="{{list}}" wx:key="{{index}}" class="item" wx:if="{{!none}}">
@@ -57,3 +36,7 @@
     </view>
   </view>
 </view> 
+</scroll-view>
+<view class='footer-btn' bindtap='addexp' wx:if="{{!none}}">
+  <text class='buy-btn'>添加工作经验</text>
+</view>

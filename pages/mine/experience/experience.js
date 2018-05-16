@@ -14,7 +14,6 @@ Page({
     })
     // 页面初始化 options为页面跳转所带来的参数
     this.initEleWidth();
-    this.tempData();
   },
 
   onReady: function () {
@@ -22,7 +21,7 @@ Page({
   },
 
   onShow: function () {
-    // 页面显示
+    this.tempData();    
   },
 
   onHide: function () {
@@ -217,6 +216,11 @@ Page({
       },
       complete: function (res) {
       },
+    })
+  },
+  addexp(){
+    wx.navigateTo({
+      url: 'addexperience/addexperience'
     })
   }
 })
