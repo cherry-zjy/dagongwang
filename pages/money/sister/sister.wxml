@@ -13,7 +13,7 @@
 <view class='connectbox'>
  <view class="flex-wrp" style="flex-direction:row;">
     <view class="flex-item icon">
-      <image class="sister-icon" src='../../../../img/qzs_senior_wechat.png'></image>
+      <image class="sister-icon" src='../../../img/qzs_senior_wechat.png'></image>
     </view>
     <view class="flex-item msg">
     <view class='postage'>
@@ -23,7 +23,7 @@
   </view>
   <view class="flex-wrp" style="flex-direction:row;">
     <view class="flex-item icon">
-      <image class="sister-icon" src='../../../../img/qzs_senior_qq.png'></image>
+      <image class="sister-icon" src='../../../img/qzs_senior_qq.png'></image>
     </view>
     <view class="flex-item msg">
     <view class='postage'>
@@ -33,7 +33,7 @@
   </view>
   <view class="flex-wrp last" style="flex-direction:row;">
     <view class="flex-item icon">
-      <image class="sister-icon" src='../../../../img/qzs_senior_call.png'></image>
+      <image class="sister-icon" src='../../../img/qzs_senior_call.png'></image>
     </view>
     <view class="flex-item msg">
     <view class='postage'>

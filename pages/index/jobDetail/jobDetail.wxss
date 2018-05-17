@@ -233,6 +233,6 @@
   padding: 10rpx 1.5% 0 1.5%;
   background-color: #fff;
 }
-.qiyetable{
-  margin-bottom: 100rpx;
+.qiyebox{
+  padding-bottom: 100rpx;
 }

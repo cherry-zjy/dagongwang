@@ -140,9 +140,6 @@ Page({
     wx.getStorage({
       key: 'token',
       success: function (res) {
-        tt.setData({
-          isLogin: true
-        })
         app.ajax({
           method: 'get',
           url: app.mainUrl + 'api/User/Info',
@@ -155,6 +152,9 @@ Page({
               tt.setData({
                 userInfo: res.data.Result,
                 UserInfoIcon: app.mainUrl + res.data.Result.Image,
+              })
+              tt.setData({
+                isLogin: true
               })
             } else if (res.data.Status == 40002) {
               tt.setData({
@@ -181,6 +181,9 @@ Page({
               })
             }
             else {
+              tt.setData({
+                isLogin: false
+              })
               wx.showModal({
                 showCancel: false,
                 title: '提示',

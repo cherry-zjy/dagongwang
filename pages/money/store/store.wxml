@@ -11,13 +11,13 @@
 </wxs>
 <view wx:for="{{store}}" wx:key="index">
 <view class='addressbox'>
-  <image class="store-icon1" src='../../../../img/qzs_region.png'></image>
+  <image class="store-icon1" src='../../../img/qzs_region.png'></image>
   <text class='store-Name'>{{item.Name}}</text>
 </view>
  <view class="flex-wrp" style="flex-direction:row;" wx:for="{{item.Store}}" wx:for-item="items" wx:key="index" data-id="{{items.ID}}" bindtap='storedetail'>
 
     <view class="flex-item icon">
-      <image class="store-icon" src='../../../../img/ssmd_stores.png'></image>
+      <image class="store-icon" src='../../../img/ssmd_stores.png'></image>
       <!-- <image class="store-icon {{items.Type == 0? 'hideview' : ''}}" src='../../../../img/flag.png'></image> -->
       <!-- <image class="store-icon {{items.Type == 1? 'hideview' : ''}}" src='../../../../img/store.png'></image>  -->
     </view>

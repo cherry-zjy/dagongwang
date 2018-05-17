@@ -2,11 +2,11 @@
   <view>账户余额（元）</view>
   <view class="blance {{accountshow == true? 'on' : ''}}">
     <text>****</text>
-    <image src='../../../img/closeeye.png' class="account-icon {{accountshow == true? 'showview' : ''}}" bindtap='open'></image>
+    <image class="account-icon {{accountshow == true? 'showview' : ''}}" bindtap='open' src='../../img/closeeye.png'></image>
   </view>
   <view class="blance {{accountshow == false? 'on' : ''}}">
     <text>{{Money}}</text>
-    <image src='../../../img/openeye.png' class="account-icon {{accountshow == true? 'hideview' : ''}}" bindtap='close'></image>
+    <image class="account-icon {{accountshow == true? 'hideview' : ''}}" bindtap='close' src='../../img/openeye.png'></image>
   </view>
   <view class='account-right'>
     <view class='detail' bindtap='accountdetail'>明细</view>
@@ -14,10 +14,10 @@
   </view>
 </view>
   <view class='recommend' bindtap='gotoindex'>
-    <image src='../../../img/qzs_advertising.png' class='recommend-img'></image>
+    <image class='recommend-img' src='../../img/qzs_advertising.png'></image>
   </view>
   <view class='recommend2'>
-    <image src='../../../img/qzs_recommended.png' class='recommend2-img'></image>
+    <image class='recommend2-img' src='../../img/qzs_recommended.png'></image>
     <view class='recommend-text'>
     <view class='big-text'>拿推荐费100元</view>
     <view class='small-text'>推荐好友入职后可领取</view>
@@ -26,8 +26,8 @@
   </view>
 <view class="section list">
   <view class="flex-wrp" style="flex-direction:row;">
-    <view class="flex-item store" bindtap='store'><image src='../../../img/qzs_offline_store.png' class="list-icon"></image><view class='list-text'>线下门店</view></view>
-    <view class="flex-item wages" bindtap='wages'><image src='../../../img/qzs_salary_information.png' class="list-icon"></image><view class='list-text'>工资信息</view></view>
-     <view class="flex-item sister" bindtap='sister'><image src='../../../img/qzs_senior.png' class="list-icon"></image><view class='list-text'>学姐</view></view>
+    <view class="flex-item store" bindtap='store'><image class="list-icon" src='../../img/qzs_offline_store.png' class="list-icon"></image><view class='list-text'>线下门店</view></view>
+    <view class="flex-item wages" bindtap='wages'><image class="list-icon" src='../../img/qzs_salary_information.png'></image><view class='list-text'>工资信息</view></view>
+     <view class="flex-item sister" bindtap='sister'><image class="list-icon" src='../../img/qzs_senior.png'></image><view class='list-text'>学姐</view></view>
   </view>
 </view>

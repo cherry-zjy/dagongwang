@@ -13,7 +13,7 @@
           <view class="weui-label">月综合薪资（元）</view>
         </view>
         <view class="weui-cell__bd">
-          <input class="weui-input" type="text" placeholder="请填写月综合薪资" name="MonthSalary"></input>
+          <input class="weui-input" type="text" placeholder="请填写月综合薪资" name="MonthSalary" type='number'></input>
         </view>
       </view>
       <view class="weui-cell weui-cell_input">

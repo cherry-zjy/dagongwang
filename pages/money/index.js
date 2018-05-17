@@ -11,10 +11,11 @@ Page({
     isLogin:false
   },
   open(){
+    var that = this
     wx.getStorage({
       key: 'token',
       success: function (res) {
-        this.setData({
+        that.setData({
           accountshow: false
         })
       },
@@ -196,6 +197,9 @@ Page({
               })
             }
             else {
+              tt.setData({
+                isLogin: false
+              })
               wx.showModal({
                 showCancel: false,
                 title: '提示',

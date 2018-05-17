@@ -109,7 +109,7 @@
   left: 30%;
   width: 40rpx;
   height: 40rpx;
-  top:31rpx;
+  top:25rpx;
   z-index: 1;
 }
 
@@ -119,6 +119,7 @@
   font-size: 30rpx;
   background-color: #fff;
   margin-bottom: 20rpx;
+  padding: 10rpx 0;
 }
 .red{
   color: #D33A31;
@@ -212,17 +213,17 @@
   margin-top: 30rpx;
   text-align: center;
   border: 1px solid #D33A31;
-  width: 170rpx;
+  width: 150rpx;
 }
 .subsidy{
   font-size: 28rpx;
   color: #fff;
   background-color: #D33A31;
-  padding: 5rpx 38rpx;
+  padding: 5rpx 20rpx;
 }
 .subsidy-money{
   font-size: 28rpx;
-  padding: 5rpx 38rpx;
+  padding: 5rpx 20rpx;
   color: #666666;
 }
 

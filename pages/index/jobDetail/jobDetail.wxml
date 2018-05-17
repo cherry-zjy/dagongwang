@@ -39,7 +39,7 @@
         </view>
       </view>
     </view>
-    <image src='../../../../img/xq_amplification.png' class='lookimg'></image>
+    <image src='../../../img/xq_amplification.png' class='lookimg'></image>
     
     <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="{{indicatorColor}}"
       indicator-active-color="{{indicatorActiveColor}}" class="swipelist {{currentTab == 0? 'showview':'hideview'}}">
