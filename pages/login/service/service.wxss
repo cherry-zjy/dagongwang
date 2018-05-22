@@ -1,4 +1,10 @@
 /* pages/login/service/service.wxss */
 page{
   background-color: #fff;
+  width: 90%;
+  padding: 0 5%;
+}
+.bigbox{
+  font-weight: bolder;
+  margin-bottom: 20rpx;
 }
