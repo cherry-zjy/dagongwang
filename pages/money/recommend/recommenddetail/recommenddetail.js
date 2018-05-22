@@ -24,7 +24,17 @@ Page({
           tip: '',
         })
       }, 1000)
-    } else {
+    } else if (e.detail.value.password.length !== 11 || !(/^1[34578]\d{9}$/.test(e.detail.value.password))) {
+      that.setData({
+        tip: '提示：请输入正确的手机号！',
+      })
+      setTimeout(() => {
+        that.setData({
+          tip: '',
+        })
+      }, 1000)
+    }
+      else {
       this.setData({
         tip: "",
         userName: e.detail.value.username,
