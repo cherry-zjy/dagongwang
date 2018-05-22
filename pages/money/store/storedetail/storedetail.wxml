@@ -23,7 +23,8 @@
 <view class='store-address' bindtap='openLocation'>
   <view class='store-add'>门店地址</view>
   <view class='address'>{{util.sub(store.Adress)}}</view>
-  <view class='store-distance'>距离{{store.Distance}}</view>
+  <view class='store-distance' wx:if="{{isloacation}}">距离{{store.Distance}}</view>
+  <view class='store-distance' wx:if="{{!isloacation}}">未打开定位，获取距离失败</view>
   <view><image class="store-arrow" src='../../../../img/right.png'></image></view>
 </view>
  <view class='store-agent'>

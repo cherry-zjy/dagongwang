@@ -9,7 +9,8 @@ Page({
   data: {
     store: [],
     Longitude:'',
-    Latitude:''
+    Latitude:'',
+    isloacation:false
   },
   
   storedetail(event) {
@@ -44,7 +45,8 @@ Page({
         console.log(res)
         tt.setData({
           Longitude: res.longitude,
-          Latitude: res.latitude
+          Latitude: res.latitude,
+          isloacation: true
         })
         app.ajax({
           method: 'get',
@@ -72,7 +74,40 @@ Page({
             wx.hideLoading()
           }
         })
-      }
+      },
+      fail: function (res) {
+        tt.setData({
+          Longitude: '-1',
+          Latitude: '-1',
+          isloacation: false
+        })
+        app.ajax({
+          method: 'get',
+          url: app.mainUrl + 'api/Home/WorkStore',
+          data: {
+            Longitude: -1,
+            Latitude: -1,
+          },
+          success: function (res) {
+            wx.hideLoading()
+            if (res.data.Status == 1) {
+              tt.setData({
+                store: res.data.Result
+              })
+            } else {
+              wx.showModal({
+                showCancel: false,
+                title: '提示',
+                content: res.data.Result,
+              })
+            }
+
+          },
+          error: function () {
+            wx.hideLoading()
+          }
+        })
+      },
     })
   },
 

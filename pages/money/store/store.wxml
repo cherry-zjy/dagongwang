@@ -24,7 +24,7 @@
     <view class="flex-item msg">
     <view class='postage'>
       <text class='store-name'>{{items.Name}}</text>
-      <text class='store-distance'>距离{{items.Distance}}</text>
+      <text class='store-distance' wx:if="{{isloacation}}">距离{{items.Distance}}</text>
     </view>
       <view class='store-address'>{{util.sub(items.Adress)}}</view>
     </view>

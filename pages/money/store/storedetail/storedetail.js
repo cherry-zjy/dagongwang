@@ -9,7 +9,8 @@ Page({
     store:[],
     Icon: '../../../../img/icon.png',
     detailid:'',
-    mainurl:''
+    mainurl:'',
+    isloacation:false
   },
   openLocation: function () {
     wx.openLocation({
@@ -41,7 +42,8 @@ Page({
         console.log(res)
         that.setData({
           Longitude: res.longitude,
-          Latitude: res.latitude
+          Latitude: res.latitude,
+          isloacation:true
         })
         console.log(options.id)
         app.ajax({
@@ -51,6 +53,39 @@ Page({
             "ID": options.id,
             "Longitude": that.data.Longitude,
             "Latitude": that.data.Latitude,
+          },
+          success: function (res) {
+            wx.hideLoading()
+            if (res.data.Status == 1) {
+              that.setData({
+                store: res.data.Result,
+              })
+            } else {
+              wx.showModal({
+                showCancel: false,
+                title: '提示',
+                content: res.data.Result,
+              })
+            }
+          },
+          error: function () {
+            wx.hideLoading()
+          }
+        })
+      },
+      fail: function (res) {
+        that.setData({
+          Longitude: '-1',
+          Latitude: '-1',
+          isloacation: false
+        })
+        app.ajax({
+          method: 'get',
+          url: app.mainUrl + 'api/Home/WorkStoreDetail',
+          data: {
+            "ID": options.id,
+            "Longitude": '-1',
+            "Latitude": '-1',
           },
           success: function (res) {
             wx.hideLoading()
