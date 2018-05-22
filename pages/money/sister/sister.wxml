@@ -37,7 +37,7 @@
     </view>
     <view class="flex-item msg">
     <view class='postage'>
-      <text class='sister-connect'>{{list.Phone}}</text>
+      <text class='sister-connect' bindtap='makePhoneCall1'>{{list.Phone}}</text>
     </view>
     </view>
   </view>

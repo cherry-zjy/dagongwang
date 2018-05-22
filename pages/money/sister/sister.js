@@ -18,6 +18,15 @@ Page({
       }
     })
   },
+  makePhoneCall1: function () {
+    var that = this;
+    wx.makePhoneCall({
+      phoneNumber: that.data.list.Phone,
+      success: function () {
+        console.log("成功拨打电话")
+      }
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载
