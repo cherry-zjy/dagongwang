@@ -1,4 +1,4 @@
-<!-- <scroll-view scroll-y="true" style="height:{{scrollHeight}}px;" upper-threshold	= "{{upperThreshold}}"  bindscrolltoupper="upper" lower-threshold = "{{lowerThreshold}}" bindscrolltoupper="lower">   -->
+<scroll-view scroll-y="true" style="height: {{scrollHeight}}px" bindscroll="scroll" scroll-into-view="{{toView}}">
 <view class="page-section-spacing">
   <view class="flex-wrp" style="flex-direction:row;">
     <view class="flex-item job-tag" wx:for="{{detailInfo.Tag}}">{{item}}</view>
@@ -6,7 +6,7 @@
   </view>
 </view>
 
-<view class="table">
+<view class="table one">
   <view class="onetr">
     <view class="one-td1">综合薪资</view>
     <view class="one-td2">{{detailInfo.Salary}}元</view>
@@ -43,48 +43,54 @@
     
     <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="{{indicatorColor}}"
       indicator-active-color="{{indicatorActiveColor}}" class="swipelist {{currentTab == 0? 'showview':'hideview'}}">
-      <block wx:for="{{Images}}" wx:if = "{{item.Type == 0}}">
+      <view wx:for="{{Images}}" wx:if = "{{item.Type == 0}}">
         <swiper-item>
           <image src="{{item.Image}}" class="slide-image" data-src="{{item.Image}}" data-index="{{index}}" bindtap="previewImage" data-type="{{item.Type}}"/>
           <text class='swipe-text'>{{item.text}}</text>
         </swiper-item>
-      </block>
+      </view>
     </swiper>
     <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="{{indicatorColor}}"
       indicator-active-color="{{indicatorActiveColor}}" class="swipelist {{currentTab == 1? 'showview':'hideview'}}">
-      <block wx:for="{{Images}}" wx:if = "{{item.Type == 1}}">
+      <view wx:for="{{Images}}" wx:if = "{{item.Type == 1}}">
         <swiper-item>
           <image src="{{item.Image}}" class="slide-image" data-src="{{item.Image}}" data-index="{{index}}" bindtap="previewImage" data-type="{{item.Type}}"/>
           <text class='swipe-text'>{{item.text}}</text>
         </swiper-item>
-      </block>
+      </view>
     </swiper>
     <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="{{indicatorColor}}"
       indicator-active-color="{{indicatorActiveColor}}" class="swipelist {{currentTab == 2? 'showview':'hideview'}}">
-      <block wx:for="{{Images}}" wx:if = "{{item.Type == 2}}">
+      <view wx:for="{{Images}}" wx:if = "{{item.Type == 2}}">
         <swiper-item>
           <image src="{{item.Image}}" class="slide-image" data-src="{{item.Image}}" data-index="{{index}}" bindtap="previewImage" data-type="{{item.Type}}" />
           <text class='swipe-text'>{{item.text}}</text>
         </swiper-item>
-      </block>
+      </view>
     </swiper>
     <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="{{indicatorColor}}"
       indicator-active-color="{{indicatorActiveColor}}" class="swipelist {{currentTab == 3? 'showview':'hideview'}}">
-      <block wx:for="{{Images}}" wx:if = "{{item.Type == 3}}">
+      <view wx:for="{{Images}}" wx:if = "{{item.Type == 3}}">
         <swiper-item>
           <image src="{{item.Image}}" class="slide-image" data-src="{{item.Image}}" data-index="{{index}}" bindtap="previewImage" data-type="{{item.Type}}" />
           <text class='swipe-text'>{{item.text}}</text>
         </swiper-item>
-      </block>
+      </view>
     </swiper>
   </view>
 </view>
 
-<view class="section type">
+<view class="section type {{isShowFloatTab == true? 'top':''}}" id='type' upper-threshold = '0'>
   <view class="flex-wrp" style="flex-direction:row;">
-    <view class="flex-item job-type {{currenttype == 0? 'act':''}}" bindtap="gototype" data-index="0">工资说明</view>
-    <view class="flex-item job-type {{currenttype == 1? 'act':''}}" bindtap="gototype" data-index="1">岗位说明</view>
-    <view class="flex-item job-type {{currenttype == 2? 'act':''}}" bindtap="gototype" data-index="2">企业说明</view>
+    <view class="flex-item job-type {{currenttype == 0? 'act':''}}" bindtap="gototype" data-index="0">
+      <image class="type-icon {{currenttype == 0? 'act':''}}" src='../../../img/xq_choose.png'></image>工资说明
+    </view>
+    <view class="flex-item job-type {{currenttype == 1? 'act':''}}" bindtap="gototype" data-index="1">
+      <image class="type-icon {{currenttype == 1? 'act':''}}" src='../../../img/xq_choose.png'></image>岗位说明
+    </view>
+    <view class="flex-item job-type {{currenttype == 2? 'act':''}}" bindtap="gototype" data-index="2">
+      <image class="type-icon {{currenttype == 2? 'act':''}}" src='../../../img/xq_choose.png'></image>企业说明
+    </view>
   </view>
 </view>
 <!-- 工资说明 -->
@@ -101,8 +107,8 @@
   module.exports.sub = sub;
 </wxs>
 
-<!-- <view bindscroll="scroll"> -->
-<view class='moneybox' id='start'>
+<view class="moneybox {{isShowFloatTab == true? 'top':''}}" id='start'>
+  <view class='tb-bigtitle'>工资说明</view>
   <view class='tb-title'>基本情况</view>
   <view class="table">
     <view class="onetr">
@@ -141,76 +147,77 @@
       </view>
     <view class="table">
         <view class="onetr">
-          <view class="one-td1">合同说明</view>
-          <view class="one-td2">{{utilTitle.sub(detailInfo.Contract)}}</view>
+          <view class="one-td3">合同说明</view>
+          <view class="one-td4">{{utilTitle.sub(detailInfo.Contract)}}</view>
         </view>
         <view class="onetr">
-          <view class="one-td1">工资发放</view>
-          <view class="one-td2">{{utilTitle.sub(detailInfo.PayMoney)}}</view>
+          <view class="one-td3">工资发放</view>
+          <view class="one-td4">{{utilTitle.sub(detailInfo.PayMoney)}}</view>
         </view>
         <view class="onetr">
-          <view class="one-td1">保险说明</view>
-          <view class="one-td2">{{utilTitle.sub(detailInfo.Insurance)}}</view>
+          <view class="one-td3">保险说明</view>
+          <view class="one-td4">{{utilTitle.sub(detailInfo.Insurance)}}</view>
         </view>
         <view class="onetr">
-          <view class="one-td1">温馨提示</view>
-          <view class="one-td2">{{utilTitle.sub(detailInfo.Prompt)}}</view>
+          <view class="one-td3">温馨提示</view>
+          <view class="one-td4">{{utilTitle.sub(detailInfo.Prompt)}}</view>
         </view>
     </view>
   </view>
 </view>
 
 <!-- 岗位说明 -->
-<view class='workbox'>
-  <!-- <view class='tb-bigtitle'>岗位说明</view> -->
+<view class='workbox' id='work'>
+   <view class='tb-bigtitle'>岗位说明</view> 
   <view class='tb-title'>岗位状态</view>
   <view class="table">
     <view class="onetr">
       <view class="basic-td1">1</view>
-      <view class="basic-td2">工作内容</view>
+      <view class="basic-td2 no">工作内容</view>
       <view class="basic-td3">{{utilTitle.sub(detailInfo.WorkContent)}}</view>
     </view>
     <view class="onetr">
       <view class="basic-td1">2</view>
-      <view class="basic-td2">两班倒</view>
+      <view class="basic-td2 no">两班倒</view>
       <view class="basic-td3">{{utilTitle.sub(detailInfo.Changework)}}</view>
     </view>
     <view class="onetr">
       <view class="basic-td1">3</view>
-      <view class="basic-td2">工作环境</view>
+      <view class="basic-td2 no">工作环境</view>
       <view class="basic-td3">{{utilTitle.sub(detailInfo.WorkEnvir)}}</view>
     </view>
   </view>
 
   <view class='tb-title'>录用条件</view>
   <view class="table">
-    <block wx:for="{{rule}}">
+    <view wx:for="{{rule}}">
       <view class="onetr">
         <view class="basic-td1">{{index+1}}</view>
-        <view class="basic-td2">{{item.Title}}</view>
+        <view class="basic-td2 no">{{item.Title}}</view>
         <view class="basic-td3">{{item.Content}}</view>
       </view>
-    </block>
+    </view>
   </view>
 </view>
 
 <!-- 企业说明 -->
 
-<view class='qiyebox'>
-<view class='tb-title'>企业说明</view>
+<view class='qiyebox' id='company'>
+<view class='tb-bigtitle'>企业说明</view>
   <view class="table qiyetable">
   <view class="onetr">
-      <view class="one-td1">企业说明：</view>
+      <view class="one-td1 no">企业说明：</view>
       <view class="one-td2">{{detailInfo.EnterpriseExplain}}</view>
     </view>
     <view class="onetr">
-      <view class="one-td1">公司地址：</view>
+      <view class="one-td1 no">公司地址：</view>
       <view class="one-td2">{{detailInfo.Adress}}</view>
     </view>
   </view>
 </view>
 <!-- </view> -->
-<!-- </scroll-view> -->
+ </scroll-view> 
+ 
 <view class="section foot">
   <view class="flex-wrp flexfoot" style="flex-direction:row;">
     <view class="flex-item floow" bindtap='floow'>
@@ -218,13 +225,13 @@
         <image class='search-icon' src='../../../img/xq_focus.png' wx:if = "{{isfloow}}"></image>
         <image class='search-icon' src='../../../img/xq_focus_no.png' wx:if = "{{isfloow == false}}"></image>
       </view>
-      <view>关注</view>
+      <view class='foot-text'>关注</view>
     </view>
     <view class="flex-item call" bindtap='makePhoneCall'>
       <view>
         <image class='search-icon' src='../../../img/xq_consulting_no.png'></image>
       </view>
-      <view>咨询</view>
+      <view class='foot-text'>咨询</view>
     </view>
     <view class="flex-item attend" bindtap='attend' wx:if="{{!isattend}}">
       <view>

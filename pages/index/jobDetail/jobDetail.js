@@ -1,5 +1,7 @@
 // pages/index/jobDetail/jobDetail.js
 const app = getApp()
+var rate = 0; //分辨转换
+var floatTop = 0; //悬浮高度
 Page({
 
   /**
@@ -13,17 +15,18 @@ Page({
     indicatorColor:'rgb(173,173,173)',
     indicatorActiveColor:'#fff',
     currentTab: 0,
-    // currenttype:0,
+    currenttype:0,
     scrollHeight:"",
-    upperThreshold:"",
-    lowerThreshold:"",
     detailInfo:[],
     rule:[],
     Images:[],
     isfloow: false,
     isattend:false,
     Upphone:'',
-    detailid:''
+    detailid:'',
+    toView:'',
+    scrollTop:'',
+    isShowFloatTab:false //是否置顶
   },
   /**
    * 生命周期函数--监听页面加载
@@ -31,6 +34,7 @@ Page({
   onLoad: function (options) {
     this.setData({
       detailid: options.id
+      // detailid: '4b8eff17-3e4f-e811-9a80-bf23cdc8323e'
     })
     // 获取参数id
     // console.dir(options.id)
@@ -42,7 +46,7 @@ Page({
           method: 'get',
           url: app.mainUrl + 'api/Home/WorkDetails',
           data: {
-            "ID": options.id,
+            "ID": that.data.detailid,
           },
           header: {
             "Authorization": res.data
@@ -50,7 +54,6 @@ Page({
           success: function (res) {
             wx.hideLoading()
             if (res.data.Status == 1) {
-              console.log(res.data.Result)
               that.setData({
                 detailInfo: res.data.Result,
                 rule: res.data.Result.Rule,
@@ -77,17 +80,17 @@ Page({
           method: 'get',
           url: app.mainUrl + 'api/Home/WorkDetails',
           data: {
-            "ID": options.id,
+            "ID": that.data.detailid,
           },
           success: function (res) {
             wx.hideLoading()
             if (res.data.Status == 1) {
-              console.log(res.data.Result)
               that.setData({
                 detailInfo: res.data.Result,
                 rule: res.data.Result.Rule,
                 Images: res.data.Result.Images,
-                isfloow: res.data.Result.Isattention
+                isfloow: res.data.Result.Isattention,
+                
               })
 
             } else {
@@ -106,46 +109,44 @@ Page({
       complete: function (res) {
       },
     })
+
+    wx.getSystemInfo({
+      success: function (res) {
+        // console.info(res.windowHeight);
+        that.setData({
+          scrollHeight: res.windowHeight,
+        });
+      }
+    });
+
+    if (wx.canIUse('getSystemInfo.success.screenWidth')) {
+      wx: wx.getSystemInfo({
+        success: function (res) {
+          rate = res.screenWidth / 750;
+          floatTop = 260 * rate;
+          that.setData({
+            scrollTop: 310* res.screenWidth / 750 + 150,
+            // scrollHeight: res.screenHeight / (res.screenWidth / 750) - 128,
+          });
+        }
+      });
+    }
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+    // var that = this;
+    // that.setData({
+    //   toView: 'type'
+    // });
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    // var that = this;
-    // wx.getSystemInfo({
-    //   success: function (res) {
-    //     console.info(res.windowHeight);
-    //     that.setData({
-    //       scrollHeight:res.windowHeight
-    //     });
-    //   }
-    // });  
-    // var that = this;
-    // wx.createSelectorQuery().select('#start').boundingClientRect(function (rect) {
-    //   // rect.id      // 节点的ID  
-    //   // rect.dataset // 节点的dataset  
-    //   // rect.left    // 节点的左边界坐标  
-    //   // rect.right   // 节点的右边界坐标  
-    //   // rect.top     // 节点的上边界坐标  
-    //   // rect.bottom  // 节点的下边界坐标  
-    //   // rect.width   // 节点的宽度  
-    //   // rect.height  // 节点的高度  
-    //   console.log(rect)
-    //   that.setData({
-    //     upperThreshold: rect.top
-    //   });
-    //   that.setData({
-    //     lowerThreshold: rect.bottom
-    //   });
-    // }).exec()
     
   },
 
@@ -235,9 +236,6 @@ Page({
                   isfloow: false
                 })
               } else if (res.data.Status == 40002) {
-                tt.setData({
-                  isLogin: false
-                })
                 wx.showModal({
                   title: '提示',
                   content: res.data.Result,
@@ -342,8 +340,8 @@ Page({
           })
         },
         fail: function (res) {
-          tt.setData({
-            isLogin: false
+          wx.navigateTo({
+            url: '../../login/login'
           })
         },
         complete: function (res) {
@@ -423,26 +421,64 @@ Page({
         })
       },
       fail: function (res) {
-        tt.setData({
-          isLogin: false
+        wx.navigateTo({
+          url: '../../login/login'
         })
       },
       complete: function (res) {
       },
     })
-  }
-  // gototype: function (e) {
+  },
+  // tap: function (e) {
+  //   for (var i = 0; i < order.length; ++i) {
+  //     if (order[i] === this.data.toView) {
+  //       this.setData({
+  //         toView: order[i + 1],
+  //         scrollTop: (i + 1) * 200
+  //       })
+  //       break
+  //     }
+  //   }
+  // },
+  // tapMove: function (e) {
   //   this.setData({
-  //     currenttype: e.currentTarget.dataset['index']
+  //     scrollTop: this.data.scrollTop + 10
   //   })
   // },
-  // scroll: function (e) {
-  //   console.log(e)
-  // },
-  // upper :function(){
-  //   console.log("离顶部" + this.data.upperThreshold)
-  // },
-  // lower: function () {
-  //   console.log("离底部" + this.data.lowerThreshold)
-  // },
+  gototype: function (e) {
+    var that = this
+    that.setData({
+      currenttype: e.currentTarget.dataset['index']
+    })
+    if (that.data.currenttype == 0){
+      that.setData({
+        toView: 'start'
+      })
+    }else if (that.data.currenttype == 1) {
+      that.setData({
+        toView: 'work'
+      })
+    } else if (that.data.currenttype == 2) {
+      that.setData({
+        toView: 'company'
+      })
+    }
+  },
+  scroll: function (e) {
+    var that = this;
+    if (e.detail.scrollTop >= that.data.scrollTop && !this.data.isShowFloatTab){
+      console.log('悬浮' + e.detail.scrollTop)
+      that.setData({
+        isShowFloatTab: true
+      })
+    } else if(e.detail.scrollTop < that.data.scrollTop && this.data.isShowFloatTab){
+      console.log('不悬浮' + e.detail.scrollTop)
+      that.setData({
+        isShowFloatTab: false
+      })
+    }
+  },
+  scrolltoupper:function(e){
+    // console.log(e)
+  },
 })

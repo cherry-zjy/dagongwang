@@ -5,6 +5,9 @@
   border: 0px solid darkgray;
   background-color: #fff;
 }
+.table.one{
+  height: 150rpx;
+}
 .onetr {
   display: flex;
   width: 96%;
@@ -16,16 +19,30 @@
 .one-td1{
   width: 30%;
   justify-content: center;
-  text-align: right;
-  padding-right: 50rpx;
+  text-align: center;
   font-size: 30rpx;
   background-color: #EEEEEE;
   color: #666666;
 }
 .one-td2{
   width: 70%;
-  text-align: lest;
+  text-align: left;
   padding-left: 50rpx;
+  justify-content: center;
+  font-size: 30rpx;
+  border-left: 1px solid #EEEEEE;
+}
+.one-td3{
+  width: 50%;
+  justify-content: center;
+  text-align: center;
+  font-size: 30rpx;
+  line-height: 10rpx;
+}
+.one-td4{
+  width: 50%;
+  text-align: left;
+  padding-left: 20rpx;
   justify-content: center;
   font-size: 30rpx;
   border-left: 1px solid #EEEEEE;
@@ -37,6 +54,10 @@
   display: flex;
   align-items: center;
 }
+.basic-td2.no,
+.one-td1.no{
+  background-color: unset;
+}
 /* 标签 */
 .flex-wrp{
   margin-top: 5rpx;
@@ -46,8 +67,9 @@
   background-color:#fff;
   margin-bottom: 20rpx;
 }
-.page-section-spacing .flex-wrp{
-  height: 50rpx;
+.page-section-spacing{
+  height: 100rpx;
+  margin-bottom: 20rpx;
 }
 .page-section-spacing .flex-item{
   font-size: 25rpx;
@@ -170,9 +192,25 @@
 .attend.on{
   background-color: #A5A4A4
 }
+
+.type-icon{
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  top: 20rpx;
+  display: none;
+}
+.type-icon.act{
+  display: block
+}
+
 /* 表格 */
 .moneybox , .workbox , .qiyebox{
   background-color: #fff;
+  margin-top: 20rpx;
+}
+.moneybox.top{
+  padding-top: 90rpx;
 }
 .tb-bigtitle{
   font-size: 35rpx;
@@ -182,19 +220,27 @@
 }
 .section.type{
   font-size: 30rpx;
-  background-color: #fff;
-  border-bottom: 1px solid #EEEEEE;
   margin-top: 20rpx;
 }
+.section.type.top{
+  position:fixed;
+  top:0;
+  width:100%;
+  margin-top:-5rpx;
+  margin-bottom: 0;
+  /* padding-bottom:  */
+}
 .section.type .flex-wrp{
-  background-color: unset;
+  background-color: #fff;
+  height: 50rpx;
+  line-height: 50rpx;
 }
 .job-type{
   width: 33.3%;
   text-align: center;
 }
 .job-type.act{
-  color: rgb(26,122,228)
+  color: #D33A31
 }
 .basic-td1{
    width: 15%; 
@@ -218,12 +264,21 @@
   justify-content: center;
   font-size: 30rpx;
   margin-left: 20rpx;
+  color: #666666;
+}
+.tb-bigtitle{
+  font-size: 32rpx;
+  padding: 10rpx 0;
+  margin-left: 1.5%;
+  color: #333333;
+  font-weight: bolder;
 }
 .tb-title{
   font-size: 30rpx;
   padding: 10rpx 0;
   margin-left: 1.5%;
-  color: #333333
+  color: #333333;
+  font-weight: bolder;
 }
 .onetr{
   border: 1px solid #EEEEEE;
@@ -233,6 +288,9 @@
   padding: 10rpx 1.5% 0 1.5%;
   background-color: #fff;
 }
-.qiyebox{
+/* .qiyebox{
   padding-bottom: 100rpx;
+} */
+.foot-text{
+  color: #D3D3D3
 }

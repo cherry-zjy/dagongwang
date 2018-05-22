@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -12,8 +12,8 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "1.9.98",
-	"appid": "wxaeb49a37f5f8c396",
-	"projectname": "quanqiuyingcai",
+	"appid": "wx6c2955ba68993948",
+	"projectname": "%E5%85%A8%E7%90%83%E8%8B%B1%E6%89%8D",
 	"condition": {
 		"search": {
 			"current": -1,
