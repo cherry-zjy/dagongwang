@@ -43,4 +43,4 @@
   </view>
   </view>
 
-  <view class='phone'>公司客服电话：<text class='blue'>18758471000</text></view>
+  <view class='phone'>公司客服电话：<text class='blue' bindtap='makePhoneCall'>18758471000</text></view>
