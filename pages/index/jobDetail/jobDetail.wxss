@@ -212,6 +212,12 @@
 .moneybox.top{
   padding-top: 90rpx;
 }
+.workbox.top{
+  padding-top: 90rpx;
+}
+.qiyebox.top{
+  padding-top: 90rpx;
+}
 .tb-bigtitle{
   font-size: 35rpx;
   margin-left: 1.5%;
@@ -288,9 +294,9 @@
   padding: 10rpx 1.5% 0 1.5%;
   background-color: #fff;
 }
-/* .qiyebox{
+ .qiyebox{
   padding-bottom: 100rpx;
-} */
+} 
 .foot-text{
   color: #D3D3D3
 }

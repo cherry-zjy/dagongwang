@@ -26,6 +26,7 @@ Page({
     detailid:'',
     toView:'',
     scrollTop:'',
+    mainurl:'',
     isShowFloatTab:false //是否置顶
   },
   /**
@@ -137,10 +138,9 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    // var that = this;
-    // that.setData({
-    //   toView: 'type'
-    // });
+    this.setData({
+      mainurl: app.mainUrl
+    })
   },
 
   /**
@@ -186,7 +186,8 @@ Page({
   },
   // 点击查看图片
   previewImage: function (e) {
-    console.log(e)
+    // var that = this;
+    // console.log(e)
     var index = e.currentTarget.dataset.index;
     var Type = e.currentTarget.dataset.type;
     var imgArr = [];
@@ -197,10 +198,11 @@ Page({
     }
     var objkeys = Object.keys(img);
     for (var i = 1; i <= objkeys.length; i++) {
-      imgArr.push(img[i - 1]["Image"]);
+      var imglist = this.data.mainurl + img[i - 1]["Image"];
+      imgArr.push(imglist);
     }
     wx.previewImage({
-      current: this.data.Images[index],//当前图片地址
+      current: this.data.mainurl + this.data.Images[index],//当前图片地址
       urls: imgArr
     })
   },

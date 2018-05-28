@@ -4,7 +4,7 @@ const app = getApp()
 
 Page({
   data: {
-    imgUrls: [],
+    imgUrls: '',
     // indicatorDots: true,
     autoplay: true,
     interval: 5000,
@@ -58,9 +58,7 @@ Page({
           that.data.pageIndex = that.data.pageIndex + 1
           that.data.listlenth = res.data.Result.result.Works.length
           that.setData({
-            imgUrls: [
-              app.mainUrl + res.data.Result.BannerImage
-            ],
+            imgUrls: app.mainUrl + res.data.Result.result.BannerImage,
             recommendList: res.data.Result.result,
             IsNext: res.data.Result.IsNext
           })
@@ -95,8 +93,10 @@ Page({
   /**
  * 生命周期函数--监听页面加载
  */
-onLoad: function (options) {
-
+  onLoad: function (options) {
+    this.setData({
+      mainurl: app.mainUrl
+    })
   },
 
   /**
@@ -113,8 +113,8 @@ onLoad: function (options) {
     this.setData({
       pageIndex: 1
     })
+    
     this.getInfo();
-    this.mainurl = app.mainUrl
   },
 
   /**
@@ -176,9 +176,7 @@ onLoad: function (options) {
           that.data.pageIndex = that.data.pageIndex + 1
           that.data.listlenth = res.data.Result.result.Works.length
           that.setData({
-            imgUrls: [
-              app.mainUrl + res.data.Result.BannerImage
-            ],
+            imgUrls: app.mainUrl + res.data.Result.result.BannerImage,
             recommendList: res.data.Result.result,
             IsNext: res.data.Result.IsNext
           })

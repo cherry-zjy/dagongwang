@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    none:'',
     list:[],
     mainurl:''
   },
@@ -65,12 +66,9 @@ Page({
                 list: res.data.Result,
               })
             } else if (res.data.Status == -1) {
-              wx.showModal({
-                showCancel: false,
-                title: '提示',
-                content: res.data.Result,
+              tt.setData({
+                none: true
               })
-              wx.navigateBack({}); 
             }
             else {
               wx.showModal({
@@ -94,6 +92,9 @@ Page({
       complete: function (res) {
       },
     })
+  },
+  back(){
+    wx.navigateBack({}); 
   },
 
   /**

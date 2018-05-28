@@ -1,6 +1,13 @@
 <!--pages/money/sister/sister.wxml-->
+<view wx:if="{{none}}" class='none'>
+  <image src='../../../../img/gz_empty.png' class="noicon"></image>
+  <view class='tip'>宝宝，你还没有指定的经纪人哦~</view>
+  <view class="btn-area">
+    <button class='btn' bindtap='back'>返回</button>
+  </view>
+</view>
 
- <view class='sister-agent'>
+ <view class='sister-agent' wx:if="{{!none}}">
   <view class='agent-box'>
     <image class="sister-img" src="{{mainurl+list.Image}}"></image>
     <view class="sister-name">
@@ -10,7 +17,7 @@
   </view>
 </view>
 
-<view class='connectbox'>
+<view class='connectbox' wx:if="{{!none}}">
  <view class="flex-wrp" style="flex-direction:row;">
     <view class="flex-item icon">
       <image class="sister-icon" src='../../../img/qzs_senior_wechat.png'></image>
@@ -43,4 +50,4 @@
   </view>
   </view>
 
-  <view class='phone'>公司客服电话：<text class='blue' bindtap='makePhoneCall'>18758471000</text></view>
+  <view class='phone' wx:if="{{!none}}">公司客服电话：<text class='blue' bindtap='makePhoneCall'>18758471000</text></view>

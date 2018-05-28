@@ -6,8 +6,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    datalist: []
+    datalist: [],
+    none:''
 
+  },
+  back() {
+    wx.navigateBack({});
   },
 
   /**
@@ -41,9 +45,16 @@ Page({
           success: function (res) {
             wx.hideLoading()
             if (res.data.Status == 1) {
-              tt.setData({
-                datalist: res.data.Result,
-              })
+              if (res.data.Result.length == 0) {
+                tt.setData({
+                  none: true
+                })
+              } else {
+                tt.setData({
+                  datalist: res.data.Result,
+                  none: false
+                })
+              }
             }else {
               wx.showModal({
                 showCancel: false,

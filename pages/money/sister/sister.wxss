@@ -65,3 +65,22 @@ page{
   color: #D33A31;
   font-weight: bolder;
 }
+/* 无经验 */
+.none{
+  text-align: center;
+}
+.btn {
+  background: #D33A31;
+  color: #fff;
+  margin-top: 90rpx;
+  width: 80%;
+  font-size: 30rpx;
+}
+.noicon{
+  width: 300rpx;
+  height: 300rpx;
+  margin-top: 100rpx;
+}
+.tip{
+  color: #666666;
+}

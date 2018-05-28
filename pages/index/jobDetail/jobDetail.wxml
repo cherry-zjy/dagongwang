@@ -45,7 +45,7 @@
       indicator-active-color="{{indicatorActiveColor}}" class="swipelist {{currentTab == 0? 'showview':'hideview'}}">
       <view wx:for="{{Images}}" wx:if = "{{item.Type == 0}}">
         <swiper-item>
-          <image src="{{item.Image}}" class="slide-image" data-src="{{item.Image}}" data-index="{{index}}" bindtap="previewImage" data-type="{{item.Type}}"/>
+          <image src="{{mainurl+item.Image}}" class="slide-image" data-src="{{item.Image}}" data-index="{{index}}" bindtap="previewImage" data-type="{{item.Type}}"/>
           <text class='swipe-text'>{{item.text}}</text>
         </swiper-item>
       </view>
@@ -54,7 +54,7 @@
       indicator-active-color="{{indicatorActiveColor}}" class="swipelist {{currentTab == 1? 'showview':'hideview'}}">
       <view wx:for="{{Images}}" wx:if = "{{item.Type == 1}}">
         <swiper-item>
-          <image src="{{item.Image}}" class="slide-image" data-src="{{item.Image}}" data-index="{{index}}" bindtap="previewImage" data-type="{{item.Type}}"/>
+          <image src="{{mainurl+item.Image}}" class="slide-image" data-src="{{item.Image}}" data-index="{{index}}" bindtap="previewImage" data-type="{{item.Type}}"/>
           <text class='swipe-text'>{{item.text}}</text>
         </swiper-item>
       </view>
@@ -63,7 +63,7 @@
       indicator-active-color="{{indicatorActiveColor}}" class="swipelist {{currentTab == 2? 'showview':'hideview'}}">
       <view wx:for="{{Images}}" wx:if = "{{item.Type == 2}}">
         <swiper-item>
-          <image src="{{item.Image}}" class="slide-image" data-src="{{item.Image}}" data-index="{{index}}" bindtap="previewImage" data-type="{{item.Type}}" />
+          <image src="{{mainurl+item.Image}}" class="slide-image" data-src="{{item.Image}}" data-index="{{index}}" bindtap="previewImage" data-type="{{item.Type}}" />
           <text class='swipe-text'>{{item.text}}</text>
         </swiper-item>
       </view>
@@ -72,7 +72,7 @@
       indicator-active-color="{{indicatorActiveColor}}" class="swipelist {{currentTab == 3? 'showview':'hideview'}}">
       <view wx:for="{{Images}}" wx:if = "{{item.Type == 3}}">
         <swiper-item>
-          <image src="{{item.Image}}" class="slide-image" data-src="{{item.Image}}" data-index="{{index}}" bindtap="previewImage" data-type="{{item.Type}}" />
+          <image src="{{mainurl+item.Image}}" class="slide-image" data-src="{{item.Image}}" data-index="{{index}}" bindtap="previewImage" data-type="{{item.Type}}" />
           <text class='swipe-text'>{{item.text}}</text>
         </swiper-item>
       </view>
@@ -167,7 +167,7 @@
 </view>
 
 <!-- 岗位说明 -->
-<view class='workbox' id='work'>
+<view class="workbox {{isShowFloatTab == true? 'top':''}}" id='work'>
    <view class='tb-bigtitle'>岗位说明</view> 
   <view class='tb-title'>岗位状态</view>
   <view class="table">
@@ -202,7 +202,7 @@
 
 <!-- 企业说明 -->
 
-<view class='qiyebox' id='company'>
+<view class="qiyebox {{isShowFloatTab == true? 'top':''}}" id='company'>
 <view class='tb-bigtitle'>企业说明</view>
   <view class="table qiyetable">
   <view class="onetr">

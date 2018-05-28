@@ -1,4 +1,12 @@
 <!--wxs语法过滤器  -->
+<view wx:if="{{none}}" class='none'>
+  <image src='../../../../img/gz_empty.png' class="icon"></image>
+  <view class='tip'>宝宝，木有信息哦~</view>
+  <view class="btn-area">
+    <button class='btn' bindtap='back'>返回</button>
+  </view>
+</view>
+
 <wxs module="utilTitle">
   var sub = function(val) {
     val = val.substring(0,10)
@@ -21,7 +29,7 @@
   }
   module.exports.sub = sub;
 </wxs>
-<view class="section list">
+<view class="section list" wx:if="{{!none}}">
   <view class="flex-wrp" style="flex-direction:column;">
     <view class="flex-item" wx:for="{{datalist}}">
       <view class='list-name'>{{item.Explain}}</view>
