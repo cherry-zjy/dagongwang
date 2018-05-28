@@ -12,7 +12,7 @@
 <image class='kf-icon' src='../../img/sy_consulting.png'></image>
 
 
-<view class='bannerbox'>
+<view class='bannerbox' bindtap='gotorecommend'>
   <view class='today-recommend'>
     <view class='today-title'>今日推荐</view>
     <view class='today-wage'>{{recommendList.Salary}}元</view>

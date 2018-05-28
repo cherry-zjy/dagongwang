@@ -18,7 +18,6 @@
 }
 
 .input-box {
-  width: 610rpx;
   height: 88rpx;
   padding: 0 110rpx;
   font-size: 30rpx;

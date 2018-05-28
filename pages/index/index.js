@@ -21,7 +21,8 @@ Page({
     recommendList:[],
     group:20,
     listlenth:0,
-    next:false
+    next:false,
+    recommendid:''
   },
   getInfo() {
     var that = this
@@ -32,6 +33,9 @@ Page({
       success: function (res) {
         wx.hideLoading()
         if (res.data.Status == 1) {
+          that.setData({
+            recommendid: res.data.Result.result.ID,
+          })
           if (that.data.pageIndex == 1) {
             that.data.jobList = [];
             that.setData({
@@ -81,6 +85,11 @@ Page({
     var id = event.currentTarget.dataset.id
     wx.navigateTo({
       url: 'jobDetail/jobDetail?id=' + id,
+    })
+  },
+  gotorecommend(){
+    wx.navigateTo({
+      url: 'jobDetail/jobDetail?id=' + this.data.recommendid,
     })
   },
 

@@ -8,8 +8,8 @@ Page({
   
   },
   back(){
-    wx.navigateTo({
-      url: '../../accountwithdraw/accountwithdraw',
+    wx.switchTab({
+      url: '../money/money'
     })
   },
 
