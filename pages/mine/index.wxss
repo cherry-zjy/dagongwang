@@ -129,3 +129,12 @@
   margin-top: 40rpx;
   margin-right: 20rpx;
 }
+
+.renzheng-img{
+  width: 30rpx;
+  height: 30rpx;
+}
+.renzheng-text{
+  font-size: 30rpx;
+  margin-left: 10rpx;
+}

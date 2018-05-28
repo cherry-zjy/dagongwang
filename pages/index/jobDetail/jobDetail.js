@@ -27,7 +27,9 @@ Page({
     toView:'',
     scrollTop:'',
     mainurl:'',
-    isShowFloatTab:false //是否置顶
+    isShowFloatTab:false, //是否置顶
+    workFloatTab:false,
+    qiyeFloatTab:false
   },
   /**
    * 生命周期函数--监听页面加载
@@ -458,16 +460,37 @@ Page({
       })
     }else if (that.data.currenttype == 1) {
       that.setData({
-        toView: 'work'
+        toView: 'work',
+        workFloatTab: true
       })
     } else if (that.data.currenttype == 2) {
       that.setData({
-        toView: 'company'
+        toView: 'company',
+        qiyeFloatTab: true
       })
     }
   },
   scroll: function (e) {
     var that = this;
+    console.log(that.data.currenttype)
+    // if (that.data.currenttype !== 1){
+    //   that.setData({
+    //     workFloatTab: false
+    //   })
+    // }else{
+    //   that.setData({
+    //     workFloatTab: true
+    //   })
+    // }
+    // if (that.data.currenttype !== 2) {
+    //   that.setData({
+    //     qiyeFloatTab: false
+    //   })
+    // } else {
+    //   that.setData({
+    //     qiyeFloatTab: true
+    //   })
+    // }
     if (e.detail.scrollTop >= that.data.scrollTop && !this.data.isShowFloatTab){
       console.log('悬浮' + e.detail.scrollTop)
       that.setData({

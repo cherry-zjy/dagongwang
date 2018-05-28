@@ -1,6 +1,6 @@
 <!--pages/mine/aboutus/aboutus.wxml-->
 <image src='../../../img/1024.png' class='image'></image>
-<view class='text'>我要打工网</view>
+<view class='text'>全球英才网</view>
 <view class='text'>v1.0</view>
 
 <view class='box'>

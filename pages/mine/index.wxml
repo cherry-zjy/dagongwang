@@ -3,7 +3,14 @@
   <view class='top-info'>
     <image class='user-img' src='{{UserInfoIcon}}'></image>
     <view class='user-info'>
-      <view class='user-name'>{{userInfo.NickName}}</view>
+      <view class='user-name' wx:if="{{userInfo.IsBusy}}">{{userInfo.NickName}}
+         <image class='renzheng-img' src='../../img/renzheng.png'></image>
+         <text wx-if="userInfo.IsBusy" class='renzheng-text'>已认证</text>
+      </view>
+      <view class='user-name' wx:if="{{!userInfo.IsBusy}}">{{userInfo.NickName}}
+         <image class='renzheng-img' src='../../img/weirenz.png'></image>
+         <text class='renzheng-text'>未认证</text>
+      </view>
       <view class='user-phone'>{{userInfo.Phone}}</view>
     </view>
     <image class='icon-enter' src='../../img/right.png'></image>

@@ -25,11 +25,9 @@
   height: 380rpx;
   background-color: #261e2b;
 }
-
 .swiper-box {
   height: 100%;
 }
-
 .slide-image {
   width: 100%;
   height: 100%;
@@ -154,7 +152,7 @@
 .job-size{
   position: absolute;
   bottom: 12rpx;
-  font-size: 26rpx;
+  font-size: 25rpx;
   text-align: center;
   border-radius: 3px;
   color: #fff;
@@ -230,4 +228,22 @@
 .icon{
   width: 40rpx;
   height: 40rpx;
+}
+
+/* 客服按钮 */
+.kfbtn{
+  position: fixed;
+  bottom: 15%;
+  right: 15%;
+  opacity: 0;
+  width: 100rpx;
+  height: 100rpx;
+}
+.kf-icon{
+  position: fixed;
+  bottom: 15%;
+  right: 15%;
+  width: 100rpx;
+  height: 100rpx;
+  z-index: 1;
 }

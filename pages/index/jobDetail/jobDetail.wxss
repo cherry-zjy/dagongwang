@@ -133,6 +133,7 @@
   position: absolute;
   right: 20rpx;
   top: 20rpx;
+  z-index: 1;
 }
 .swipebox .flex-item{
   height: 24.5%;
@@ -209,14 +210,8 @@
   background-color: #fff;
   margin-top: 20rpx;
 }
-.moneybox.top{
-  padding-top: 90rpx;
-}
-.workbox.top{
-  padding-top: 90rpx;
-}
-.qiyebox.top{
-  padding-top: 90rpx;
+.content.top{
+   padding-top: 90rpx; 
 }
 .tb-bigtitle{
   font-size: 35rpx;
@@ -227,6 +222,7 @@
 .section.type{
   font-size: 30rpx;
   margin-top: 20rpx;
+  height: 90rpx;
 }
 .section.type.top{
   position:fixed;

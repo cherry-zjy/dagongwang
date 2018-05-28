@@ -8,7 +8,7 @@ Page({
   data: {
     none:false,
     jobList: [],
-  
+    mainurl:''
   },
   getInfo() {
     var that = this;
@@ -70,6 +70,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({
+      mainurl: app.mainUrl
+    })
     this.getInfo()
   },
 

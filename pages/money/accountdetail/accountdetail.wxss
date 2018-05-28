@@ -10,13 +10,13 @@ page {
 .list .flex-item{
   color: #000;
   text-align: left;
-  margin-left: 50rpx;
+  margin-left: 5%;
   border-bottom: 1px solid rgb(245,245,245);
   margin-top: 20rpx;
 }
 .list-other{
   position: absolute;
-  right: 100rpx;
+  right: 5%;
   top: 40rpx;
   color: rgb(173,173,173);
 }
@@ -30,7 +30,7 @@ page {
 }
 .list .flex-item{
   position: relative;
-  width: 100%;
+  width: 95%;
 }
 .list-name{
   font-size: 30rpx;

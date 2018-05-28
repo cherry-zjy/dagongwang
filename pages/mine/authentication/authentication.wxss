@@ -1,0 +1,51 @@
+/* pages/mine/authentication/authentication.wxss */
+/* pages/money/accountwithdraw/accountwithdraw.wxss */
+.btn {
+  background: #D33A31;
+  color: #fff;
+  margin-top: 60rpx;
+}
+
+.input-box {
+  height: 100rpx;
+  padding: 0 40rpx;
+  font-size: 50rpx;
+  width: 100%;
+}
+
+.inputbox{
+  background-color: #fff;
+  float: left;
+  padding:0 20rpx;
+}
+.input-text{
+  float: left;
+}
+.input-input{
+  float: right;
+  padding-left: 20rpx;
+}
+.box{
+  float: left;
+  width: 100%;
+  padding: 20rpx 0rpx;
+}
+.box:first-child{
+  border-bottom: 1px solid #EEEEEE;
+}
+.input{
+  color: #BBBBBB;
+  width: 100%;
+  text-align: right;
+  font-size: 30rpx;
+  
+}
+.btn-area{
+  float: left;
+}
+.errod {
+  color: red;
+  font-size: 30rpx;
+  line-height: 43rpx;
+  padding-left: 30rpx;
+}

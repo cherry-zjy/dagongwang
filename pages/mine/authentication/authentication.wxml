@@ -1,0 +1,19 @@
+<!--pages/login/login.wxml-->
+<!--input.wxml-->
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view class='inputbox'>
+    <view class="box">
+      <view class='input-text'>真实姓名</view>
+      <view class='input-input'><input class='input' name="name" placeholder='请填写真实姓名' value='{{Name}}'/></view>
+    </view>
+    <view class="box">
+      <view class='input-text'>身份证</view>
+      <view class='input-input'><input class='input' name="phone" placeholder='请填写身份证' type='number' value='{{IDcard}}'/></view>
+    </view>
+  </view>
+  <view class="errod">{{tip}}</view>
+
+  <view class="btn-area">
+    <button class='btn' formType="submit">确认</button>
+  </view>
+</form>

@@ -32,7 +32,7 @@
   <view class='agent-box'>
     <image class="store-img" src="{{Icon}}"></image>
     <view class='agent-msg'>
-      <view class='store-agentname'>{{store.Phone}}</view>
+      <view class='store-agentname'>{{store.JJName}}</view>
       <view class='store-phone'>{{store.Phone}}</view>
     </view>
   </view>

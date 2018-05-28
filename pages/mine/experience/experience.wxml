@@ -1,5 +1,5 @@
 <view wx:if="{{none}}" class='none'>
-  <image src='../../../../img/gz_empty.png' class="icon"></image>
+  <image src='../../../img/gz_empty.png' class="icon"></image>
   <view class='tip'>宝宝，你目前还木有工作经历哦~</view>
   <view class="btn-area">
     <button class='btn' bindtap='addexp'>添加工作经验</button>

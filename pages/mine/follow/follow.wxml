@@ -38,7 +38,7 @@
 </view>
 
 <view wx:if="{{none}}" class='none'>
-<image src='../../../../img/gz_empty.png' class="icon"></image>
+<image src='../../../img/gz_empty.png' class="icon"></image>
 <view class='tip'>宝宝，你还没有关注的工作哦</view>
 <view class="btn-area">
   <button class='btn' bindtap="goto">去逛逛</button>

@@ -8,6 +8,10 @@
   </view>
 </view>
 
+<contact-button size="40" session-from="weapp" class='kfbtn'></contact-button>
+<image class='kf-icon' src='../../img/sy_consulting.png'></image>
+
+
 <view class='bannerbox'>
   <view class='today-recommend'>
     <view class='today-title'>今日推荐</view>

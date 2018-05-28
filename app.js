@@ -1,8 +1,8 @@
 //app.js
 App({
   // data: {
-  // mainUrl: "http://192.168.1.125/Working/",
-  mainUrl: "https://working.quanqiuyingcai.com/",
+  mainUrl: "http://192.168.1.125/Working/",
+  // mainUrl: "https://working.quanqiuyingcai.com/",
   ajax: require('utils/ajax.js'),
   token: "",
   onLaunch: function () {
