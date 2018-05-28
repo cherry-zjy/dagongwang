@@ -113,10 +113,11 @@ Page({
             success: function (res) {
               wx.hideLoading()
               if (res.data.Status == 1) {
+                wx.showToast({
+                  title: res.data.Result
+                })
                 setTimeout(() => {
-                  wx.navigateTo({
-                    url: '../userInfo/userInfo'
-                  })
+                  wx.navigateBack()
                 }, 1500);
               } else {
                 wx.showModal({

@@ -275,8 +275,8 @@ Page({
           })
         },
         fail: function (res) {
-          tt.setData({
-            isLogin: false
+          wx.navigateTo({
+            url: '../login/login',
           })
         },
         complete: function (res) {
@@ -363,6 +363,7 @@ Page({
       }
     })
   },
+  //报名
   attend(){
     var tt = this
     wx.getStorage({
@@ -387,9 +388,6 @@ Page({
                 isattend: true
               })
             } else if (res.data.Status == 40002) {
-              tt.setData({
-                isLogin: false
-              })
               wx.showModal({
                 title: '提示',
                 content: res.data.Result,
@@ -403,6 +401,20 @@ Page({
                     })
                     wx.navigateTo({
                       url: '../login/login',
+                    })
+                  } else if (res.cancel) {
+                    console.log('用户点击取消')
+                  }
+                }
+              })
+            } else if (res.data.Status == -2){
+              wx.showModal({
+                title: '提示',
+                content: res.data.Result,
+                success: function (res) {
+                  if (res.confirm) {
+                    wx.navigateTo({
+                      url: '../../mine/authentication/authentication',
                     })
                   } else if (res.cancel) {
                     console.log('用户点击取消')

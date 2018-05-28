@@ -24,7 +24,7 @@
 </view>
 <view class='info-list' bindtap="gotoauthentication">实名认证
   <view class='info-right'>
-    <text class='info-text'>{{userInfo.IsBusy == false?"未会员":"已认证"}}</text>
+    <text class='info-text'>{{userInfo.IsBusy == false?"未认证":"已认证"}}</text>
     <image class='enter-img' src='../../../img/right.png'></image>
   </view>
 </view>
