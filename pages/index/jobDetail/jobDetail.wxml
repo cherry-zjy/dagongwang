@@ -135,14 +135,14 @@
 
   <view class='tb-title'>食宿介绍</view>
   <view class="table">
-      <view class="onetr">
+      <view class="onetr no">
         <view class="basic-td1">1</view>
-        <view class="basic-td2">伙食</view>
+        <view class="basic-td2"><text class='td2-text'>伙食</text></view>
         <view class="basic-td3">{{utilTitle.sub(detailInfo.SSEat)}}</view>
       </view>
-      <view class="onetr">
+      <view class="onetr no">
         <view class="basic-td1">2</view>
-        <view class="basic-td2">住宿</view>
+        <view class="basic-td2"><text class='td2-text'>住宿</text></view>
         <view class="basic-td3">{{utilTitle.sub(detailInfo.SSStay)}}</view>
       </view>
     <view class="table">

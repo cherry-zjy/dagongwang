@@ -6,7 +6,7 @@
     <form bindsubmit="formSubmit" bindreset="formReset">
       <view class="section">
       <text class='input-number'>+86</text>
-        <input class='input-box' name="Phone" placeholder="请输入手机号" auto-focus bindinput="Changephone" type='number'/>
+        <input class='input-box phone' name="Phone" placeholder="请输入手机号" auto-focus bindinput="Changephone" type='number'/>
       </view>
       <view class="section codebox">
         <input class='input-box code' name="code" type="text" maxlength="18" placeholder='请输入验证码' type='number' />

@@ -1,6 +1,6 @@
 <!--wxs语法过滤器  -->
 <view wx:if="{{none}}" class='none'>
-  <image src='../../../../img/gz_empty.png' class="icon"></image>
+  <image src='../../../img/gz_empty.png' class="icon"></image>
   <view class='tip'>宝宝，木有信息哦~</view>
   <view class="btn-area">
     <button class='btn' bindtap='back'>返回</button>

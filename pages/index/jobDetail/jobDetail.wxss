@@ -5,17 +5,19 @@
   border: 0px solid darkgray;
   background-color: #fff;
 }
-.table.one{
+/* .table.one{
   height: 150rpx;
-}
+} */
 .onetr {
   display: flex;
   width: 96%;
-  justify-content: center;
-  align-items: center;
   margin-left: 1.5%;
   background-color: #fff;
+  align-items: center;
 }
+/* .onetr.no{
+  align-items: unset;
+} */
 .one-td1{
   width: 30%;
   justify-content: center;
@@ -37,7 +39,6 @@
   justify-content: center;
   text-align: center;
   font-size: 30rpx;
-  line-height: 10rpx;
 }
 .one-td4{
   width: 50%;
@@ -76,9 +77,10 @@
   padding: 0 10rpx;
   text-align: center;
   border: 1px solid #D33A31;
-  border-radius: 3px;
   color: #D33A31;
   line-height: 50rpx;
+  background-color: rgb(250, 245, 245);
+  border-radius: 8rpx;
 }
 .job-tag{
   margin: 0 5rpx;
@@ -230,7 +232,7 @@
   width:100%;
   margin-top:-5rpx;
   margin-bottom: 0;
-  /* padding-bottom:  */
+  z-index: 1
 }
 .section.type .flex-wrp{
   background-color: #fff;
@@ -254,13 +256,17 @@
 .basic-td2{
    width: 35%; 
   text-align: center;
-  justify-content: center;
   font-size: 30rpx;
-  height: 100%;
   border-right: 1px solid #EEEEEE;
   background-color: #EEEEEE;
-  color: #666666
+  color: #666666;
+  position: relative;
 }
+/* .td2-text{
+  position:absolute;
+  top:25%;
+  left:38%;
+} */
 .basic-td3{
   width: 50%; 
   justify-content: center;

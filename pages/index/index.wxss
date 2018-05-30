@@ -25,6 +25,9 @@
   height: 380rpx;
   background-color: #261e2b;
 }
+swiper{
+  height: 350rpx
+}
 .swiper-box {
   height: 100%;
 }
@@ -39,7 +42,7 @@
 }
 .today-recommend{
   position: absolute;
-  top: 40rpx;
+  top: 60rpx;
   width: calc(60% - 110rpx); 
   left: calc(20% + 55rpx); 
   z-index: 999;
@@ -67,7 +70,7 @@
   height: 91rpx;
   position: absolute;
   /* top: 48px; */
-  top: 100rpx;
+  top: 120rpx;
   left: 20%;
   z-index: 999
 } 
@@ -75,7 +78,7 @@
   width: 55rpx;
   height: 91rpx;
   position: absolute;
-  top: 100rpx;
+  top: 120rpx;
   right: 20%;
   z-index: 999
 } 
@@ -164,11 +167,11 @@
 
 .job-list{
   margin-top: 10rpx;
+  line-height: 40rpx;
 }
 .job-title {
   font-size: 32rpx;
   color: #D33A31;
-  line-height: 39rpx;
   font-weight: 600;
 }
 .job-text {
@@ -186,17 +189,17 @@
   font-size: 25rpx;
   padding-right: 10rpx;
   text-align: center;
-  color: #999999;
-  border-right: 1rpx solid #999999;
+  color: #D33A31;
+  border: 1px solid #D33A31;
+  padding: 10rpx;
+  background-color: rgb(250, 245, 245);
+  border-radius: 8rpx;
 }
 .job-tag{
-  margin: 0 10rpx 0 0;
+  margin: 0 10rpx 10rpx 0;
   font-size: 30rpx;
   line-height:20rpx;
   margin-top: 5rpx;
-}
-.flex-wrp .job-tag:last-child{
-  border-right: unset;
 }
 .job-address{
   font-size: 30rpx;

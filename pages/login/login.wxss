@@ -20,19 +20,26 @@ page{
   border-bottom: 1px solid rgb(173,173,173);
   height:60rpx;
   overflow:hidden;
-
+  position: relative;
 }
 .input-number{
-  float: left;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* float: left; */
   margin-left: 10rpx;
 }
 .input-box {
   text-align: left;
-  float: left;
   background: #fff;
   padding: 0 30rpx;
   font-size: 30rpx;
   color: rgba(179, 179, 179, 1);
+}
+.input-box.phone{
+  position: absolute;
+  top: 0;
+  left: 100rpx;
 }
 .codebox{
   position: relative;
@@ -62,11 +69,6 @@ page{
   width: 100%;
   color: #fff;
   margin-top: 50rpx;
-}
-
-.bg {
-  height: 100vh;
-  background-size: 100% 100%;
 }
 .service{
   margin-top: 50rpx;

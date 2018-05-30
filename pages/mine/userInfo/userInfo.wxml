@@ -22,9 +22,12 @@
     <text class='info-text'>{{userInfo.Phone}}</text>
   </view>
 </view>
-<view class='info-list' bindtap="gotoauthentication">实名认证
-  <view class='info-right'>
-    <text class='info-text'>{{userInfo.IsBusy == false?"未认证":"已认证"}}</text>
+<view class='info-list'>实名认证
+  <view class='info-right' wx:if="{{userInfo.IsBusy}}">
+    <text class='info-text'>已认证</text>
+  </view>
+  <view class='info-right' bindtap="gotoauthentication" wx:if="{{!userInfo.IsBusy}}">
+    <text class='info-text'>未认证</text>
     <image class='enter-img' src='../../../img/right.png'></image>
   </view>
 </view>

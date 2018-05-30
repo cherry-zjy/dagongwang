@@ -8,8 +8,7 @@
   </view>
 </view>
 
-<contact-button size="40" session-from="weapp" class='kfbtn'></contact-button>
-<image class='kf-icon' src='../../img/sy_consulting.png'></image>
+<image class='kf-icon' src='../../img/sy_consulting.png' bindtap='zixun'></image>
 
 
 <view class='bannerbox' bindtap='gotorecommend'>
@@ -75,6 +74,7 @@
 </view>
 
 <view wx:if="{{jobList2.length > 0}}" class='baby'>
+<image src='../../img/sy_announcement.png' class='icon'></image>
   宝宝，下面这<text class='red'>20</text>个也是可以考虑的
 </view>
 <view class='info-list' wx:for="{{jobList2}}" wx:key="index" data-id="{{item.ID}}" bindtap='jobDetail' wx:for-index="index">
@@ -100,6 +100,7 @@
 </view>
 
 <view wx:if="{{jobList3.length > 0}}" class='baby'>
+<image src='../../img/sy_announcement.png' class='icon'></image>
   宝宝，接下来这<text class='red'>20</text>个其实...一般啦
 </view>
 <view class='info-list' wx:for="{{jobList3}}" wx:key="index" data-id="{{item.ID}}" bindtap='jobDetail' wx:for-index="index">
@@ -125,6 +126,7 @@
 </view>
 
 <view wx:if="{{jobList4.length > 0}}" class='baby'>
+<image src='../../img/sy_announcement.png' class='icon'></image>
   宝宝，后面的你就随意看看吧
 </view>
 <view class='info-list' wx:for="{{jobList4}}" wx:key="index" data-id="{{item.ID}}" bindtap='jobDetail' wx:for-index="index">
