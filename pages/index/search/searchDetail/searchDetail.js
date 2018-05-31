@@ -16,7 +16,8 @@ Page({
     ascending: false,
     issort:false,
     Type:0,
-    City:-1
+    City:-1,
+    next:false
   },
   getInfo(){
     var that = this
@@ -212,8 +213,8 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    if (this.data.IsNext) {
-      var that = this
+    var that = this
+    if (that.data.IsNext) {
       if (that.data.pageIndex == 1) {
         that.setData({
           pageIndex: 2
@@ -221,9 +222,14 @@ Page({
       }
       that.getInfo()
     } else {
-      wx.showToast({
-        title: '没有更多数据了',
-      })
+      if (that.data.next == false) {
+        that.setData({
+          next: true
+        })
+        wx.showToast({
+          title: '没有更多数据了',
+        })
+      }
     }
   },
 

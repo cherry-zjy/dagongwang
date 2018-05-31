@@ -22,18 +22,18 @@
     <view class="flex-item sort {{ascending? 'on' : ''}}" bindtap="sort">补贴由高到低</view>
   </view>
 </view>
-<!-- 
+ 
  <wxs module="utilTitle">
   var sub = function(val) { 
   if (val == '0') { 
-    val = '补贴' return val 
+    val = '补贴：' return val 
   } else if (val == '1') { 
-    val = '工价' return val 
+    val = '工价：' return val 
   } else {
-    val = '收费' return val } 
+    val = '收费：' return val } 
   } 
   module.exports.sub = sub;
-</wxs>  -->
+</wxs>  
 
   <view class="section list">
   <view class=" flex-wrp" style="flex-direction:column" wx:for="{{datalist}}" data-id="{{item.ID}}" bindtap='jobDetail'>

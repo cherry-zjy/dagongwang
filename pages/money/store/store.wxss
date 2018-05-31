@@ -6,8 +6,8 @@ page{
   display:flex;
 }
 .flex-item.msg{
-  width: 90%;
-  margin-left: 5%;
+  width: 95%;
+  margin-left: 2.5%;
 }
 .store-icon{
   width: 80rpx;
@@ -28,12 +28,12 @@ page{
 .addressbox{
   font-size: 28rpx;
   background-color: rgb(245,245,245);
-  width: 100%;
-  padding: 10rpx 0 10rpx 30rpx; 
+  width: 98%;
+  padding: 10rpx 0 10rpx 2%; 
   position: relative;
 }
 .flex-wrp{
-  padding: 20rpx 0 20rpx 30rpx;
+  padding: 20rpx 0 20rpx 2%;
 }
 .store-distance{
   float: right;

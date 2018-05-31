@@ -20,13 +20,13 @@
   </view>
   <image src='../../img/suc.png' class='swiper-left'></image>
   <image src='../../img/sucyi.png' class='swiper-right'></image>
-  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <!-- <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}"> -->
     <!-- <block wx:for="{{imgUrls}}"> -->
-      <swiper-item>
+      <!-- <swiper-item> -->
         <image src="{{imgUrls}}" class="slide-image" width="100%" height="100%" />
-      </swiper-item>
+      <!-- </swiper-item> -->
     <!-- </block> -->
-  </swiper>
+  <!-- </swiper> -->
 </view>
 
 <!--wxs语法截取字符串  -->

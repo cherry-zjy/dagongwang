@@ -25,15 +25,9 @@
   height: 380rpx;
   background-color: #261e2b;
 }
-swiper{
-  height: 350rpx
-}
-.swiper-box {
-  height: 100%;
-}
 .slide-image {
   width: 100%;
-  height: 100%;
+  height: 350rpx
 }
 /* 今日推荐 */
 .bannerbox{
@@ -246,7 +240,7 @@ swiper{
   position: fixed;
   bottom: 15%;
   right: 15%;
-  width: 100rpx;
-  height: 100rpx;
+  width: 110rpx;
+  height: 110rpx;
   z-index: 1;
 }

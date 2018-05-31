@@ -209,7 +209,7 @@ Page({
   // 点击查看图片
   previewImage: function (e) {
     // var that = this;
-    // console.log(e)
+    console.log(e)
     var index = e.currentTarget.dataset.index;
     var Type = e.currentTarget.dataset.type;
     var imgArr = [];
@@ -224,7 +224,7 @@ Page({
       imgArr.push(imglist);
     }
     wx.previewImage({
-      current: this.data.mainurl + this.data.Images[index],//当前图片地址
+      current: this.data.mainurl + e.currentTarget.dataset.src,//当前图片地址
       urls: imgArr
     })
   },
