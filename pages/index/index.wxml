@@ -2,7 +2,7 @@
 <view class="page-section-spacing search-box">
   <view class="flex-wrp" style="flex-direction:row;">
     <view class="serachbox">
-      <input class='search' bindtap='gotosearch' placeholder='输入您想搜索的内容' placeholder-class="center"></input>
+      <input class='search' bindtap='gotosearch' placeholder='输入您想搜索的内容' disabled="true"></input>
       <image class='search-icon' src='../../img/sy_search.png'></image>
     </view>
   </view>
@@ -13,13 +13,13 @@
 
 <view class='bannerbox' bindtap='gotorecommend'>
   <view class='today-recommend'>
-    <view class='today-title'>今日推荐</view>
-    <view class='today-wage'>{{recommendList.Salary}}元</view>
-    <view class='today-wage'>{{recommendList.Name}}</view>
-    <view><text class='today-subsidy'>补贴{{recommendList.Subsidy}}元</text></view>
+    <image src='../../img/recommendation.png' class='rencommendimg'></image>
+    <view class='today-wage'>工资{{recommendList.Salary}}元</view>
+    <!-- <view class='today-wage'>{{recommendList.Name}}</view> -->
+    <view><image src='../../img/check.png' class='checkimg'></image><text class='today-subsidy'>{{utilTitle.sub(recommendList.SubsidyType)}}{{recommendList.Subsidy}}元</text><image src='../../img/check.png' class='checkimg'></image><text class='today-subsidy'>地区{{recommendList.Adress}}</text></view>
   </view>
-  <image src='../../img/suc.png' class='swiper-left'></image>
-  <image src='../../img/sucyi.png' class='swiper-right'></image>
+  <!-- <image src='../../img/suc.png' class='swiper-left'></image> -->
+  <!-- <image src='../../img/sucyi.png' class='swiper-right'></image> -->
   <!-- <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}"> -->
     <!-- <block wx:for="{{imgUrls}}"> -->
       <!-- <swiper-item> -->

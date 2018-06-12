@@ -375,12 +375,24 @@ Page({
   },
   // 打电话
   makePhoneCall: function () {
-    var that = this
-    wx.makePhoneCall({
-      phoneNumber: that.data.Upphone,
-      success: function () {
-        console.log("成功拨打电话")
-      }
+    var that = this;
+    wx.getStorage({
+      key: 'token',
+      success: function (res) {
+        wx.makePhoneCall({
+          phoneNumber: that.data.Upphone,
+          success: function () {
+            console.log("成功拨打电话")
+          }
+        })
+      },
+      fail: function (res) {
+        wx.navigateTo({
+          url: '../../login/login'
+        })
+      },
+      complete: function (res) {
+      },
     })
   },
   //报名

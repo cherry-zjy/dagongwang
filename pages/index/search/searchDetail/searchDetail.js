@@ -124,18 +124,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    if (options.id == ''){
+    if (options.id == "undefined" || options.id == ""){
       this.setData({
-        detailid: '-1'
+        detailid: '-1',
+        inputTxt: ''
       })
     }else{
       this.setData({
-        detailid: options.id
+        detailid: options.id,
+        inputTxt: options.id
       })
     }
-    this.setData({
-      inputTxt: options.id
-    })
     this.getInfo()
   },
 

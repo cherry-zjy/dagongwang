@@ -3,25 +3,37 @@
 /* 搜索框 */
 .search-box {
   width: 100%;
-  border-bottom: 1px solid rgb(245,245,245);
   position: relative;
+  background-color: #EFEFF4;
+  padding: 20rpx 0;
 }
 .serachbox{
-  margin-left: 5%;
+  margin-left: 40rpx;
   width: 80%;
 }
-.serachtext{
-  position: absolute;
-  right: 2%;
-  top: 30rpx;
-  width: 10%
-}
 .search {
-  height: 60rpx;
-  background-color: rgb(245,245,245);
+  background-color: #fff;
   font-size: 30rpx;
-  padding-left: 30rpx;
-  margin: 20rpx 0;
+  padding: 5rpx 0 5rpx calc(8% + 20rpx);
+  border-radius: 25rpx;
+}
+.center{
+  color: #BBBBBB;
+}
+.serachimgbox{
+  position: absolute;
+  right: 30rpx;
+  top: 23rpx;
+  font-size: 30rpx; 
+  color: #333333
+}
+.serachbox .search-icon {
+  position: absolute;
+  left: 8%;
+  width: 40rpx;
+  height: 40rpx;
+  top:25rpx;
+  z-index: 1;
 }
 /* 筛选、排序 */
 .flex-wrp{
@@ -57,7 +69,6 @@
 .list{
   width: 100%;
   position: absolute;
-  top: 180rpx;
   z-index: 20;
   background-color: #fff;
 }

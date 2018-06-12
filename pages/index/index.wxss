@@ -32,12 +32,16 @@
 /* 今日推荐 */
 .bannerbox{
    position: relative; 
-   color: #fff;
+   color: #000;
+}
+.rencommendimg{
+  width:50%;
+  height:50rpx;
 }
 .today-recommend{
   position: absolute;
-  top: 60rpx;
-  width: calc(60% - 110rpx); 
+  top: 100rpx;
+  /* width: calc(60% - 110rpx);  */
   left: calc(20% + 55rpx); 
   z-index: 999;
   text-align: center;
@@ -47,15 +51,22 @@
   font-weight: bolder;
 }
 .today-wage{
-  font-size: 30rpx;
+  font-size: 35rpx;
   font-weight: bold;
 }
+.checkimg{
+  width: 50rpx;
+  height: 50rpx;
+  float:left;
+}
 .today-subsidy{
-  font-size: 25rpx;
-  font-weight: bold;
-  background-color:rgba(0,0,0,0.5); 
+  font-size: 30rpx;
+  float:left;
+  color:#666666;
+  margin-top:5rpx;
+  /* background-color:rgba(0,0,0,0.5); 
   padding: 5rpx 20rpx;
-  border-radius: 8rpx;
+  border-radius: 8rpx; */
 }
  .swiper-left{
   /* width: 29px;
@@ -94,17 +105,17 @@
   padding-left: 20rpx; 
 }
 .search {
-  /* height: 60rpx; */
   background-color: #fff;
   font-size: 30rpx;
-  padding-left: 20rpx; 
+  border-radius: 25rpx;
+  padding: 5rpx 0 5rpx calc(8% + 20rpx);
 }
 .serachbox .search-icon {
   position: absolute;
-  left: 30%;
+  left: 8%;
   width: 40rpx;
   height: 40rpx;
-  top:25rpx;
+  top:28rpx;
   z-index: 1;
 }
 
@@ -178,6 +189,8 @@
 .flex-wrp{
   margin-top: 5rpx;
   display:flex;
+  white-space:pre-wrap;
+  flex-flow:row;
 }
 .flex-item{
   font-size: 25rpx;
@@ -188,6 +201,8 @@
   padding: 10rpx;
   background-color: rgb(250, 245, 245);
   border-radius: 8rpx;
+  display:inline-block;
+
 }
 .job-tag{
   margin: 0 10rpx 10rpx 0;

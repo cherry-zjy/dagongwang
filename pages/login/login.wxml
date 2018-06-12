@@ -4,14 +4,28 @@
 <view class='bg'>
   <view class='login-form'>
     <form bindsubmit="formSubmit" bindreset="formReset">
-      <view class="section">
+    <view class="flex-wrp" style="flex-direction:row;">
+          <view class="flex-item">+86</view>
+          <view class="flex-item">
+            <input class='input-box phone' name="Phone" placeholder="请输入手机号" auto-focus bindinput="Changephone" type='number'/>
+          </view>
+        </view>
+        <view class="flex-wrp" style="flex-direction:row;">
+          <view class="flex-item">
+            <input class='input-box code' name="code" type="text" maxlength="18" placeholder='请输入验证码' type='number' />
+          </view>
+          <view class="flex-item">
+            <text class='getcode' bindtap='getVerificationCode' disabled='{{disabled}}' data-id="2">{{time}}</text>
+          </view>
+        </view>
+      <!-- <view class="section">
       <text class='input-number'>+86</text>
         <input class='input-box phone' name="Phone" placeholder="请输入手机号" auto-focus bindinput="Changephone" type='number'/>
       </view>
       <view class="section codebox">
         <input class='input-box code' name="code" type="text" maxlength="18" placeholder='请输入验证码' type='number' />
         <text class='getcode' bindtap='getVerificationCode' disabled='{{disabled}}' data-id="2">{{time}}</text>
-      </view>
+      </view> -->
       <view class="errod">{{tip}}</view>
       <view class="btn-area">
         <button class='btn' formType="submit">登录</button>

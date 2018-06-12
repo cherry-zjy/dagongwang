@@ -13,20 +13,7 @@ page{
   margin: 30rpx 40rpx 0 40rpx;
   background-color: #fff;
 }
-
-.section {
-  margin-top: 80rpx;
-  margin-bottom: 30rpx;
-  border-bottom: 1px solid rgb(173,173,173);
-  height:60rpx;
-  overflow:hidden;
-  position: relative;
-}
 .input-number{
-  position: absolute;
-  top: 0;
-  left: 0;
-  /* float: left; */
   margin-left: 10rpx;
 }
 .input-box {
@@ -37,24 +24,19 @@ page{
   color: rgba(179, 179, 179, 1);
 }
 .input-box.phone{
-  position: absolute;
-  top: 0;
-  left: 100rpx;
-}
-.codebox{
-  position: relative;
+  width: 80%;
 }
 .code{
-  width: 60%;
+  width: 80%;
 }
-.getcode{
-  position: absolute;
-  right: 10rpx;
-  font-size: 28rpx;
-  top: 0;
-  padding-left: 20rpx;
+.flex-wrp {
+  display:flex;
+  margin-top: 80rpx;
+  margin-bottom: 30rpx;
+  border-bottom: 1px solid rgb(173,173,173);
+  height:60rpx;
+  overflow:hidden;
 }
-
 .errod {
   color: red;
   font-size: 28rpx;

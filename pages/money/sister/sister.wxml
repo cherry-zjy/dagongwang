@@ -34,7 +34,8 @@
     </view>
     <view class="flex-item msg">
     <view class='postage'>
-      <text class='sister-connect'>{{list.QQ}}</text>
+    <web-view src="http://wpa.qq.com/msgrd?v=3&uin=3002807274&site=qq&menu=yes"><text class='sister-connect'>{{list.QQ}}</text></web-view>
+      
     </view>
     </view>
   </view>
